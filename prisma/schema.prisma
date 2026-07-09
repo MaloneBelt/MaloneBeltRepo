@@ -1,0 +1,41 @@
+// Phase 1 scaffold — NOT connected yet. The quote form is UI-only; this model
+// mirrors src/lib/validators/quote.ts so Phase 2 can persist leads without
+// reshaping the payload. Run migrations only once a DATABASE_URL exists.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Lead {
+  id          String      @id @default(cuid())
+  name        String
+  company     String?
+  email       String
+  phone       String?
+  urgency     LeadUrgency @default(PLANNED)
+  productSlug String?
+  beltWidth   String?
+  beltLength  String?
+  message     String?
+  status      LeadStatus  @default(NEW)
+  createdAt   DateTime    @default(now())
+
+  @@index([status, createdAt])
+}
+
+enum LeadUrgency {
+  DOWN_NOW
+  PLANNED
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUOTED
+  CLOSED
+}

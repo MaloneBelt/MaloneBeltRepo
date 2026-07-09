@@ -1,26 +1,150 @@
 @import "tailwindcss";
+@import "./styles/tokens/colors.css";
+@import "./styles/tokens/typography.css";
+@import "./styles/tokens/spacing.css";
+@import "tw-animate-css";
 
+/* Fonts are self-hosted via next/font (see layout.tsx). Repoint the DS font
+   tokens at the next/font variables so the vendored token files stay verbatim. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-display: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-data: var(--font-plex-mono), ui-monospace, "SF Mono", Menlo, monospace;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* ---- Brand palette (values live only in tokens/colors.css) ---- */
+  --color-petrol-50: var(--petrol-50);
+  --color-petrol-100: var(--petrol-100);
+  --color-petrol-200: var(--petrol-200);
+  --color-petrol-300: var(--petrol-300);
+  --color-petrol-400: var(--petrol-400);
+  --color-petrol-500: var(--petrol-500);
+  --color-petrol-600: var(--petrol-600);
+  --color-petrol-700: var(--petrol-700);
+  --color-petrol-800: var(--petrol-800);
+  --color-petrol-900: var(--petrol-900);
+  --color-marigold: var(--marigold);
+  --color-marigold-600: var(--marigold-600);
+  --color-stock: var(--green);
+  --color-stock-tint: var(--green-tint);
+  --color-stock-line: var(--green-line);
+  --color-down: var(--red);
+  --color-down-tint: var(--red-tint);
+  --color-down-line: var(--red-line);
+  /* AA text-on-tint values, canonical in DS reference components
+     (StateChip.jsx, Button.jsx danger variant) */
+  --color-down-strong: #c13438;
+  --color-stock-strong: #0c7a3c;
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-body-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-line: var(--line);
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* ---- shadcn semantic variables → DS tokens ---- */
+  --color-background: var(--canvas);
+  --color-foreground: var(--ink-2);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--ink-2);
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--ink-2);
+  --color-primary: var(--marigold);
+  --color-primary-foreground: var(--ink-2); /* ink on marigold, NEVER white */
+  --color-secondary: var(--petrol-50);
+  --color-secondary-foreground: var(--petrol-700);
+  --color-muted: var(--petrol-50);
+  --color-muted-foreground: var(--muted);
+  --color-accent: var(--petrol-100);
+  --color-accent-foreground: var(--petrol-800);
+  --color-destructive: var(--red);
+  --color-destructive-foreground: #ffffff;
+  --color-border: var(--line);
+  --color-input: var(--line);
+  --color-ring: var(--petrol-500);
+
+  /* ---- Typography ---- */
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-data);
+  --text-display: var(--fs-display);
+  --text-h1: var(--fs-h1);
+  --text-h2: var(--fs-h2);
+  --text-h3: var(--fs-h3);
+  --text-lead: var(--fs-lead);
+  --text-caption: var(--fs-caption);
+  --text-data: var(--fs-data);
+  --tracking-eyebrow: var(--tracking-eyebrow);
+  --tracking-display: var(--tracking-display);
+
+  /* ---- Radii (DS scale; track = the belt-loop pill motif) ---- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 22px;
+  --radius-track: 999px;
+
+  /* ---- Shadows (petrol-tinted, from tokens/spacing.css) ---- */
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+
+  /* ---- Layout ---- */
+  --spacing-nav: 68px;
+
+  /* ---- Motion ---- */
+  --animate-roll: roll 22s linear infinite;
+  --animate-status-pulse: status-pulse 2s ease-in-out infinite;
+
+  @keyframes roll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes status-pulse {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.45;
+      transform: scale(0.8);
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    border-color: var(--border-hairline);
+  }
+  body {
+    background: var(--surface-page);
+    color: var(--text-body);
+    font-family: var(--font-ui);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--petrol-100);
+  }
+}
+
+/* Page shell: DS container (max 1180px, 24px gutters) */
+@utility container-shell {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
 }

@@ -1,0 +1,61 @@
+/* Malone Road Belt — Color tokens
+   v2 "Petrol — deep teal & amber" palette (client-approved, July 2026).
+   Petrol is the identity. Marigold does the work.
+   60 / 30 / 10 discipline: 60% warm-bone canvas, 30% petrol, 10% marigold.
+   Vendored verbatim from Design/Design system/tokens/colors.css
+   (legacy --grape-* aliases removed — not allowed in new work). */
+:root {
+  /* ---- Petrol — identity scale ---- */
+  --petrol-50:  #EDF6F7;
+  --petrol-100: #D6ECEE;
+  --petrol-200: #ABD8DC;
+  --petrol-300: #74BCC4;
+  --petrol-400: #3D9AA6;
+  --petrol-500: #147888;
+  --petrol-600: #0C5F6E; /* ★ Primary brand */
+  --petrol-700: #0A4E5B;
+  --petrol-800: #083D48;
+  --petrol-900: #052730;
+
+  /* ---- Action & semantic (unchanged from v1) ---- */
+  --marigold:      #F5A623; /* action only — CTAs, "Find my belt", add to cart */
+  --marigold-600:  #E08A00; /* marigold hover/press */
+  --green:         #12A150; /* in-stock / ships today — the planned-buy signal */
+  --green-tint:    #EAF7EF;
+  --green-line:    #BCE3CB;
+  --red:           #E5484D; /* down-now / expedite / alerts */
+  --red-tint:      #FDEDEE;
+  --red-line:      #F3C6C8;
+
+  /* ---- Warm-bone neutrals (a whisper of teal, never cold slate) ---- */
+  --ink:      #10191C; /* darkest — footers, app-icon fill background */
+  --ink-2:    #1B2529; /* primary text, ink label on marigold */
+  --muted:    #5F6F6E; /* body-text minimum on white, meta */
+  --subtle:   #96A4A2; /* placeholders, faint meta */
+  --line:     #E7EAE2; /* hairline borders, dividers */
+  --line-2:   #E7EAE2; /* alt hairline */
+  --canvas:   #F9F7F2; /* page background */
+  --surface:  #FFFFFF; /* cards, panels */
+
+  /* ---------- SEMANTIC ALIASES ---------- */
+  --color-brand:        var(--petrol-600);
+  --color-brand-strong: var(--petrol-800);
+  --color-action:       var(--marigold);
+  --color-action-hover: var(--marigold-600);
+  --color-success:      var(--green);
+  --color-danger:       var(--red);
+
+  --text-heading:     var(--ink-2);
+  --text-body:        var(--ink-2);
+  --text-muted:       var(--muted);
+  --text-subtle:      var(--subtle);
+  --text-on-brand:    #FFFFFF;
+  --text-on-action:   var(--ink-2);   /* Ink text on marigold, NEVER white */
+  --text-link:        var(--petrol-600);
+
+  --surface-page:     var(--canvas);
+  --surface-card:     var(--surface);
+  --surface-brand:    var(--petrol-600);
+  --surface-ink:      var(--ink);
+  --border-hairline:  var(--line);
+}
