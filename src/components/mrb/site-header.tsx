@@ -20,12 +20,12 @@ export function SiteHeader() {
       <div className="container-shell flex h-nav items-center justify-between gap-4">
         <Link href="/" aria-label={`${site.name} — home`} className="shrink-0">
           <Image
-            src="/brand/logo-lockup.svg"
+            src="/brand/Final-logo-sin-contacto.png"
             alt=""
-            width={190}
-            height={40}
+            width={1272}
+            height={409}
             priority
-            className="h-9 w-auto"
+            className="h-10 w-auto"
           />
         </Link>
 

@@ -1,13 +1,19 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { SealMark } from "@/components/mrb/seal-mark";
 
 export default function NotFound() {
   return (
     <section className="container-shell flex flex-col items-center py-24 text-center">
-      <SealMark size={96} className="text-petrol-200" />
+      <Image
+        src="/brand/Final-logo-emblema.png"
+        alt=""
+        width={380}
+        height={390}
+        className="h-24 w-auto"
+      />
       <Badge variant="mono" className="mt-6">
         404 · NO MATCH FOUND
       </Badge>

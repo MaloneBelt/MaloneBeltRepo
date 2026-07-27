@@ -12,6 +12,15 @@
   --font-data: var(--font-plex-mono), ui-monospace, "SF Mono", Menlo, monospace;
 }
 
+/* Client direction (July 2026): no warm-bone beige. The page canvas is white
+   and section differentiation comes from petrol (petrol-50 bands on light
+   pages, petrol-800/900 for high-impact bands). Repointed here — token files
+   stay vendored verbatim. */
+:root {
+  --canvas: var(--surface);
+  --surface-page: var(--surface);
+}
+
 @theme inline {
   /* ---- Brand palette (values live only in tokens/colors.css) ---- */
   --color-petrol-50: var(--petrol-50);

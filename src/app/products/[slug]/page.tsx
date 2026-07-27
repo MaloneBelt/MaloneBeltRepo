@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Check, ChevronRight } from "lucide-react";
@@ -7,6 +6,7 @@ import { Check, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/mrb/product-card";
+import { ProductGallery } from "@/components/mrb/product-gallery";
 import { SectionHeading } from "@/components/mrb/section-heading";
 import { SpecList } from "@/components/mrb/spec-row";
 import { StateChip } from "@/components/mrb/state-chip";
@@ -43,12 +43,14 @@ export default async function ProductDetailPage({
 
   return (
     <>
-      <section className="container-shell py-10 lg:py-14">
+      {/* Detail — dark zone (client-assigned) */}
+      <section className="border-b border-petrol-800 bg-linear-135 from-petrol-800 to-petrol-900">
+        <div className="container-shell py-10 lg:py-14">
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb">
-          <ol className="flex flex-wrap items-center gap-1.5 text-[13px] text-body-muted">
+          <ol className="flex flex-wrap items-center gap-1.5 text-[13px] text-petrol-200">
             <li>
-              <Link href="/" className="hover:text-petrol-700">
+              <Link href="/" className="hover:text-white">
                 Home
               </Link>
             </li>
@@ -56,59 +58,31 @@ export default async function ProductDetailPage({
               <ChevronRight className="size-3.5" strokeWidth={2} />
             </li>
             <li>
-              <Link href="/products" className="hover:text-petrol-700">
+              <Link href="/products" className="hover:text-white">
                 Products
               </Link>
             </li>
             <li aria-hidden="true">
               <ChevronRight className="size-3.5" strokeWidth={2} />
             </li>
-            <li aria-current="page" className="font-semibold text-ink-2">
+            <li aria-current="page" className="font-semibold text-white">
               {product.name}
             </li>
           </ol>
         </nav>
 
         <div className="mt-8 grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-          {/* Gallery */}
-          <div>
-            <div className="relative flex h-80 items-center justify-center overflow-hidden rounded-xl border border-line bg-radial-[120%_140%_at_20%_0%] from-petrol-100 to-petrol-50 lg:h-96">
-              <Image
-                src={product.images.hero.src}
-                alt={product.images.hero.alt}
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 580px"
-                className="object-contain p-6"
-              />
-            </div>
-            {product.images.gallery.length > 0 && (
-              <ul className="mt-4 grid grid-cols-3 gap-4 sm:grid-cols-4">
-                {product.images.gallery.map((image) => (
-                  <li
-                    key={image.src}
-                    className="relative h-24 overflow-hidden rounded-lg border border-line bg-surface"
-                  >
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      sizes="(max-width: 640px) 33vw, 140px"
-                      className="object-cover"
-                    />
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
+          <ProductGallery
+            images={[product.images.hero, ...product.images.gallery]}
+          />
 
           {/* Summary */}
           <div>
             <Badge variant="mono">{product.sku}</Badge>
-            <h1 className="mt-3 font-display text-h2 leading-[1.1] font-black tracking-tight text-ink-2 lg:text-[2.5rem]">
+            <h1 className="mt-3 font-display text-h2 leading-[1.1] font-black tracking-tight text-white lg:text-[2.5rem]">
               {product.name}
             </h1>
-            <p className="mt-3 text-lead text-body-muted">{product.tagline}</p>
+            <p className="mt-3 text-lead text-petrol-200">{product.tagline}</p>
 
             <div className="mt-5">
               {product.availability.status === "in-stock" ? (
@@ -130,16 +104,22 @@ export default async function ProductDetailPage({
                   Request a quote
                 </Link>
               </Button>
-              <Button asChild variant="secondary" size="lg">
+              <Button
+                asChild
+                variant="secondary"
+                size="lg"
+                className="border-white/25 text-petrol-100 hover:border-white/60 hover:text-white"
+              >
                 <Link href="/contact?urgency=down-now">Machine down now?</Link>
               </Button>
             </div>
           </div>
         </div>
+        </div>
       </section>
 
-      {/* Description + features */}
-      <section className="border-y border-line bg-surface/60">
+      {/* Description + features — white layer between the two dark zones */}
+      <section>
         <div className="container-shell grid gap-10 py-14 lg:grid-cols-2">
           <div>
             <h2 className="font-display text-h3 font-extrabold text-ink-2">
@@ -193,10 +173,15 @@ export default async function ProductDetailPage({
         </div>
       </section>
 
-      {/* Related */}
+      {/* Related — dark zone (client-assigned) */}
       {related.length > 0 && (
-        <section className="container-shell py-14 lg:py-16">
-          <SectionHeading eyebrow="Related" title="Also worth a look." />
+        <section className="border-t border-petrol-800 bg-linear-135 from-petrol-800 to-petrol-900">
+          <div className="container-shell py-14 lg:py-16">
+          <SectionHeading
+            tone="inverse"
+            eyebrow="Related"
+            title="Also worth a look."
+          />
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((relatedProduct) => (
               <ProductCard
@@ -211,6 +196,7 @@ export default async function ProductDetailPage({
                 ctaVariant="secondary"
               />
             ))}
+          </div>
           </div>
         </section>
       )}

@@ -10,7 +10,8 @@ import { cn } from "@/lib/utils";
 /* THE signature component: the cross-reference engine as a UI. A segmented
    pill toggle (By machine / By OEM part #), the track search field with a
    marigold "Find my belt" action, and a popular-terms hint row.
-   Phase 1: UI-only — submitting routes to /products. */
+   Submitting routes to /products?q=…&mode=…, rendered server-side there
+   via src/lib/search.ts. */
 const TABS = [
   { value: "machine", label: "By machine" },
   { value: "part", label: "By OEM part #" },
@@ -20,22 +21,29 @@ type TabValue = (typeof TABS)[number]["value"];
 
 export function BeltMatch({
   popular = ["MB-4471-EP", "Powerscreen Chieftain", "Cat AP555"],
+  defaultQuery = "",
+  defaultMode = "machine",
   className,
 }: {
   popular?: string[];
+  defaultQuery?: string;
+  defaultMode?: TabValue;
   className?: string;
 }) {
   const router = useRouter();
-  const [tab, setTab] = useState<TabValue>("machine");
-  const [query, setQuery] = useState("");
+  const [tab, setTab] = useState<TabValue>(defaultMode);
+  const [query, setQuery] = useState(defaultQuery);
 
   const placeholder =
     tab === "machine"
       ? "e.g. Wirtgen W 100 Fi — main conveyor"
       : "e.g. MB-4471-EP or OEM part #";
 
-  function submit() {
-    router.push("/products");
+  function submit(value: string = query) {
+    const q = value.trim();
+    router.push(
+      q ? `/products?q=${encodeURIComponent(q)}&mode=${tab}` : "/products"
+    );
   }
 
   return (
@@ -49,7 +57,7 @@ export function BeltMatch({
       <div
         role="tablist"
         aria-label="Search mode"
-        className="mb-3.5 inline-flex w-max gap-1.5 rounded-track border border-line bg-canvas p-1"
+        className="mb-3.5 inline-flex w-max gap-1.5 rounded-track border border-petrol-800 bg-linear-135 from-petrol-800 to-petrol-900 p-1"
       >
         {TABS.map((t) => {
           const active = t.value === tab;
@@ -64,7 +72,7 @@ export function BeltMatch({
                 "cursor-pointer rounded-track px-4 py-[7px] font-display text-[12.5px] font-bold transition-colors",
                 active
                   ? "bg-surface text-petrol-700 shadow-sm"
-                  : "text-body-muted hover:text-petrol-700"
+                  : "text-petrol-200 hover:text-white"
               )}
             >
               {t.label}
@@ -107,9 +115,9 @@ export function BeltMatch({
             type="button"
             onClick={() => {
               setQuery(p);
-              submit();
+              submit(p);
             }}
-            className="cursor-pointer rounded-sm bg-petrol-50 px-2 py-0.5 font-mono text-[12.5px] text-petrol-600 hover:bg-petrol-100"
+            className="cursor-pointer rounded-sm bg-linear-135 from-petrol-800 to-petrol-900 px-2 py-0.5 font-mono text-[12.5px] text-petrol-100 hover:text-white"
           >
             {p}
           </button>

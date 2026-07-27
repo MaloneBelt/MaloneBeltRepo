@@ -5,32 +5,48 @@ export function SpecRow({
   label,
   value,
   last = false,
+  tone = "default",
   className,
 }: {
   label: string;
   value: string;
   last?: boolean;
+  /* "inverse" = light text for dark (petrol-800/900) surfaces */
+  tone?: "default" | "inverse";
   className?: string;
 }) {
+  const inverse = tone === "inverse";
+
   return (
     <div
       className={cn(
         "flex items-center justify-between gap-4 py-[9px] text-[13px]",
-        !last && "border-b border-line",
+        !last && (inverse ? "border-b border-white/10" : "border-b border-line"),
         className
       )}
     >
-      <dt className="text-body-muted">{label}</dt>
-      <dd className="font-mono text-right text-ink-2">{value}</dd>
+      <dt className={inverse ? "text-petrol-200" : "text-body-muted"}>
+        {label}
+      </dt>
+      <dd
+        className={cn(
+          "font-mono text-right",
+          inverse ? "text-white" : "text-ink-2"
+        )}
+      >
+        {value}
+      </dd>
     </div>
   );
 }
 
 export function SpecList({
   specs,
+  tone = "default",
   className,
 }: {
   specs: { label: string; value: string }[];
+  tone?: "default" | "inverse";
   className?: string;
 }) {
   return (
@@ -40,6 +56,7 @@ export function SpecList({
           key={s.label}
           label={s.label}
           value={s.value}
+          tone={tone}
           last={i === specs.length - 1}
         />
       ))}

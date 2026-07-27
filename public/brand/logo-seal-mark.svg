@@ -1,7 +1,0 @@
-<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Malone Road Belt seal mark">
-  <circle cx="60" cy="60" r="47" fill="none" stroke="currentColor" stroke-width="11"></circle>
-  <g fill="none" stroke="#F5A623" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
-    <polyline points="39,40 55,60 39,80"></polyline>
-    <polyline points="60,40 76,60 60,80"></polyline>
-  </g>
-</svg>

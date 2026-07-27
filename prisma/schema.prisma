@@ -1,6 +1,12 @@
-// Phase 1 scaffold — NOT connected yet. The quote form is UI-only; this model
-// mirrors src/lib/validators/quote.ts so Phase 2 can persist leads without
-// reshaping the payload. Run migrations only once a DATABASE_URL exists.
+// MRB data model — Phase 2 target schema.
+// NOT connected yet: Phase 1 has no DATABASE_URL and runs the catalog from
+// src/data/products.ts. This schema is the contract Phase 2 migrates into.
+// Run migrations only once a DATABASE_URL exists (npx prisma migrate dev).
+//
+// Scope (confirmed 2026-07-12): full e-commerce (cart, checkout, orders,
+// payments), catalog in DB with per-dimension variants and stock control,
+// admin + customer accounts, machine/OEM cross-reference powering the
+// BeltMatch search, and the existing public quote form (Lead).
 
 generator client {
   provider = "prisma-client-js"
@@ -8,7 +14,336 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+}
+
+// ---------------------------------------------------------------------------
+// Users & addresses
+// ---------------------------------------------------------------------------
+
+enum UserRole {
+  ADMIN
+  CUSTOMER
+}
+
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  passwordHash String
+  name         String
+  company      String?
+  phone        String?
+  role         UserRole  @default(CUSTOMER)
+  addresses    Address[]
+  carts        Cart[]
+  orders       Order[]
+  leads        Lead[]
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model Address {
+  id         String  @id @default(cuid())
+  userId     String
+  user       User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  label      String? // e.g. "Belfast quarry site"
+  line1      String
+  line2      String?
+  city       String
+  region     String?
+  postalCode String
+  country    String
+  isDefault  Boolean @default(false)
+
+  @@index([userId])
+}
+
+// ---------------------------------------------------------------------------
+// Catalog: products, variants, stock
+// ---------------------------------------------------------------------------
+
+enum AvailabilityStatus {
+  IN_STOCK
+  MADE_TO_ORDER
+}
+
+enum BuyingMoment {
+  DOWN_NOW
+  PLANNED
+}
+
+// How the belt is supplied — mirrors the four beltFormats on the home page.
+enum BeltFormat {
+  ENDLESS
+  OPEN_LENGTH
+  CLIPPED
+  ZIP_CLIP
+}
+
+model Product {
+  id                String             @id @default(cuid())
+  slug              String             @unique
+  sku               String             @unique // family code, e.g. "MB-EB"
+  name              String
+  tagline           String
+  description       String[] // paragraphs
+  features          String[]
+  applications      String[] // e.g. "Crushing", "Screening"
+  standards         String[] // e.g. "DIN 22102", "ISO 9001"
+  availability      AvailabilityStatus
+  availabilityLabel String // marketing label, e.g. "In stock — ships today"
+  buyingMoment      BuyingMoment
+  featured          Boolean            @default(false) // shown on the home page
+  active            Boolean            @default(true) // soft-unpublish without deleting
+  images            ProductImage[]
+  specs             ProductSpec[]
+  variants          ProductVariant[]
+  fits              MachineFit[]
+  related           Product[]          @relation("RelatedProducts")
+  relatedFrom       Product[]          @relation("RelatedProducts")
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+}
+
+model ProductImage {
+  id        String  @id @default(cuid())
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  src       String
+  alt       String
+  isHero    Boolean @default(false)
+  sort      Int     @default(0)
+
+  @@index([productId])
+}
+
+model ProductSpec {
+  id        String  @id @default(cuid())
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  label     String
+  value     String // rendered in IBM Plex Mono
+  sort      Int     @default(0)
+
+  @@index([productId])
+}
+
+// A sellable configuration of a product: concrete dimensions + format.
+// This is what carries price and stock; carts/orders always reference a variant.
+model ProductVariant {
+  id             String          @id @default(cuid())
+  productId      String
+  product        Product         @relation(fields: [productId], references: [id], onDelete: Cascade)
+  sku            String          @unique // e.g. "MB-4471-EP"
+  format         BeltFormat?
+  widthMm        Int?
+  lengthMm       Int?
+  plies          Int?
+  coverGrade     String? // e.g. "Y (DIN 22102)"
+  priceCents     Int? // null = price on application (quote only)
+  currency       String          @default("GBP")
+  stockQty       Int             @default(0)
+  lowStockAt     Int             @default(0) // alert threshold for admin
+  leadTimeDays   Int? // for made-to-order variants
+  active         Boolean         @default(true)
+  oemParts       OemPartNumber[]
+  fits           MachineFit[]
+  cartItems      CartItem[]
+  orderItems     OrderItem[]
+  stockMovements StockMovement[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  @@index([productId])
+}
+
+// Audit trail for inventory changes; stockQty is the cached running total.
+enum StockMovementReason {
+  ORDER
+  RESTOCK
+  ADJUSTMENT
+  RETURN
+}
+
+model StockMovement {
+  id        String              @id @default(cuid())
+  variantId String
+  variant   ProductVariant      @relation(fields: [variantId], references: [id], onDelete: Cascade)
+  delta     Int // negative = out, positive = in
+  reason    StockMovementReason
+  orderId   String?
+  order     Order?              @relation(fields: [orderId], references: [id])
+  note      String?
+  createdAt DateTime            @default(now())
+
+  @@index([variantId, createdAt])
+}
+
+// ---------------------------------------------------------------------------
+// Machine / OEM cross-reference (powers the BeltMatch search)
+// ---------------------------------------------------------------------------
+
+model Machine {
+  id        String       @id @default(cuid())
+  slug      String       @unique // e.g. "powerscreen-chieftain-1400"
+  brand     String // e.g. "Powerscreen"
+  model     String // e.g. "Chieftain 1400"
+  aliases   String[] // alternate spellings searched against
+  fits      MachineFit[]
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+
+  @@unique([brand, model])
+  @@index([brand])
+}
+
+// Which belt fits which machine, at which conveyor position.
+model MachineFit {
+  id            String          @id @default(cuid())
+  machineId     String
+  machine       Machine         @relation(fields: [machineId], references: [id], onDelete: Cascade)
+  productId     String
+  product       Product         @relation(fields: [productId], references: [id], onDelete: Cascade)
+  variantId     String? // exact-fit variant when known
+  variant       ProductVariant? @relation(fields: [variantId], references: [id])
+  position      String // e.g. "Main conveyor", "Side conveyor"
+  oemPartNumber String? // the OEM's part number for this fit
+  notes         String?
+
+  @@unique([machineId, productId, position])
+  @@index([productId])
+}
+
+// OEM part number → our variant. The "By OEM part #" search path.
+model OemPartNumber {
+  id        String         @id @default(cuid())
+  code      String         @unique // normalized (uppercased, trimmed)
+  brand     String? // OEM the code belongs to
+  variantId String
+  variant   ProductVariant @relation(fields: [variantId], references: [id], onDelete: Cascade)
+}
+
+// ---------------------------------------------------------------------------
+// Cart & checkout
+// ---------------------------------------------------------------------------
+
+model Cart {
+  id        String     @id @default(cuid())
+  userId    String? // null = guest cart
+  user      User?      @relation(fields: [userId], references: [id], onDelete: SetNull)
+  sessionId String?    @unique // guest carts keyed by cookie
+  items     CartItem[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@index([userId])
+}
+
+model CartItem {
+  id        String         @id @default(cuid())
+  cartId    String
+  cart      Cart           @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  variantId String
+  variant   ProductVariant @relation(fields: [variantId], references: [id], onDelete: Cascade)
+  qty       Int
+
+  @@unique([cartId, variantId])
+}
+
+enum OrderStatus {
+  PENDING // created, awaiting payment
+  PAID
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+model Order {
+  id             String          @id @default(cuid())
+  number         String          @unique // human-readable, e.g. "MRB-2026-00042"
+  userId         String? // null = guest checkout
+  user           User?           @relation(fields: [userId], references: [id], onDelete: SetNull)
+  email          String
+  phone          String?
+  status         OrderStatus     @default(PENDING)
+  // Money in integer cents; totals are denormalized at checkout time.
+  subtotalCents  Int
+  shippingCents  Int             @default(0)
+  taxCents       Int             @default(0)
+  totalCents     Int
+  currency       String          @default("GBP")
+  // Shipping address snapshot — orders must survive address edits/deletes.
+  shipName       String
+  shipCompany    String?
+  shipLine1      String
+  shipLine2      String?
+  shipCity       String
+  shipRegion     String?
+  shipPostalCode String
+  shipCountry    String
+  items          OrderItem[]
+  payments       Payment[]
+  stockMovements StockMovement[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  @@index([userId])
+  @@index([status, createdAt])
+}
+
+// Line items snapshot name/SKU/price so historical orders render correctly
+// even after the catalog changes.
+model OrderItem {
+  id             String          @id @default(cuid())
+  orderId        String
+  order          Order           @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  variantId      String?
+  variant        ProductVariant? @relation(fields: [variantId], references: [id], onDelete: SetNull)
+  productName    String
+  variantSku     String
+  unitPriceCents Int
+  qty            Int
+
+  @@index([orderId])
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCEEDED
+  FAILED
+  REFUNDED
+}
+
+model Payment {
+  id          String        @id @default(cuid())
+  orderId     String
+  order       Order         @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  provider    String // e.g. "stripe"
+  providerRef String? // provider's payment/intent id
+  status      PaymentStatus @default(PENDING)
+  amountCents Int
+  currency    String        @default("GBP")
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([orderId])
+}
+
+// ---------------------------------------------------------------------------
+// Leads (public quote form) — mirrors src/lib/validators/quote.ts
+// ---------------------------------------------------------------------------
+
+enum LeadUrgency {
+  DOWN_NOW
+  PLANNED
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUOTED
+  CLOSED
 }
 
 model Lead {
@@ -23,19 +358,9 @@ model Lead {
   beltLength  String?
   message     String?
   status      LeadStatus  @default(NEW)
+  userId      String? // linked when submitted by a signed-in customer
+  user        User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
   createdAt   DateTime    @default(now())
 
   @@index([status, createdAt])
-}
-
-enum LeadUrgency {
-  DOWN_NOW
-  PLANNED
-}
-
-enum LeadStatus {
-  NEW
-  CONTACTED
-  QUOTED
-  CLOSED
 }

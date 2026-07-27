@@ -6,14 +6,19 @@ export function SectionHeading({
   title,
   lead,
   align = "left",
+  tone = "default",
   className,
 }: {
   eyebrow?: string;
   title: string;
   lead?: string;
   align?: "left" | "center";
+  /* "inverse" = light text for dark (petrol-800/900) section bands */
+  tone?: "default" | "inverse";
   className?: string;
 }) {
+  const inverse = tone === "inverse";
+
   return (
     <div
       className={cn(
@@ -22,11 +27,34 @@ export function SectionHeading({
         className
       )}
     >
-      {eyebrow && <Badge variant="brand">{eyebrow}</Badge>}
-      <h2 className="mt-4 font-display text-h2 leading-[1.1] font-extrabold tracking-tight text-ink-2">
+      {eyebrow && (
+        <Badge
+          variant="brand"
+          className={cn(
+            inverse && "border-white/15 bg-white/10 text-petrol-100"
+          )}
+        >
+          {eyebrow}
+        </Badge>
+      )}
+      <h2
+        className={cn(
+          "mt-4 font-display text-h2 leading-[1.1] font-extrabold tracking-tight",
+          inverse ? "text-white" : "text-ink-2"
+        )}
+      >
         {title}
       </h2>
-      {lead && <p className="mt-3 text-lead text-body-muted">{lead}</p>}
+      {lead && (
+        <p
+          className={cn(
+            "mt-3 text-lead",
+            inverse ? "text-petrol-200" : "text-body-muted"
+          )}
+        >
+          {lead}
+        </p>
+      )}
     </div>
   );
 }

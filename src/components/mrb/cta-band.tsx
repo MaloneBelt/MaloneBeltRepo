@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { site } from "@/data/site";
 
 /* Dual-path closing band: the two buying moments, side by side.
-   Planned purchase (marigold action) vs. machine down (red urgency). */
+   Planned purchase (marigold action) vs. machine down (red urgency).
+   Dark petrol gradient — every page places a white section right above it. */
 export function CtaBand() {
   return (
     <section className="bg-linear-135 from-petrol-800 to-petrol-900">

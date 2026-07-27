@@ -1,8 +1,0 @@
-<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Malone Road Belt app icon">
-  <rect width="120" height="120" rx="28" fill="#0C5F6E"></rect>
-  <circle cx="60" cy="60" r="40" fill="none" stroke="#FFFFFF" stroke-width="9"></circle>
-  <g fill="none" stroke="#F5A623" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
-    <polyline points="44,44 57,60 44,76"></polyline>
-    <polyline points="61,44 74,60 61,76"></polyline>
-  </g>
-</svg>

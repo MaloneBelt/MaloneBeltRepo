@@ -8,13 +8,17 @@ export function SiteFooter() {
     <footer className="bg-ink text-white">
       <div className="container-shell grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <Image
-            src="/brand/logo-lockup-reversed.svg"
-            alt={site.name}
-            width={190}
-            height={40}
-            className="h-9 w-auto"
-          />
+          {/* The final client logo has no reversed (light) variant yet, so it
+              sits on a white plate to stay legible on the dark footer. */}
+          <div className="inline-block rounded-md bg-white px-3 py-2">
+            <Image
+              src="/brand/Final-logo-sin-contacto.png"
+              alt={site.name}
+              width={1272}
+              height={409}
+              className="h-9 w-auto"
+            />
+          </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
             {site.description}
           </p>
@@ -59,8 +63,6 @@ export function SiteFooter() {
                 {site.email}
               </a>
             </li>
-            <li className="text-white/60">{site.address}</li>
-            <li className="font-mono text-white/60">{site.hours}</li>
           </ul>
         </div>
       </div>

@@ -12,7 +12,7 @@ const badgeVariants = cva(
     variants: {
       variant: {
         brand:
-          "font-display uppercase tracking-[2px] text-petrol-700 bg-petrol-50 border border-petrol-100",
+          "font-display uppercase tracking-[2px] text-petrol-100 bg-petrol-900 border border-petrol-800",
         mono: "font-mono tracking-[0.5px] text-petrol-600 bg-petrol-50 border border-transparent",
         solid:
           "font-display uppercase tracking-[1px] text-ink-2 bg-marigold border border-transparent",

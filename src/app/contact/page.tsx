@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { Clock, Mail, MapPin } from "lucide-react";
+import { Mail } from "lucide-react";
 
 import { QuoteForm } from "@/components/mrb/quote-form";
 import { SectionHeading } from "@/components/mrb/section-heading";
@@ -14,19 +14,23 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="container-shell grid gap-12 py-14 lg:grid-cols-[1fr_0.55fr] lg:py-16">
-      <div>
-        <SectionHeading
-          eyebrow="Contact"
-          title="Get a straight quote."
-          lead="Send us your machine model or OEM part number. You'll get back a cross-referenced spec, stock status and pricing — no games."
-        />
-        <div className="mt-8">
-          <Suspense fallback={null}>
-            <QuoteForm />
-          </Suspense>
+    /* The whole Contact page is a dark canvas (client direction); the quote
+       form lives on a white card so its fields keep their default styling */
+    <div className="bg-linear-135 from-petrol-800 to-petrol-900">
+      <section className="container-shell grid gap-12 py-14 lg:grid-cols-[1fr_0.55fr] lg:py-16">
+        <div>
+          <SectionHeading
+            tone="inverse"
+            eyebrow="Contact"
+            title="Get a straight quote."
+            lead="Send us your machine model or OEM part number. You'll get back a cross-referenced spec, stock status and pricing — no games."
+          />
+          <div className="mt-8 rounded-xl border border-line bg-surface p-6 shadow-lg">
+            <Suspense fallback={null}>
+              <QuoteForm />
+            </Suspense>
+          </div>
         </div>
-      </div>
 
       {/* Direct contact — the down-now buyer wants to call, not fill forms */}
       <aside className="lg:pt-20">
@@ -64,24 +68,9 @@ export default function ContactPage() {
               {site.email}
             </a>
           </li>
-          <li className="flex items-start gap-3">
-            <MapPin
-              className="mt-0.5 size-[17px] shrink-0 text-petrol-600"
-              strokeWidth={2}
-              aria-hidden="true"
-            />
-            <span className="text-body-muted">{site.address}</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <Clock
-              className="mt-0.5 size-[17px] shrink-0 text-petrol-600"
-              strokeWidth={2}
-              aria-hidden="true"
-            />
-            <span className="font-mono text-body-muted">{site.hours}</span>
-          </li>
         </ul>
       </aside>
-    </section>
+      </section>
+    </div>
   );
 }

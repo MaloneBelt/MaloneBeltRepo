@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Archivo, IBM_Plex_Mono, Inter } from "next/font/google";
+import { HideOnRoute } from "@/components/mrb/hide-on-route";
 import { SiteFooter } from "@/components/mrb/site-footer";
 import { SiteHeader } from "@/components/mrb/site-header";
+import { launchMode } from "@/data/launch";
 
 import "./globals.css";
 
@@ -48,11 +50,16 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <SiteHeader />
+        {/* Launch mode hides all chrome — see src/data/launch.ts */}
+        {!launchMode && <SiteHeader />}
         <main id="main" className="flex-1">
           {children}
         </main>
-        <SiteFooter />
+        {!launchMode && (
+          <HideOnRoute routes={["/coming-soon"]}>
+            <SiteFooter />
+          </HideOnRoute>
+        )}
       </body>
     </html>
   );

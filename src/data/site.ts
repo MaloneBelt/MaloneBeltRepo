@@ -1,24 +1,26 @@
-/* Site-wide configuration. Contact details are placeholders until the client
-   confirms addresses, phones and inboxes (see Client content deliverables §6). */
+/* Site-wide configuration. Phone, email and domain come from the client's
+   final logo artwork (public/brand/Final-logo.png). Address and opening
+   hours are intentionally omitted (client direction, July 2026). */
 
 export const site = {
   name: "Malone Road Belt",
-  tagline: "Keep the line moving.",
+  tagline: "Moving your business forward.",
   description:
     "OEM-spec conveyor belts for mobile material processing equipment. We don't sell belts — we sell uptime.",
-  url: "https://www.maloneroadbelt.com",
-  phone: "+44 28 0000 0000",
-  phoneHref: "tel:+442800000000",
-  email: "sales@maloneroadbelt.com",
-  address: "Malone Road, Belfast, Northern Ireland",
-  hours: "Mon–Fri 07:00–18:00 GMT",
+  url: "https://www.malonebelt.com",
+  phone: "270-777-7727",
+  phoneHref: "tel:+12707777727",
+  email: "sales@malonebelt.com",
 };
 
 export const nav = {
   links: [
     { label: "Products", href: "/products" },
-    { label: "About", href: "/#about" },
+    { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
+    /* Interim launch page — remove from the nav once the final version
+       is approved and it takes over as the live-launch landing. */
+    { label: "Coming Soon", href: "/coming-soon" },
   ],
 };
 
@@ -31,7 +33,7 @@ export const footerLinks = {
     { label: "Cleated & Chevron", href: "/products/cleated-chevron" },
   ],
   company: [
-    { label: "About", href: "/#about" },
+    { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
     { label: "Request a quote", href: "/contact" },
   ],

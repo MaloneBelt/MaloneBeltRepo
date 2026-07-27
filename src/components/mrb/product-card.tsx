@@ -3,13 +3,14 @@ import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { SealMark } from "@/components/mrb/seal-mark";
 import { SpecList } from "@/components/mrb/spec-row";
 import { StateChip } from "@/components/mrb/state-chip";
 import { cn } from "@/lib/utils";
 
-/* The canonical belt card: dark gradient header (mono meta + live status),
-   visual panel (product photo, or the seal on a petrol wash), mono spec rows,
+/* The canonical belt card: petrol-300 header (mono meta + live status) — the
+   mid-teal pops against the dark section backgrounds these cards sit on —
+   visual panel (product photo, or the brand emblem on a petrol wash), mono
+   spec rows,
    footer CTA. `ctaVariant` exists to honor one-marigold-per-view. */
 export function ProductCard({
   partNumber,
@@ -43,10 +44,10 @@ export function ProductCard({
         className
       )}
     >
-      <div className="flex items-center justify-between gap-3 bg-linear-135 from-petrol-800 to-petrol-900 px-5 py-4">
-        <span className="font-mono text-xs text-petrol-200">{headerLabel}</span>
+      <div className="flex items-center justify-between gap-3 bg-petrol-300 px-5 py-4">
+        <span className="font-mono text-xs text-petrol-900">{headerLabel}</span>
         {liveLabel && (
-          <span className="flex items-center gap-[7px] font-display text-[11px] font-bold tracking-[1px] text-white">
+          <span className="flex items-center gap-[7px] font-display text-[11px] font-bold tracking-[1px] text-petrol-900">
             <span
               aria-hidden="true"
               className="size-[7px] rounded-full bg-stock shadow-[0_0_8px_var(--color-success)]"
@@ -66,7 +67,13 @@ export function ProductCard({
             className="object-contain p-4"
           />
         ) : (
-          <SealMark size={120} className="text-petrol-600" />
+          <Image
+            src="/brand/Final-logo-emblema.png"
+            alt=""
+            width={380}
+            height={390}
+            className="h-24 w-auto"
+          />
         )}
       </div>
 
