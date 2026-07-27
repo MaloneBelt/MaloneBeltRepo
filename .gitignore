@@ -42,3 +42,8 @@ next-env.d.ts
 
 # internal design proposals — not for the client repo
 /Design ideas/
+
+# internal working docs and agent instructions — not for the client repo
+CLAUDE.md
+AGENTS.md
+/docs/
