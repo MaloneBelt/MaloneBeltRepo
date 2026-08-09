@@ -3,9 +3,13 @@ import type { MetadataRoute } from "next";
 import { categories } from "@/data/categories";
 import { products } from "@/data/products";
 import { site } from "@/data/site";
+import { stagingMode } from "@/data/staging";
 import { locales } from "@/i18n/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  /* site.url is hardcoded to production, so a staging sitemap would list
+     production URLs — and staging must not be indexed at all. */
+  if (stagingMode) return [];
   return locales.flatMap((locale) => {
     const base = `${site.url}/${locale}`;
     return [
