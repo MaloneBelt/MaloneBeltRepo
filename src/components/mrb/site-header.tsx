@@ -6,19 +6,37 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
-import { nav, site } from "@/data/site";
+import { LocaleSwitcher } from "@/components/mrb/locale-switcher";
+import { site } from "@/data/site";
+import { l, type Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n";
 import { cn } from "@/lib/utils";
 
-/* Sticky frosted nav (68px): brand lockup, nav links, and the red pulsing
-   "Machine down now?" escape hatch for the urgent buying moment. */
-export function SiteHeader() {
+/* Sticky frosted nav (68px): brand lockup, nav links, language dropdown and
+   the red pulsing "Machine down now?" escape hatch for the urgent buying
+   moment. */
+export function SiteHeader({ locale }: { locale: Locale }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const dict = getDictionary(locale);
+
+  const links = [
+    { label: dict.nav.products, href: l(locale, "/products") },
+    { label: dict.nav.about, href: l(locale, "/about") },
+    { label: dict.nav.contact, href: l(locale, "/contact") },
+    /* Interim launch page — remove from the nav once the final version
+       is approved and it takes over as the live-launch landing. */
+    { label: dict.nav.comingSoon, href: l(locale, "/coming-soon") },
+  ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-canvas/80 backdrop-blur-md">
       <div className="container-shell flex h-nav items-center justify-between gap-4">
-        <Link href="/" aria-label={`${site.name} — home`} className="shrink-0">
+        <Link
+          href={l(locale, "/")}
+          aria-label={`${site.name} — ${dict.common.home}`}
+          className="shrink-0"
+        >
           <Image
             src="/brand/Final-logo-sin-contacto.png"
             alt=""
@@ -30,7 +48,7 @@ export function SiteHeader() {
         </Link>
 
         <nav aria-label="Main" className="hidden items-center gap-7 md:flex">
-          {nav.links.map((link) => (
+          {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -45,23 +63,17 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Link
-            href="/contact?urgency=down-now"
-            className="hidden items-center gap-[7px] rounded-track border border-down-line bg-down-tint px-4 py-[9px] text-[13px] font-bold leading-none text-down-strong transition-colors hover:bg-down-line/60 sm:inline-flex"
-          >
-            <span
-              aria-hidden="true"
-              className="size-2 rounded-full bg-down animate-status-pulse motion-reduce:animate-none"
-            />
-            Machine down now?
-          </Link>
-
+          <LocaleSwitcher
+            locale={locale}
+            label={dict.common.languageLabel}
+            className="hidden sm:flex"
+          />
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-controls="mobile-nav"
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? dict.common.closeMenu : dict.common.openMenu}
             className="inline-flex size-10 cursor-pointer items-center justify-center rounded-md border border-line bg-surface text-ink-2 md:hidden"
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
@@ -76,7 +88,7 @@ export function SiteHeader() {
           className="border-t border-line bg-canvas md:hidden"
         >
           <div className="container-shell flex flex-col gap-1 py-3">
-            {nav.links.map((link) => (
+            {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -86,17 +98,12 @@ export function SiteHeader() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/contact?urgency=down-now"
-              onClick={() => setOpen(false)}
-              className="mt-1 inline-flex items-center gap-[7px] rounded-track border border-down-line bg-down-tint px-4 py-2.5 text-[13px] font-bold text-down-strong"
-            >
-              <span
-                aria-hidden="true"
-                className="size-2 rounded-full bg-down"
+            <div className="px-3 py-2">
+              <LocaleSwitcher
+                locale={locale}
+                label={dict.common.languageLabel}
               />
-              Machine down now?
-            </Link>
+            </div>
           </div>
         </nav>
       )}

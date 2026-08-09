@@ -1,6 +1,7 @@
+import { categories, getCategory } from "@/data/categories";
 import { machines, mbPartNumbers } from "@/data/machines";
 import { getProduct, products } from "@/data/products";
-import type { Product } from "@/types/product";
+import type { Category, Product } from "@/types/product";
 
 /* BeltMatch search. Phase 1 runs in-memory over the TypeScript catalog and
    machine cross-reference; Phase 2 swaps the internals for database queries
@@ -13,6 +14,10 @@ export type SearchMode = "machine" | "part";
 export interface ProductMatch {
   product: Product;
   reasons: string[]; // human-readable "why it matched", first one is shown
+}
+
+export interface CategoryMatch {
+  category: Category;
 }
 
 function tokenize(value: string): string[] {
@@ -31,6 +36,30 @@ function partKey(value: string): string {
 
 function tokenHit(queryToken: string, haystackTokens: string[]): boolean {
   return haystackTokens.some((token) => token.startsWith(queryToken));
+}
+
+/* Category matches: every query token must prefix-hit somewhere in the
+   category's own text. Rendered above product matches on /products. */
+export function searchCategories(query: string): CategoryMatch[] {
+  const queryTokens = tokenize(query);
+  if (queryTokens.length === 0) return [];
+
+  return categories
+    .filter((category) => {
+      const categoryTokens = tokenize(
+        [
+          category.name,
+          category.subtitle,
+          category.family,
+          category.tagline,
+          category.code,
+          ...category.applications,
+          ...category.specs.map((spec) => `${spec.label} ${spec.value}`),
+        ].join(" ")
+      );
+      return queryTokens.every((t) => tokenHit(t, categoryTokens));
+    })
+    .map((category) => ({ category }));
 }
 
 export function searchProducts(query: string): ProductMatch[] {
@@ -95,12 +124,18 @@ export function searchProducts(query: string): ProductMatch[] {
   }
 
   // 3. Product text: every query token must appear somewhere in the product.
+  // Category names count as product text, so "stonecleat" surfaces the
+  // patterns of the Stonecleat Pro™ range.
   for (const product of products) {
+    const productCategories = product.categories
+      .map((slug) => getCategory(slug))
+      .filter((c) => c !== undefined);
     const productTokens = tokenize(
       [
         product.name,
         product.tagline,
         product.sku,
+        ...productCategories.flatMap((c) => [c.name, c.subtitle]),
         ...product.applications,
         ...product.standards,
         ...product.features,

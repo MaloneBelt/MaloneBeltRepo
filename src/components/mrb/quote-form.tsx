@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle2 } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -20,27 +20,44 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
+  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { categories } from "@/data/categories";
 import { products } from "@/data/products";
-import { quoteSchema, type QuoteFormValues } from "@/lib/validators/quote";
+import type { Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n";
+import { localizeCategory, localizeProduct } from "@/i18n/localize";
+import { makeQuoteSchema, type QuoteFormValues } from "@/lib/validators/quote";
 import { cn } from "@/lib/utils";
 
 /* Quote-request form. Phase 1 is UI-only: client-side Zod validation and an
    inline success state — no network request. The payload shape mirrors the
    Prisma Lead model so Phase 2 can wire it straight to the database. */
-export function QuoteForm() {
+export function QuoteForm({ locale }: { locale: Locale }) {
   const searchParams = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
+  const dict = getDictionary(locale);
 
   const urgencyParam = searchParams.get("urgency");
   const productParam = searchParams.get("product");
 
+  const schema = useMemo(
+    () =>
+      makeQuoteSchema({
+        name: dict.quoteForm.errName,
+        email: dict.quoteForm.errEmail,
+        message: dict.quoteForm.errMessage,
+      }),
+    [dict]
+  );
+
   const form = useForm<QuoteFormValues>({
-    resolver: zodResolver(quoteSchema),
+    resolver: zodResolver(schema),
     defaultValues: {
       name: "",
       company: "",
@@ -57,8 +74,8 @@ export function QuoteForm() {
   });
 
   function onSubmit() {
-    // Phase 2: POST the validated QuoteFormValues to a server action / API
-    // route and persist as a Lead.
+    // Phase 2: POST the validated QuoteFormValues to a route handler and
+    // persist as a Lead.
     setSubmitted(true);
   }
 
@@ -75,12 +92,10 @@ export function QuoteForm() {
           aria-hidden="true"
         />
         <h2 className="font-display text-h3 font-extrabold text-ink-2">
-          Quote request received.
+          {dict.quoteForm.successTitle}
         </h2>
         <p className="text-sm leading-relaxed text-body-muted">
-          We&apos;ll get back to you within one business hour with a
-          cross-referenced spec and straight pricing. If your machine is down,
-          call us — stocked belts ship today.
+          {dict.quoteForm.successBody}
         </p>
       </div>
     );
@@ -98,7 +113,7 @@ export function QuoteForm() {
           name="urgency"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>How urgent is it?</FormLabel>
+              <FormLabel>{dict.quoteForm.urgencyLabel}</FormLabel>
               <FormControl>
                 <RadioGroup
                   onValueChange={field.onChange}
@@ -119,10 +134,10 @@ export function QuoteForm() {
                       </FormControl>
                       <span>
                         <span className="block text-sm font-bold text-down-strong">
-                          Machine is down now
+                          {dict.quoteForm.downNowTitle}
                         </span>
                         <span className="mt-0.5 block text-caption text-body-muted">
-                          We prioritize and ship same day
+                          {dict.quoteForm.downNowSub}
                         </span>
                       </span>
                     </FormLabel>
@@ -141,10 +156,10 @@ export function QuoteForm() {
                       </FormControl>
                       <span>
                         <span className="block text-sm font-bold text-stock-strong">
-                          Planned purchase
+                          {dict.quoteForm.plannedTitle}
                         </span>
                         <span className="mt-0.5 block text-caption text-body-muted">
-                          Quote for an upcoming belt change
+                          {dict.quoteForm.plannedSub}
                         </span>
                       </span>
                     </FormLabel>
@@ -162,9 +177,13 @@ export function QuoteForm() {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel>{dict.quoteForm.name}</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your name" autoComplete="name" {...field} />
+                  <Input
+                    placeholder={dict.quoteForm.namePlaceholder}
+                    autoComplete="name"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -175,10 +194,10 @@ export function QuoteForm() {
             name="company"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Company</FormLabel>
+                <FormLabel>{dict.quoteForm.company}</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="Company (optional)"
+                    placeholder={dict.quoteForm.companyPlaceholder}
                     autoComplete="organization"
                     {...field}
                   />
@@ -192,11 +211,11 @@ export function QuoteForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel>{dict.quoteForm.email}</FormLabel>
                 <FormControl>
                   <Input
                     type="email"
-                    placeholder="you@company.com"
+                    placeholder={dict.quoteForm.emailPlaceholder}
                     autoComplete="email"
                     {...field}
                   />
@@ -210,11 +229,11 @@ export function QuoteForm() {
             name="phone"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Phone</FormLabel>
+                <FormLabel>{dict.quoteForm.phone}</FormLabel>
                 <FormControl>
                   <Input
                     type="tel"
-                    placeholder="Phone (optional)"
+                    placeholder={dict.quoteForm.phonePlaceholder}
                     autoComplete="tel"
                     {...field}
                   />
@@ -230,19 +249,36 @@ export function QuoteForm() {
           name="productSlug"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Product</FormLabel>
+              <FormLabel>{dict.quoteForm.product}</FormLabel>
               <Select onValueChange={field.onChange} value={field.value ?? ""}>
                 <FormControl>
                   <SelectTrigger className="h-12 w-full rounded-track border-[1.5px] border-petrol-200 bg-surface px-[18px]">
-                    <SelectValue placeholder="Not sure — help me match it" />
+                    <SelectValue
+                      placeholder={dict.quoteForm.productPlaceholder}
+                    />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  {products.map((product) => (
-                    <SelectItem key={product.slug} value={product.slug}>
-                      {product.name}
-                    </SelectItem>
-                  ))}
+                  {/* One entry per product, grouped under its primary
+                      category so the list reads like the catalog */}
+                  {categories.map((category) => {
+                    const categoryProducts = products.filter(
+                      (p) => p.categories[0] === category.slug
+                    );
+                    if (categoryProducts.length === 0) return null;
+                    return (
+                      <SelectGroup key={category.slug}>
+                        <SelectLabel>
+                          {localizeCategory(category, locale).name}
+                        </SelectLabel>
+                        {categoryProducts.map((product) => (
+                          <SelectItem key={product.slug} value={product.slug}>
+                            {localizeProduct(product, locale).name}
+                          </SelectItem>
+                        ))}
+                      </SelectGroup>
+                    );
+                  })}
                 </SelectContent>
               </Select>
               <FormMessage />
@@ -256,10 +292,10 @@ export function QuoteForm() {
             name="beltWidth"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Belt width</FormLabel>
+                <FormLabel>{dict.quoteForm.beltWidth}</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="e.g. 1000 mm"
+                    placeholder={dict.quoteForm.beltWidthPlaceholder}
                     className="font-mono"
                     {...field}
                   />
@@ -273,10 +309,10 @@ export function QuoteForm() {
             name="beltLength"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Belt length</FormLabel>
+                <FormLabel>{dict.quoteForm.beltLength}</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="e.g. 7150 mm"
+                    placeholder={dict.quoteForm.beltLengthPlaceholder}
                     className="font-mono"
                     {...field}
                   />
@@ -292,10 +328,10 @@ export function QuoteForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel>{dict.quoteForm.message}</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Machine model, OEM part number, or anything else that helps us match the belt"
+                  placeholder={dict.quoteForm.messagePlaceholder}
                   {...field}
                 />
               </FormControl>
@@ -305,7 +341,7 @@ export function QuoteForm() {
         />
 
         <Button type="submit" variant="primary" size="lg" block>
-          Request my quote
+          {dict.quoteForm.submit}
         </Button>
       </form>
     </Form>

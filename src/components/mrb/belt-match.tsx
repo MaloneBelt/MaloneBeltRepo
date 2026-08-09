@@ -5,26 +5,26 @@ import { useState } from "react";
 import { Search } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { l, type Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n";
 import { cn } from "@/lib/utils";
 
 /* THE signature component: the cross-reference engine as a UI. A segmented
    pill toggle (By machine / By OEM part #), the track search field with a
    marigold "Find my belt" action, and a popular-terms hint row.
-   Submitting routes to /products?q=…&mode=…, rendered server-side there
-   via src/lib/search.ts. */
-const TABS = [
-  { value: "machine", label: "By machine" },
-  { value: "part", label: "By OEM part #" },
-] as const;
+   Submitting routes to /<locale>/products?q=…&mode=…, rendered server-side
+   there via src/lib/search.ts. */
 
-type TabValue = (typeof TABS)[number]["value"];
+type TabValue = "machine" | "part";
 
 export function BeltMatch({
+  locale,
   popular = ["MB-4471-EP", "Powerscreen Chieftain", "Cat AP555"],
   defaultQuery = "",
   defaultMode = "machine",
   className,
 }: {
+  locale: Locale;
   popular?: string[];
   defaultQuery?: string;
   defaultMode?: TabValue;
@@ -33,16 +33,24 @@ export function BeltMatch({
   const router = useRouter();
   const [tab, setTab] = useState<TabValue>(defaultMode);
   const [query, setQuery] = useState(defaultQuery);
+  const dict = getDictionary(locale);
+
+  const tabs: { value: TabValue; label: string }[] = [
+    { value: "machine", label: dict.beltMatch.byMachine },
+    { value: "part", label: dict.beltMatch.byPart },
+  ];
 
   const placeholder =
     tab === "machine"
-      ? "e.g. Wirtgen W 100 Fi — main conveyor"
-      : "e.g. MB-4471-EP or OEM part #";
+      ? dict.beltMatch.placeholderMachine
+      : dict.beltMatch.placeholderPart;
 
   function submit(value: string = query) {
     const q = value.trim();
     router.push(
-      q ? `/products?q=${encodeURIComponent(q)}&mode=${tab}` : "/products"
+      q
+        ? l(locale, `/products?q=${encodeURIComponent(q)}&mode=${tab}`)
+        : l(locale, "/products")
     );
   }
 
@@ -56,10 +64,10 @@ export function BeltMatch({
     >
       <div
         role="tablist"
-        aria-label="Search mode"
+        aria-label={dict.beltMatch.searchMode}
         className="mb-3.5 inline-flex w-max gap-1.5 rounded-track border border-petrol-800 bg-linear-135 from-petrol-800 to-petrol-900 p-1"
       >
-        {TABS.map((t) => {
+        {tabs.map((t) => {
           const active = t.value === tab;
           return (
             <button
@@ -98,17 +106,17 @@ export function BeltMatch({
           onChange={(e) => setQuery(e.target.value)}
           placeholder={placeholder}
           aria-label={
-            tab === "machine" ? "Search by machine" : "Search by OEM part number"
+            tab === "machine" ? dict.beltMatch.ariaMachine : dict.beltMatch.ariaPart
           }
           className="min-w-0 flex-1 border-none bg-transparent text-[15px] text-ink-2 outline-none placeholder:text-subtle"
         />
         <Button type="submit" variant="primary" className="shrink-0">
-          Find my belt →
+          {dict.beltMatch.submit}
         </Button>
       </form>
 
       <div className="mt-3 flex flex-wrap items-center gap-2 text-[12.5px] text-subtle">
-        Popular:
+        {dict.beltMatch.popular}
         {popular.map((p) => (
           <button
             key={p}

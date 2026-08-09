@@ -3,25 +3,28 @@ import { ArrowRight, PhoneCall } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { site } from "@/data/site";
+import { l, type Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n";
 
 /* Dual-path closing band: the two buying moments, side by side.
    Planned purchase (marigold action) vs. machine down (red urgency).
    Dark petrol gradient — every page places a white section right above it. */
-export function CtaBand() {
+export function CtaBand({ locale }: { locale: Locale }) {
+  const dict = getDictionary(locale);
+
   return (
     <section className="bg-linear-135 from-petrol-800 to-petrol-900">
       <div className="container-shell grid gap-8 py-16 md:grid-cols-2">
         <div className="flex flex-col items-start gap-4">
           <h2 className="font-display text-h3 font-extrabold text-white">
-            Planning your next belt change?
+            {dict.ctaBand.planTitle}
           </h2>
           <p className="text-sm leading-relaxed text-petrol-200">
-            Send us your machine or OEM part number and get a cross-referenced
-            quote — with stock status up front.
+            {dict.ctaBand.planBody}
           </p>
           <Button asChild variant="primary" size="lg">
-            <Link href="/contact">
-              Request a quote
+            <Link href={l(locale, "/contact")}>
+              {dict.common.requestQuote}
               <ArrowRight aria-hidden="true" />
             </Link>
           </Button>
@@ -33,11 +36,10 @@ export function CtaBand() {
               aria-hidden="true"
               className="size-2.5 rounded-full bg-down animate-status-pulse motion-reduce:animate-none"
             />
-            Machine down right now?
+            {dict.common.machineDownRightNow}
           </h2>
           <p className="text-sm leading-relaxed text-petrol-200">
-            Call us. Stocked belts ship same day, and ZIP CLIP® fits in as
-            little as one hour.
+            {dict.ctaBand.downBody}
           </p>
           <Button asChild variant="danger" size="lg">
             <a href={site.phoneHref}>

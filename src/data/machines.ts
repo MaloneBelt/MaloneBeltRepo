@@ -41,7 +41,7 @@ export const machines: Machine[] = [
     aliases: ["warrior"],
     fits: [
       {
-        productSlug: "toughflex",
+        productSlug: "ironcleat",
         position: "Main conveyor",
         oemPartNumber: "PS-1800-3310",
       },
@@ -83,7 +83,7 @@ export const machines: Machine[] = [
     aliases: ["lokotrack", "lt106"],
     fits: [
       {
-        productSlug: "toughflex",
+        productSlug: "ironcleat",
         position: "Main conveyor",
         oemPartNumber: "MM-N11852341",
       },
@@ -140,7 +140,7 @@ export const mbPartNumbers: Record<string, string> = {
   "MB-4471-EP": "ep-multi-ply",
   "MB-6120-EB": "endless-belt",
   "MB-2210-ZC": "zip-clip",
-  "MB-8830-TF": "toughflex",
+  "MB-8830-IC": "ironcleat",
   "MB-1050-RS": "ripstop",
   "MB-3300-CC": "cleated-chevron",
 };

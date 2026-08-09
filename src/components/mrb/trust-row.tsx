@@ -12,7 +12,7 @@ export function TrustRow({
   items = DEFAULT_ITEMS,
   tone = "default",
 }: {
-  items?: string[];
+  items?: readonly string[];
   /* "inverse" = light text for dark (petrol-900 / photo) backgrounds */
   tone?: "default" | "inverse";
 }) {
