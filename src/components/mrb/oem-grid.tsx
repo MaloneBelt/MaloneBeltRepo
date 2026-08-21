@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 /* Static manufacturer wall for the About page: every allied OEM as a white
    card carrying its logo in the original brand colors (client direction,
    Aug 2026) with the brand name beneath. Logos whose original artwork is
-   white-on-dark (tone: "dark") sit on a petrol plate inside the card. Not a
+   white-on-dark (tone: "dark") sit on a navy plate inside the card. Not a
    carousel — the full roster on display at once. */
 export function OemGrid({ className }: { className?: string }) {
   return (
@@ -25,7 +25,7 @@ export function OemGrid({ className }: { className?: string }) {
             className={cn(
               "relative flex h-14 w-full items-center justify-center rounded-md",
               oem.tone === "dark" &&
-                "bg-linear-135 from-petrol-800 to-petrol-900"
+                "bg-linear-135 from-navy-800 to-navy-900"
             )}
           >
             <Image

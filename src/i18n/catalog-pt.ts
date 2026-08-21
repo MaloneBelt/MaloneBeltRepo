@@ -21,19 +21,19 @@ interface ProductOverlay {
 }
 
 export const categoryPt: Record<string, CategoryOverlay> = {
-  "conveyor-belts": {
-    name: "Correias Transportadoras",
-    subtitle: "A Linha Essencial",
+  standard: {
+    name: "Padrão",
+    subtitle: "Correias Multilonas",
     family: "Linha essencial",
-    tagline: "A especificação exata da sua máquina, pronta para envio.",
+    tagline: "A EP de estoque que carrega o trabalho — escolha as lonas.",
     description: [
-      "A linha essencial da Malone Road Belt: correias EP multilonas fabricadas conforme DIN 22102 e fornecidas no formato que combina com o seu jeito de trabalhar — sem-fim prontas para instalar, em comprimento de corte ou com fixação mecânica ZIP CLIP®. Toda correia tem referência cruzada com a sua máquina ou número de peça OEM.",
-      "As carcaças de poliéster-poliamida (EP) entregam alta resistência com alongamento mínimo e excelente acomodação em calha, enquanto taliscas, abas laterais e perfis chevron moldados a quente transformam qualquer correia base em uma solução de transporte sob medida.",
+      "A linha padrão da Malone Road Belt: correias EP multilonas fabricadas conforme DIN 22102 e mantidas em estoque nas construções de 2, 3 e 4 lonas. O urdume de poliéster e a trama de poliamida dão à carcaça alta resistência à tração com alongamento mínimo e excelente acomodação em calha.",
+      "Combine o número de lonas com a classe de tensão e os diâmetros de polia da sua máquina, e leve a correia sem-fim, em corte, preparada ou pronta para ZIP CLIP®. Toda correia tem referência cruzada com a sua máquina ou número de peça OEM.",
     ],
     features: [
       "Fabricadas conforme DIN 22102, testadas rotineiramente em laboratório próprio",
+      "Carcaças EP de 2, 3 e 4 lonas conforme a classe de tensão",
       "Formatos de fornecimento: sem-fim, preparada, corte ou ZIP CLIP®",
-      "Carcaça EP de 2 a 5 lonas conforme a classe de tensão da máquina",
       "Emendas vulcanizadas a quente na fábrica — quase 2x a resistência da emenda a frio",
       "Números de peça MB com referência cruzada para recompra rápida",
     ],
@@ -55,7 +55,8 @@ export const categoryPt: Record<string, CategoryOverlay> = {
       "Emenda vulcanizada a quente ou preparação ZIP CLIP®",
     ],
   },
-  "stonecleat-pro": {
+  incline: {
+    name: "Incline",
     subtitle: "Correias com Taliscas para Agregados",
     family: "Linha com taliscas Cleatpro X™",
     tagline: "Rocha sem retorno.",
@@ -71,118 +72,82 @@ export const categoryPt: Record<string, CategoryOverlay> = {
       "Fornecida em rolo, corte, sem-fim ou preparada para ZIP CLIP®",
     ],
   },
-  roadcleat: {
-    subtitle: "Correias para Construção Viária",
-    family: "Linha com taliscas Cleatpro X™",
-    tagline: "Pegue a estrada no ritmo certo.",
+  "custom-special": {
+    name: "Sob Medida / Especiais",
+    subtitle: "Projetadas por Encomenda",
+    family: "Sob encomenda",
+    tagline: "Não está no catálogo? Fabricamos na sua especificação.",
     description: [
-      "A construção viária castiga correias transportadoras: velocidades altas, asfalto quente e abrasivo, partidas e paradas constantes. As correias ROADCLEAT™ respondem com perfis de talisca moldados integralmente na cobertura superior, que permanecem colados em velocidades que arrancam taliscas coladas.",
-      "Instaladas em fresadoras, pavimentadoras e equipamentos viários móveis, estas correias são especificadas para durar entre janelas de manutenção planejadas — não para falhar no meio de uma aplicação.",
-    ],
-    features: [
-      "Taliscas moldadas integralmente permanecem fixas em alta velocidade",
-      "Suporta asfalto fresado quente e abrasivo, dia após dia",
-      "Alturas de talisca de 25 e 32 mm em perfis C e Y",
-      "Correias base até EP630/3 e Ironcleat® para acionamentos de alta tensão",
-      "Fornecida em rolo, corte, sem-fim ou preparada para ZIP CLIP®",
+      "Perfis especiais, abas laterais, larguras fora de padrão, compostos excepcionais — se roda sobre uma correia, podemos fabricar. Envie a sua aplicação e nossa equipe retorna com um desenho e uma cotação direta.",
     ],
   },
 };
 
 export const productPt: Record<string, ProductOverlay> = {
-  "endless-belt": {
-    name: "Correia Sem-Fim Pronta para Instalar",
-    tagline: "Anel vulcanizado a quente na fábrica. Instale e rode.",
+  "2-ply": {
+    name: "Correia Transportadora de 2 Lonas",
+    tagline: "A especificação leve para polias pequenas e vãos curtos.",
     description: [
-      "Um comprimento acabado de correia com emenda vulcanizada a quente formando um anel contínuo, fabricado na especificação OEM exata da sua máquina. Chega pronta para instalar — sem emenda em campo, sem tempo de cura, sem equipe especializada.",
-      "Emendas vulcanizadas a quente são quase duas vezes mais resistentes que emendas a frio, então a correia sem-fim é a forma mais duradoura de colocar a sua máquina de volta ao trabalho. Toda correia segue a DIN 22102 e tem referência cruzada com o seu número de peça OEM.",
+      "Uma carcaça EP de duas lonas para o lado mais leve do trabalho em equipamentos móveis: transportadores de transferência, vãos curtos e máquinas com polias de diâmetro pequeno, onde uma correia mais pesada brigaria com o acionamento em vez de ajudar.",
+      "Fabricada conforme DIN 22102 com coberturas resistentes à abrasão, e fornecida sem-fim, em corte, preparada ou pronta para ZIP CLIP® — com referência cruzada para a sua máquina ou número de peça OEM.",
     ],
     features: [
-      "Emenda vulcanizada a quente na fábrica — quase 2x a resistência da emenda a frio",
-      "Fabricada nas dimensões OEM exatas da sua máquina",
-      "Dispensa equipe de emenda e tempo de cura em campo",
+      "Carcaça EP de 2 lonas — flexível em polias de diâmetro pequeno",
+      "Alta resistência com baixo alongamento e excelente acomodação em calha",
+      "Classes de cobertura resistentes à abrasão conforme o seu material",
+      "Disponível sem-fim, preparada, em corte ou pronta para ZIP CLIP®",
       "Números de peça MB com referência cruzada para recompra rápida",
-      "Fabricação certificada ISO 9001",
     ],
   },
-  "zip-clip": {
-    name: "Correia com Fixação Mecânica ZIP CLIP®",
-    tagline: "Máquina parada? Instalada em apenas uma hora.",
+  "3-ply": {
+    name: "Correia Transportadora de 3 Lonas",
+    tagline: "A especificação completa para britagem e peneiramento móveis.",
     description: [
-      "Uma correia de reposição com extremidades preparadas mecanicamente, unida na máquina por um pino de encaixe ou rosqueado. Sem ferramentas especiais, sem equipe de vulcanização, sem tempo de cura — a correia roda assim que o pino entra.",
-      "Escolha a variante rosqueada com vedação de poliuretano, ou a de encaixe com dois anéis de retenção em aço zincado que impedem o pino de se soltar em operação. As instruções de instalação acompanham cada correia.",
+      "A força de trabalho da linha padrão: uma carcaça EP de três lonas que cobre os transportadores principais e laterais da maioria dos britadores, peneiras e recicladoras móveis. Forte o bastante para trabalho pesado e abrasivo, flexível o bastante para acomodar em calha nos roletes padrão.",
+      "Fabricada conforme DIN 22102 com classes de cobertura para o seu material, e fornecida sem-fim, em corte, preparada ou pronta para ZIP CLIP®.",
     ],
     features: [
-      "Instalada em cerca de uma hora — pronta para rodar na sequência",
-      "Sem ferramentas especiais nem equipe de emenda",
-      "Variante rosqueada: pino com vedação de poliuretano",
-      "Variante de encaixe: pino travado por 2 anéis de retenção zincados",
-      "Clipes rebaixados protegem a emenda de raspadores e vedações",
-      "Instruções de instalação acompanham cada correia",
-    ],
-  },
-  "ep-multi-ply": {
-    name: "Correia EP Multilonas",
-    tagline: "A força de trabalho para blocos grandes e materiais abrasivos.",
-    description: [
-      "As correias EP multilonas são o padrão da indústria para trabalho pesado e abrasivo. O urdume de poliéster e a trama de poliamida dão à carcaça alta resistência à tração com baixo alongamento, absorvendo o impacto de blocos grandes em condições extremas.",
-      "Fabricadas conforme DIN 22102, ISO 10247 e BS 490, com classes de cobertura para o seu material e 2 a 5 lonas conforme a classe de tensão.",
-    ],
-    features: [
-      "Recomendada para blocos grandes e materiais abrasivos",
-      "Carcaça poliéster/poliamida (EP) — alta resistência, baixo alongamento",
-      "2 a 5 lonas conforme a classe de tensão da sua máquina",
+      "O número de lonas mais especificado em equipamentos móveis",
+      "Carcaça EP de 3 lonas — alta resistência, baixo alongamento",
       "Classes de cobertura para abrasão, impacto e corte",
-      "Disponível sem-fim, em corte ou preparada para ZIP CLIP®",
+      "Disponível sem-fim, preparada, em corte ou pronta para ZIP CLIP®",
+      "Números de peça MB com referência cruzada para recompra rápida",
     ],
   },
-  "cleated-chevron": {
-    name: "Correias com Taliscas & Chevron",
-    tagline: "Taliscas moldadas a quente para rampas íngremes.",
+  "4-ply": {
+    name: "Correia Transportadora de 4 Lonas",
+    tagline: "Carcaça de alta tensão para vãos longos e cargas pesadas.",
     description: [
-      "Correias sob medida com taliscas transversais, padrões chevron e abas laterais moldados a quente, fabricadas internamente conforme DIN 22102. As taliscas são moldadas — não coladas — e permanecem na correia nos ângulos e velocidades que arrancam perfis aparafusados.",
-      "Precisa de algo fora do padrão? Além dos padrões Cleatpro X™ de estoque, desenhamos leiautes de taliscas e abas laterais para a sua largura de correia, largura de talisca e passo.",
+      "Uma carcaça EP de quatro lonas para os acionamentos mais exigidos da linha padrão: empilhadores de vão longo, descarga de britador primário e correias largas movendo tonelagem de verdade. A lona extra carrega a tensão que esticaria uma correia mais leve até tirá-la de serviço.",
+      "Fabricada conforme DIN 22102 com coberturas resistentes a impacto, e fornecida sem-fim, em corte, preparada ou pronta para ZIP CLIP®.",
     ],
     features: [
-      "Taliscas transversais e chevrons moldados a quente — nunca colados",
-      "Abas laterais moldadas a quente opcionais para rampas fortes",
-      "Leiautes de talisca sob medida para a sua largura e passo",
-      "Alturas de aba e espessuras de talisca de estoque disponíveis",
-      "Fabricação interna conforme DIN 22102",
+      "Carcaça EP de 4 lonas para acionamentos de alta tensão e vão longo",
+      "Absorve o impacto de blocos grandes em condições extremas",
+      "Classes de cobertura para abrasão, impacto e corte",
+      "Disponível sem-fim, preparada, em corte ou pronta para ZIP CLIP®",
+      "Números de peça MB com referência cruzada para recompra rápida",
     ],
   },
   ironcleat: {
     tagline: "Dura até 4x mais que a EP multilonas padrão.",
     description: [
-      "A Ironcleat® usa uma trama especial de duas lonas reforçadas mais um urdume de amarração adicional. O resultado é uma carcaça que resiste a perfurações e dura até quatro vezes mais que uma correia EP multilonas padrão na mesma aplicação.",
+      "A Ironcleat® usa uma trama especial de urdume reto com duas lonas reforçadas mais um urdume de amarração adicional. O resultado é uma carcaça que resiste a perfurações e dura até quatro vezes mais que uma correia EP multilonas padrão na mesma aplicação, sob coberturas resistentes a corte, impacto e desgaste.",
       "Quando as trocas de correia estão consumindo as suas janelas de manutenção, a Ironcleat® é o upgrade que se paga em disponibilidade.",
     ],
     features: [
       "Dura até 4x mais que correias EP multilonas padrão",
-      "Trama especial: 2 lonas reforçadas + urdume de amarração",
-      "Resistência superior à perfuração",
+      "Trama especial: 2 lonas de urdume reto + urdume de amarração",
+      "Coberturas superiores resistentes a corte, impacto e desgaste",
       "Menos trocas de correia — mais tempo produtivo programado",
       "Disponível sem-fim, em corte ou preparada para ZIP CLIP®",
-    ],
-  },
-  ripstop: {
-    tagline: "Reforço de malha de aço. Feita para RCD e britadores.",
-    description: [
-      "A construção Ripstop adiciona uma trama de malha de aço reforçada entre a cobertura superior e a carcaça de lonas sintéticas. Sucata afiada e vergalhão que cortariam uma correia comum são barrados antes de chegar às lonas.",
-      "A correia preferida para resíduos de construção e demolição e aplicações de britagem, onde rasgos e perfurações são a causa número um de paradas não planejadas.",
-    ],
-    features: [
-      "Trama de malha de aço reforçada barra rasgos e perfurações",
-      "Carcaça de lonas sintéticas mantém a correia flexível e acomodável",
-      "Excelente resistência a impactos de sucata e vergalhão",
-      "Projetada para RCD e trabalho em britadores",
     ],
   },
   c15p385: {
     name: "Padrão Chevron C15P385",
     tagline: "O chevron de 15 mm mais versátil, para correias de 400–800 mm.",
     description: [
-      "O padrão mais versátil da linha Stonecleat Pro™: um chevron de 15 mm moldado a quente integralmente na cobertura superior, cobrindo larguras de correia de 400 a 800 mm. Mantém agregado peneirado, areia e produtos agrícolas subindo sem retorno nas inclinações que os equipamentos móveis realmente usam.",
+      "O padrão mais versátil da linha Incline: um chevron de 15 mm moldado a quente integralmente na cobertura superior, cobrindo larguras de correia de 400 a 800 mm. Mantém agregado peneirado, areia e produtos agrícolas subindo sem retorno nas inclinações que os equipamentos móveis realmente usam.",
       "Disponível sobre correia base EP315/3 em toda a faixa de largura, ou reforçada para EP500/3 em 650 e 800 mm para acionamentos mais exigidos. Também especificada para colheita e armazenagem.",
     ],
     features: [
@@ -213,7 +178,7 @@ export const productPt: Record<string, ProductOverlay> = {
     tagline: "Mordida de 32 mm para agregado grosso e rampas fortes.",
     description: [
       "Quando a rampa fica íngreme e o material fica grosso, as taliscas de 32 mm do C32P460 dão à rocha britada um apoio de verdade. O passo de 330 mm mantém os blocos assentados entre as taliscas em vez de quicando por cima delas.",
-      "Moldado sobre EP250/2 em 500 mm ou EP400/3 em 650 mm de largura, com a mesma união moldada a quente do restante da linha Stonecleat Pro™.",
+      "Moldado sobre EP250/2 em 500 mm ou EP400/3 em 650 mm de largura, com a mesma união moldada a quente do restante da linha Incline.",
     ],
     features: [
       "Talisca de 32 mm para rampas fortes e material grosso",
@@ -258,7 +223,7 @@ export const productPt: Record<string, ProductOverlay> = {
     tagline: "Passo curto de 182 mm mantém os finos subindo.",
     description: [
       "Um chevron de 15 mm com o passo mais curto da linha — 182 mm — para que material fino e de fluxo livre encontre uma talisca antes de escorregar de volta. Especificado para correias de 1050 mm sobre carcaça EP400/3.",
-      "O padrão Stonecleat Pro™ preferido para transportadores de finos e material peneirado secundário.",
+      "O padrão Incline preferido para transportadores de finos e material peneirado secundário.",
     ],
     features: [
       "Passo curto de 182 mm para material fino de fluxo livre",
@@ -328,103 +293,34 @@ export const productPt: Record<string, ProductOverlay> = {
       "Fornecida em rolo, corte, sem-fim ou preparada para ZIP CLIP®",
     ],
   },
-  y32p600: {
-    name: "Padrão de Taliscas Y32P600",
-    tagline: "Perfil Y de 32 mm feito para a velocidade da fresagem.",
-    description: [
-      "O padrão ROADCLEAT™ para fresadoras a frio: taliscas de 32 mm em perfil Y que seguram o material fresado quente e abrasivo nos transportadores de descarga rápidos e íngremes dos equipamentos viários. A união moldada a quente permanece no lugar em velocidades que arrancam taliscas coladas.",
-      "Disponível sobre carcaças EP400/3 e EP630/3 pesada em 850 mm, ou sobre base Ironcleat® EPP630/2 com coberturas 9+3 em 1000 mm para as máquinas mais exigidas.",
-    ],
-    features: [
-      "Segura material fresado quente e abrasivo em alta velocidade",
-      "Moldado a quente integralmente na cobertura superior — nunca colado",
-      "Talisca de 32 mm com passo de 360 mm",
-      "Correias base EP400/3, EP630/3 ou Ironcleat® EPP630/2",
-      "Fornecida em rolo, corte, sem-fim ou preparada para ZIP CLIP®",
-    ],
-  },
-  c25p660: {
-    name: "Padrão Chevron C25P660",
-    tagline: "Chevron de 25 mm para correias de pavimentadora de 914 mm.",
-    description: [
-      "Um chevron de 25 mm moldado para as correias de 914 mm comuns em pavimentadoras e veículos de transferência de material. O passo de 305 mm mantém uma alimentação constante e uniforme de asfalto até a mesa — sem golfadas, sem falta de material.",
-      "Fornecido sobre carcaça EP500/3 com coberturas 6+1.5 dimensionadas para o trabalho com asfalto quente.",
-    ],
-    features: [
-      "Alimentação uniforme para pavimentadoras e veículos de transferência",
-      "Moldado a quente integralmente na cobertura superior — nunca colado",
-      "Talisca de 25 mm com passo de 305 mm",
-      "Correia base EP500/3 6+1.5 com cobertura espessa para serviço quente",
-      "Fornecida em rolo, corte, sem-fim ou preparada para ZIP CLIP®",
-    ],
-  },
 };
 
 /* Spec labels (left column of every spec sheet) */
 export const specLabelPt: Record<string, string> = {
   Standard: "Norma",
-  Standards: "Normas",
+  Carcass: "Carcaça",
+  Coverage: "Cobertura",
+  "Tensile rating": "Classe de tração",
   "Belt width": "Largura da correia",
   "Belt widths": "Larguras de correia",
-  Carcass: "Carcaça",
   "Temperature range": "Faixa de temperatura",
-  Splice: "Emenda",
-  Splices: "Emendas",
-  Variants: "Variantes",
-  "Fitting time": "Tempo de instalação",
-  "Tools required": "Ferramentas necessárias",
-  "Cover grades": "Classes de cobertura",
   "Service life": "Vida útil",
   Resistance: "Resistência",
-  Reinforcement: "Reforço",
-  Cleats: "Taliscas",
-  Options: "Opções",
-  "Base belts": "Correias base",
-  "Base belt": "Correia base",
   Profile: "Perfil",
-  Profiles: "Perfis",
+  "Cleat height": "Altura da talisca",
   "Cleat width": "Largura da talisca",
-  "Cleat pitch": "Passo da talisca",
-  "Cleat heights": "Alturas de talisca",
-  "Cleat bond": "União da talisca",
-  "Cover options": "Opções de cobertura",
-  "Tensile ratings": "Classes de tração",
-  Constructions: "Construções",
-  "Extreme range": "Faixa extrema",
+  "Base belts": "Correias base",
 };
 
 /* Spec values that are prose rather than data */
 export const specValuePt: Record<string, string> = {
-  "EP fabric, 2–5 plies": "Tecido EP, 2–5 lonas",
-  "Hot vulcanized (factory)": "Vulcanizada a quente (fábrica)",
-  "Mechanical, pin-joined": "Mecânica, com pino",
-  "Screw-In / Push-In": "Rosqueado / Encaixe",
-  "~1 hour": "~1 hora",
-  "None (standard hand tools)": "Nenhuma (ferramentas comuns)",
-  "Abrasion / impact resistant": "Resistente à abrasão / impacto",
-  "2 reinforced plies + binder warp": "2 lonas reforçadas + urdume de amarração",
+  "EP fabric, 2 plies": "Tecido EP, 2 lonas",
+  "EP fabric, 3 plies": "Tecido EP, 3 lonas",
+  "EP fabric, 4 plies": "Tecido EP, 4 lonas",
+  "2 Straight warp": "2 lonas de urdume reto",
+  "Cut / impact / wear resistant": "Resistente a corte / impacto / desgaste",
   "Up to 4x standard EP": "Até 4x a EP padrão",
   "Puncture / rip": "Perfuração / rasgo",
-  "Steel wire mesh (weft)": "Malha de aço (trama)",
-  "Synthetic fabric plies": "Lonas de tecido sintético",
-  "Rip / puncture": "Rasgo / perfuração",
-  "Hot-molded chevron / cross-cleat": "Chevron / talisca moldada a quente",
-  "Siderails, custom pitch": "Abas laterais, passo sob medida",
-  "EP / Ironcleat® / Ripstop": "EP / Ironcleat® / Ripstop",
-  "Hot vulcanized / ZIP CLIP®": "Vulcanizada a quente / ZIP CLIP®",
-  "Ironcleat® / Ripstop / Fabric Breaker": "Ironcleat® / Ripstop / Fabric Breaker",
-  "Binder warp / steel mesh / breaker ply":
-    "Urdume de amarração / malha de aço / lona amortecedora",
-  "-60°C to +600°C (specialized)": "-60°C a +600°C (especiais)",
-  "Heat / cold / flame / oil": "Calor / frio / chama / óleo",
-  "Integrally hot-molded": "Moldada a quente integral",
-  "Chevron, 15 mm cleat": "Chevron, talisca de 15 mm",
-  "Chevron, 25 mm cleat": "Chevron, talisca de 25 mm",
-  "Chevron, 32 mm cleat": "Chevron, talisca de 32 mm",
-  "Chevron V-joint, 15 mm cleat": "Chevron junta em V, talisca de 15 mm",
-  "S-profile, 25 mm cleat": "Perfil S, talisca de 25 mm",
-  "Y-profile V-joint, 26 mm cleat": "Perfil Y junta em V, talisca de 26 mm",
-  "Y-profile, 32 mm cleat": "Perfil Y, talisca de 32 mm",
 };
 
 /* Application chips */
@@ -435,22 +331,11 @@ export const applicationPt: Record<string, string> = {
   Aggregates: "Agregados",
   Quarrying: "Pedreiras",
   Mining: "Mineração",
-  "Emergency replacement": "Reposição de emergência",
   "Demolition waste": "Resíduos de demolição",
   "C&D waste": "Resíduos de construção e demolição",
-  "Scrap handling": "Manuseio de sucata",
-  "Steep-incline conveying": "Transporte em rampas fortes",
-  Biomass: "Biomassa",
   Stockpiling: "Armazenagem em pilhas",
   "Crop harvesting": "Colheita",
   "Grain handling": "Manuseio de grãos",
-  "Road milling": "Fresagem de pavimento",
-  Paving: "Pavimentação",
-  "Asphalt plants": "Usinas de asfalto",
-  "Mobile road plant": "Equipamentos viários móveis",
-  "Construction & Demolition": "Construção e Demolição",
-  "Road construction": "Construção viária",
-  Agriculture: "Agricultura",
   "Foundry & clinker": "Fundição e clínquer",
   "Biomass & sawdust": "Biomassa e serragem",
   "Grain & food": "Grãos e alimentos",

@@ -33,7 +33,7 @@ export default async function ContactPage({
   return (
     /* The whole Contact page is a dark canvas (client direction); the quote
        form lives on a white card so its fields keep their default styling */
-    <div className="bg-linear-135 from-petrol-800 to-petrol-900">
+    <div className="bg-linear-135 from-navy-800 to-navy-900">
       <section className="container-shell grid gap-12 py-14 lg:grid-cols-[1fr_0.55fr] lg:py-16">
         <div>
           <SectionHeading
@@ -64,7 +64,7 @@ export default async function ContactPage({
           </p>
           <a
             href={site.phoneHref}
-            className="mt-4 block font-mono text-h3 font-semibold text-ink-2 hover:text-petrol-700"
+            className="mt-4 block font-mono text-h3 font-semibold text-ink-2 hover:text-navy-700"
           >
             {site.phone}
           </a>
@@ -73,13 +73,13 @@ export default async function ContactPage({
         <ul className="mt-6 space-y-4 rounded-xl border border-line bg-surface p-6 text-sm">
           <li className="flex items-start gap-3">
             <Mail
-              className="mt-0.5 size-[17px] shrink-0 text-petrol-600"
+              className="mt-0.5 size-[17px] shrink-0 text-navy-600"
               strokeWidth={2}
               aria-hidden="true"
             />
             <a
               href={`mailto:${site.email}`}
-              className="font-mono text-ink-2 hover:text-petrol-700"
+              className="font-mono text-ink-2 hover:text-navy-700"
             >
               {site.email}
             </a>

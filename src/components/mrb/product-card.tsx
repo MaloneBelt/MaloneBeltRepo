@@ -7,11 +7,11 @@ import { SpecList } from "@/components/mrb/spec-row";
 import { StateChip } from "@/components/mrb/state-chip";
 import { cn } from "@/lib/utils";
 
-/* The canonical belt card: petrol-300 header (mono meta + live status) — the
+/* The canonical belt card: navy-300 header (mono meta + live status) — the
    mid-teal pops against the dark section backgrounds these cards sit on —
-   visual panel (product photo, or the brand emblem on a petrol wash), mono
+   visual panel (product photo, or the brand emblem on a navy wash), mono
    spec rows,
-   footer CTA. `ctaVariant` exists to honor one-marigold-per-view. */
+   footer CTA. `ctaVariant` exists to honor one-orange-per-view. */
 export function ProductCard({
   partNumber,
   title,
@@ -44,10 +44,10 @@ export function ProductCard({
         className
       )}
     >
-      <div className="flex items-center justify-between gap-3 bg-petrol-300 px-5 py-4">
-        <span className="font-mono text-xs text-petrol-900">{headerLabel}</span>
+      <div className="flex items-center justify-between gap-3 bg-navy-300 px-5 py-4">
+        <span className="font-mono text-xs text-navy-900">{headerLabel}</span>
         {liveLabel && (
-          <span className="flex items-center gap-[7px] font-display text-[11px] font-bold tracking-[1px] text-petrol-900">
+          <span className="flex items-center gap-[7px] font-display text-[11px] font-bold tracking-[1px] text-navy-900">
             <span
               aria-hidden="true"
               className="size-[7px] rounded-full bg-stock shadow-[0_0_8px_var(--color-success)]"
@@ -57,7 +57,7 @@ export function ProductCard({
         )}
       </div>
 
-      <div className="relative flex h-44 items-center justify-center overflow-hidden bg-radial-[120%_140%_at_20%_0%] from-petrol-100 to-petrol-50">
+      <div className="relative flex h-44 items-center justify-center overflow-hidden bg-radial-[120%_140%_at_20%_0%] from-navy-100 to-navy-50">
         {image ? (
           <Image
             src={image.src}
@@ -78,7 +78,7 @@ export function ProductCard({
       </div>
 
       <div className="flex flex-1 flex-col p-5">
-        <div className="font-mono text-xs text-petrol-600">{partNumber}</div>
+        <div className="font-mono text-xs text-navy-600">{partNumber}</div>
         <h3 className="mt-1 mb-3 font-display text-xl font-extrabold text-ink-2">
           {title}
         </h3>

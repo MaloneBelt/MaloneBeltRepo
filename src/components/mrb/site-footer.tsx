@@ -40,7 +40,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
               return (
                 <li key={category.slug}>
                   <Link
-                    href={l(locale, `/products/${category.slug}`)}
+                    href={l(locale, category.href ?? `/products/${category.slug}`)}
                     className="text-sm text-white/80 transition-colors hover:text-white"
                   >
                     {localized.name}

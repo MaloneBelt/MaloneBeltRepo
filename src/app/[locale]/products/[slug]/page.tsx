@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { Check, ChevronRight } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -25,10 +25,14 @@ import { localizeCategory, localizeProduct } from "@/i18n/localize";
 
 /* One flat namespace under /products: a slug is either a category (rendered
    as the brochure-style range page) or a product (rendered as the standard
-   detail page). Category slugs and product slugs never collide. */
+   detail page). Category slugs and product slugs never collide. Link-only
+   categories (`href` set, e.g. Custom / Special) get no page — visiting
+   their slug redirects to the link target. */
 export function generateStaticParams() {
   return [
-    ...categories.map((category) => ({ slug: category.slug })),
+    ...categories
+      .filter((category) => !category.href)
+      .map((category) => ({ slug: category.slug })),
     ...products.map((product) => ({ slug: product.slug })),
   ];
 }
@@ -68,6 +72,7 @@ export default async function ProductDetailPage({
 
   const category = getCategory(slug);
   if (category) {
+    if (category.href) redirect(l(locale, category.href));
     return (
       <CategoryShowcase
         category={category}
@@ -92,11 +97,11 @@ export default async function ProductDetailPage({
   return (
     <>
       {/* Detail — dark zone (client-assigned) */}
-      <section className="border-b border-petrol-800 bg-linear-135 from-petrol-800 to-petrol-900">
+      <section className="border-b border-navy-800 bg-linear-135 from-navy-800 to-navy-900">
         <div className="container-shell py-10 lg:py-14">
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb">
-          <ol className="flex flex-wrap items-center gap-1.5 text-[13px] text-petrol-200">
+          <ol className="flex flex-wrap items-center gap-1.5 text-[13px] text-navy-200">
             <li>
               <Link href={l(locale, "/")} className="hover:text-white">
                 {dict.common.home}
@@ -143,7 +148,7 @@ export default async function ProductDetailPage({
             <h1 className="mt-3 font-display text-h2 leading-[1.1] font-black tracking-tight text-white lg:text-[2.5rem]">
               {p.name}
             </h1>
-            <p className="mt-3 text-lead text-petrol-200">{p.tagline}</p>
+            <p className="mt-3 text-lead text-navy-200">{p.tagline}</p>
 
             <div className="mt-5">
               {p.availability.status === "in-stock" ? (
@@ -161,16 +166,6 @@ export default async function ProductDetailPage({
               <Button asChild variant="primary" size="lg">
                 <Link href={l(locale, `/contact?product=${p.slug}`)}>
                   {dict.common.requestQuote}
-                </Link>
-              </Button>
-              <Button
-                asChild
-                variant="secondary"
-                size="lg"
-                className="border-white/25 text-petrol-100 hover:border-white/60 hover:text-white"
-              >
-                <Link href={l(locale, "/contact?urgency=down-now")}>
-                  {dict.common.machineDownNow}
                 </Link>
               </Button>
             </div>
@@ -236,7 +231,7 @@ export default async function ProductDetailPage({
 
       {/* Related — dark zone (client-assigned) */}
       {related.length > 0 && (
-        <section className="border-t border-petrol-800 bg-linear-135 from-petrol-800 to-petrol-900">
+        <section className="border-t border-navy-800 bg-linear-135 from-navy-800 to-navy-900">
           <div className="container-shell py-14 lg:py-16">
           <SectionHeading
             tone="inverse"

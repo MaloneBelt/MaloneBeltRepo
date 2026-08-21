@@ -11,7 +11,7 @@ export function SpecRow({
   label: string;
   value: string;
   last?: boolean;
-  /* "inverse" = light text for dark (petrol-800/900) surfaces */
+  /* "inverse" = light text for dark (navy-800/900) surfaces */
   tone?: "default" | "inverse";
   className?: string;
 }) {
@@ -25,7 +25,7 @@ export function SpecRow({
         className
       )}
     >
-      <dt className={inverse ? "text-petrol-200" : "text-body-muted"}>
+      <dt className={inverse ? "text-navy-200" : "text-body-muted"}>
         {label}
       </dt>
       <dd

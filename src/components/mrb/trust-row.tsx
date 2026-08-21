@@ -13,7 +13,7 @@ export function TrustRow({
   tone = "default",
 }: {
   items?: readonly string[];
-  /* "inverse" = light text for dark (petrol-900 / photo) backgrounds */
+  /* "inverse" = light text for dark (navy-900 / photo) backgrounds */
   tone?: "default" | "inverse";
 }) {
   return (
@@ -23,7 +23,7 @@ export function TrustRow({
           key={item}
           className={cn(
             "flex items-center gap-2 text-[13px] font-semibold",
-            tone === "inverse" ? "text-petrol-100" : "text-body-muted"
+            tone === "inverse" ? "text-navy-100" : "text-body-muted"
           )}
         >
           <Check

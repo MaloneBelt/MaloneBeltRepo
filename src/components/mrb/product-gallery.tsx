@@ -20,7 +20,7 @@ export function ProductGallery({
 
   return (
     <div className={className}>
-      <div className="relative flex h-80 items-center justify-center overflow-hidden rounded-xl border border-line bg-radial-[120%_140%_at_20%_0%] from-petrol-100 to-petrol-50 lg:h-96">
+      <div className="relative flex h-80 items-center justify-center overflow-hidden rounded-xl border border-line bg-radial-[120%_140%_at_20%_0%] from-navy-100 to-navy-50 lg:h-96">
         <Image
           key={current.src}
           src={current.src}
@@ -44,8 +44,8 @@ export function ProductGallery({
                 className={cn(
                   "relative block h-24 w-full cursor-pointer overflow-hidden rounded-lg border bg-surface transition-[border-color,box-shadow]",
                   i === index
-                    ? "border-petrol-500 ring-2 ring-petrol-500/40"
-                    : "border-line hover:border-petrol-300"
+                    ? "border-navy-500 ring-2 ring-navy-500/40"
+                    : "border-line hover:border-navy-300"
                 )}
               >
                 <Image

@@ -3,7 +3,7 @@
    public/oems/<slug>.png in their ORIGINAL brand colors (client direction,
    Aug 2026), sourced from each manufacturer's official site/press assets.
    tone: "dark" marks logos whose original artwork is white-on-dark — they
-   render directly on dark bands and get a petrol plate on white surfaces.
+   render directly on dark bands and get a navy plate on white surfaces.
    KPI and Roadtec carry the Astec mark (their current corporate branding);
    Terex Cedar Rapids / Terex MPS use the Terex corporate mark. */
 

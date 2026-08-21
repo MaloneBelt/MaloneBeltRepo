@@ -2,18 +2,16 @@ import Link from "next/link";
 import { ArrowLeft, Check } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/mrb/product-card";
 import { SectionHeading } from "@/components/mrb/section-heading";
 import { ShowcaseGallery } from "@/components/mrb/showcase-gallery";
-import { SpecList } from "@/components/mrb/spec-row";
 import { site } from "@/data/site";
 import { l, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n";
 import { localizeCategory, localizeProduct } from "@/i18n/localize";
 import type { Category, Product } from "@/types/product";
 
-/* Brochure-style category page. One full-bleed dark petrol canvas — like a
+/* Brochure-style category page. One full-bleed dark navy canvas — like a
    printed catalog spread — with the range name set huge and italic, the
    range photos floating over the color in the tilted gallery, the range
    description composed into the same dark field, and the category's
@@ -32,13 +30,13 @@ export function CategoryShowcase({
   const localizedProducts = products.map((p) => localizeProduct(p, locale));
 
   return (
-    <article className="overflow-x-clip bg-linear-135 from-petrol-800 to-petrol-900">
+    <article className="overflow-x-clip bg-linear-135 from-navy-800 to-navy-900">
       <div className="container-shell pt-8 pb-16 lg:pt-10 lg:pb-24">
         {/* Top strip: way back + range meta */}
         <div className="flex flex-wrap items-center justify-between gap-4">
           <Link
             href={l(locale, "/products")}
-            className="inline-flex items-center gap-2 text-[13px] font-semibold text-petrol-200 hover:text-white"
+            className="inline-flex items-center gap-2 text-[13px] font-semibold text-navy-200 hover:text-white"
           >
             <ArrowLeft className="size-4" strokeWidth={2.5} aria-hidden="true" />
             {dict.categoryPage.allProducts}
@@ -51,13 +49,13 @@ export function CategoryShowcase({
 
         {/* Masthead — tagline right, giant italic range name below */}
         <header className="mt-10 lg:mt-14">
-          <p className="font-display text-sm font-bold tracking-[2px] text-petrol-200 uppercase italic sm:text-right">
+          <p className="font-display text-sm font-bold tracking-[2px] text-navy-200 uppercase italic sm:text-right">
             {c.tagline}
           </p>
           <h1 className="mt-2 font-display text-[min(13vw,6rem)] leading-[0.95] font-black tracking-tight text-white uppercase italic lg:text-8xl">
             {c.name}
           </h1>
-          <p className="mt-3 font-display text-lg font-bold tracking-[3px] text-petrol-300 uppercase">
+          <p className="mt-3 font-display text-lg font-bold tracking-[3px] text-navy-300 uppercase">
             {c.subtitle} · {dict.categoryPage.by} {site.name}
           </p>
         </header>
@@ -70,13 +68,13 @@ export function CategoryShowcase({
         {/* Description — composed into the same dark field, no card break */}
         <div className="mt-16 grid gap-12 md:mt-24 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
           <div>
-            <p className="text-xl leading-relaxed font-medium text-petrol-100 lg:text-2xl">
+            <p className="text-xl leading-relaxed font-medium text-navy-100 lg:text-2xl">
               {c.description[0]}
             </p>
             {c.description.slice(1).map((paragraph) => (
               <p
                 key={paragraph.slice(0, 40)}
-                className="mt-5 leading-relaxed text-petrol-200"
+                className="mt-5 leading-relaxed text-navy-200"
               >
                 {paragraph}
               </p>
@@ -90,46 +88,22 @@ export function CategoryShowcase({
                     strokeWidth={2.5}
                     aria-hidden="true"
                   />
-                  <span className="text-petrol-100">{feature}</span>
+                  <span className="text-navy-100">{feature}</span>
                 </li>
               ))}
             </ul>
-
-            <div className="mt-10 flex flex-wrap items-center gap-3">
-              <Button asChild variant="primary" size="lg">
-                <Link href={l(locale, "/contact")}>
-                  {dict.common.requestQuote}
-                </Link>
-              </Button>
-              <Button
-                asChild
-                variant="secondary"
-                size="lg"
-                className="border-white/25 text-petrol-100 hover:border-white/60 hover:text-white"
-              >
-                <Link href={l(locale, "/contact?urgency=down-now")}>
-                  {dict.common.machineDownNow}
-                </Link>
-              </Button>
-            </div>
           </div>
 
           <aside>
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6">
-              <h2 className="font-display text-sm font-bold tracking-[2px] text-petrol-200 uppercase">
-                {dict.categoryPage.rangeSpec}
-              </h2>
-              <SpecList specs={c.specs} tone="inverse" className="mt-3" />
-            </div>
-            <div className="mt-6">
-              <h2 className="font-display text-sm font-bold tracking-[2px] text-petrol-200 uppercase">
+            <div>
+              <h2 className="font-display text-sm font-bold tracking-[2px] text-navy-200 uppercase">
                 {dict.categoryPage.applications}
               </h2>
               <div className="mt-3 flex flex-wrap gap-2">
                 {c.applications.map((application) => (
                   <span
                     key={application}
-                    className="rounded-md border border-white/15 px-2.5 py-1 font-mono text-xs text-petrol-100"
+                    className="rounded-md border border-white/15 px-2.5 py-1 font-mono text-xs text-navy-100"
                   >
                     {application}
                   </span>
@@ -172,10 +146,10 @@ export function CategoryShowcase({
 
         {/* Brochure footer strip */}
         <div className="mt-16 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-6">
-          <span className="font-display text-xs font-bold tracking-[3px] text-petrol-300 uppercase">
+          <span className="font-display text-xs font-bold tracking-[3px] text-navy-300 uppercase">
             {dict.common.tagline}
           </span>
-          <span className="font-mono text-xs text-petrol-300">
+          <span className="font-mono text-xs text-navy-300">
             {site.url.replace("https://www.", "")}
           </span>
         </div>

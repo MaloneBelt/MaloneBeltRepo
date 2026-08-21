@@ -12,10 +12,10 @@ const badgeVariants = cva(
     variants: {
       variant: {
         brand:
-          "font-display uppercase tracking-[2px] text-petrol-100 bg-petrol-900 border border-petrol-800",
-        mono: "font-mono tracking-[0.5px] text-petrol-600 bg-petrol-50 border border-transparent",
+          "font-display uppercase tracking-[2px] text-navy-100 bg-navy-900 border border-navy-800",
+        mono: "font-mono tracking-[0.5px] text-navy-600 bg-navy-50 border border-transparent",
         solid:
-          "font-display uppercase tracking-[1px] text-ink-2 bg-marigold border border-transparent",
+          "font-display uppercase tracking-[1px] text-ink-2 bg-orange border border-transparent",
         neutral:
           "font-mono tracking-[0.5px] text-body-muted bg-surface border border-line",
       },

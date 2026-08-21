@@ -5,20 +5,20 @@ import { Slot } from "radix-ui"
 import { cn } from "@/lib/utils"
 
 /* MRB brand button — pill ("track") shape, Archivo label.
-   primary (marigold + ink label) is the ONE action per view; secondary is the
-   petrol ghost; dark fills petrol; danger is the down-now treatment. */
+   primary (orange + ink label) is the ONE action per view; secondary is the
+   navy ghost; dark fills navy; danger is the down-now treatment. */
 const buttonVariants = cva(
-  "inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-track font-display leading-none whitespace-nowrap transition-colors outline-none focus-visible:ring-4 focus-visible:ring-petrol-50 focus-visible:border-petrol-500 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-track font-display leading-none whitespace-nowrap transition-colors outline-none focus-visible:ring-4 focus-visible:ring-navy-50 focus-visible:border-navy-500 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
         primary:
-          "bg-marigold text-ink-2 font-extrabold border border-transparent hover:bg-marigold-600",
+          "bg-orange text-ink-2 font-extrabold border border-transparent hover:bg-orange-600",
         secondary:
-          "bg-transparent text-petrol-600 font-bold border-[1.5px] border-petrol-200 hover:border-petrol-400 hover:text-petrol-700",
+          "bg-transparent text-navy-600 font-bold border-[1.5px] border-navy-200 hover:border-navy-400 hover:text-navy-700",
         ghost:
-          "bg-transparent text-body-muted font-bold border border-transparent hover:text-petrol-700 hover:bg-petrol-50",
-        dark: "bg-petrol-600 text-white font-extrabold border border-transparent hover:bg-petrol-700",
+          "bg-transparent text-body-muted font-bold border border-transparent hover:text-navy-700 hover:bg-navy-50",
+        dark: "bg-navy-600 text-white font-extrabold border border-transparent hover:bg-navy-700",
         danger:
           "bg-down-tint text-down-strong font-bold border border-down-line hover:bg-down-line/60",
       },

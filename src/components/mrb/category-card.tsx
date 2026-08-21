@@ -28,7 +28,7 @@ export function CategoryCard({
 
   return (
     <Link
-      href={l(locale, `/products/${category.slug}`)}
+      href={l(locale, category.href ?? `/products/${category.slug}`)}
       className={cn(
         "group flex w-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition-colors hover:border-white/30 hover:bg-white/10",
         className
@@ -44,24 +44,28 @@ export function CategoryCard({
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-linear-to-t from-petrol-900/70 via-petrol-900/10 to-transparent"
+          className="absolute inset-0 bg-linear-to-t from-navy-900/70 via-navy-900/10 to-transparent"
         />
-        <span className="absolute bottom-3 left-4 font-mono text-xs text-petrol-100">
+        <span className="absolute bottom-3 left-4 font-mono text-xs text-navy-100">
           {localized.code}
         </span>
-        <span className="absolute right-4 bottom-3 font-mono text-xs text-petrol-100">
-          {productCount} {productCount === 1 ? dict.common.belt : dict.common.belts}
-        </span>
+        {/* Link-only categories (e.g. Custom / Special) carry no belt count */}
+        {!category.href && (
+          <span className="absolute right-4 bottom-3 font-mono text-xs text-navy-100">
+            {productCount}{" "}
+            {productCount === 1 ? dict.common.belt : dict.common.belts}
+          </span>
+        )}
       </div>
 
       <div className="flex flex-1 flex-col p-5">
         <h3 className="font-display text-xl font-extrabold tracking-tight text-white uppercase italic">
           {localized.name}
         </h3>
-        <p className="mt-0.5 font-display text-[11px] font-bold tracking-[2px] text-petrol-300 uppercase">
+        <p className="mt-0.5 font-display text-[11px] font-bold tracking-[2px] text-navy-300 uppercase">
           {localized.subtitle}
         </p>
-        <p className="mt-2.5 text-[13px] leading-relaxed text-petrol-200">
+        <p className="mt-2.5 text-[13px] leading-relaxed text-navy-200">
           {localized.tagline}
         </p>
         <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-semibold text-white">

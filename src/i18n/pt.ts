@@ -13,7 +13,6 @@ export const pt: Dictionary = {
   },
   common: {
     skipToContent: "Ir para o conteúdo",
-    machineDownNow: "Máquina parada agora?",
     machineDownRightNow: "Máquina parada neste momento?",
     requestQuote: "Solicitar cotação",
     contactUs: "Fale conosco",
@@ -49,8 +48,8 @@ export const pt: Dictionary = {
   beltMatch: {
     byMachine: "Por máquina",
     byPart: "Por nº de peça OEM",
-    placeholderMachine: "ex.: Wirtgen W 100 Fi — transportador principal",
-    placeholderPart: "ex.: MB-4471-EP ou nº de peça OEM",
+    placeholderMachine: "ex.: Powerscreen Chieftain 1400 — transportador principal",
+    placeholderPart: "ex.: MB-8830-IC ou nº de peça OEM",
     ariaMachine: "Buscar por máquina",
     ariaPart: "Buscar por número de peça OEM",
     searchMode: "Modo de busca",
@@ -108,7 +107,7 @@ export const pt: Dictionary = {
   productsPage: {
     metaTitle: "Produtos",
     metaDescription:
-      "Correias transportadoras OEM organizadas do jeito que você compra: correias essenciais, construções reforçadas e especiais, e as linhas com taliscas Cleatpro X™ para agregados e estradas.",
+      "Correias transportadoras OEM organizadas do jeito que você compra: correias multilonas padrão, construções reforçadas e especiais, a linha com taliscas Incline Cleatpro X™ — e fabricação sob medida na sua especificação.",
     eyebrow: "Produtos",
     title: "Correias na especificação exata da sua máquina.",
     lead: "Toda correia tem referência cruzada com a sua máquina ou número de peça OEM e é fabricada conforme DIN 22102. Sem jogo de preços — envie a especificação e cotamos direto.",
@@ -123,7 +122,7 @@ export const pt: Dictionary = {
     categoriesEyebrow: "Categorias",
     categoriesTitle: "Navegue por linha.",
     categoriesLead:
-      "Duas linhas essenciais de catálogo e duas linhas com taliscas Cleatpro X™, cada uma construída em torno de uma aplicação. Abra uma linha para ver a história completa e depois entre na correia que você precisa.",
+      "Correias multilonas padrão, construções reforçadas e a linha com taliscas Incline — cada uma construída em torno de uma aplicação. Abra uma linha para ver a história completa e depois entre na correia que você precisa. Precisa de algo especial? Aquele cartão leva você direto até nós.",
     byCategoryEyebrow: "Produtos por categoria",
     byCategoryTitle: "Cada correia na sua linha.",
     specializedEyebrow: "Correias especiais",
@@ -133,7 +132,6 @@ export const pt: Dictionary = {
   },
   categoryPage: {
     allProducts: "Todos os produtos",
-    rangeSpec: "Especificações da linha",
     applications: "Aplicações",
     inRangeEyebrow: "Nesta linha",
     inRangeTitleSuffix: "prontas para especificar.",

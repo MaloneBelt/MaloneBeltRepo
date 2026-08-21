@@ -7,19 +7,19 @@ import { l, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n";
 
 /* Dual-path closing band: the two buying moments, side by side.
-   Planned purchase (marigold action) vs. machine down (red urgency).
-   Dark petrol gradient — every page places a white section right above it. */
+   Planned purchase (orange action) vs. machine down (red urgency).
+   Dark navy gradient — every page places a white section right above it. */
 export function CtaBand({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
 
   return (
-    <section className="bg-linear-135 from-petrol-800 to-petrol-900">
+    <section className="bg-linear-135 from-navy-800 to-navy-900">
       <div className="container-shell grid gap-8 py-16 md:grid-cols-2">
         <div className="flex flex-col items-start gap-4">
           <h2 className="font-display text-h3 font-extrabold text-white">
             {dict.ctaBand.planTitle}
           </h2>
-          <p className="text-sm leading-relaxed text-petrol-200">
+          <p className="text-sm leading-relaxed text-navy-200">
             {dict.ctaBand.planBody}
           </p>
           <Button asChild variant="primary" size="lg">
@@ -38,7 +38,7 @@ export function CtaBand({ locale }: { locale: Locale }) {
             />
             {dict.common.machineDownRightNow}
           </h2>
-          <p className="text-sm leading-relaxed text-petrol-200">
+          <p className="text-sm leading-relaxed text-navy-200">
             {dict.ctaBand.downBody}
           </p>
           <Button asChild variant="danger" size="lg">

@@ -1,47 +1,48 @@
 /* Malone Road Belt — Color tokens
-   v2 "Petrol — deep teal & amber" palette (client-approved, July 2026).
-   Petrol is the identity. Marigold does the work.
-   60 / 30 / 10 discipline: 60% warm-bone canvas, 30% petrol, 10% marigold.
-   Vendored verbatim from Design/Design system/tokens/colors.css
-   (legacy --grape-* aliases removed — not allowed in new work). */
+   v3 "Navy & Safety Orange" palette (client rebrand, Aug 2026 — anchored to
+   functional_docs/New logo proposal.jpeg: navy-800 and navy-200 are sampled
+   verbatim from the card artwork; the rest of the ramp interpolates at the
+   same hue, ~221°).
+   Navy is the identity. Orange does the work.
+   60 / 30 / 10 discipline: 60% white canvas, 30% navy, 10% orange. */
 :root {
-  /* ---- Petrol — identity scale ---- */
-  --petrol-50:  #EDF6F7;
-  --petrol-100: #D6ECEE;
-  --petrol-200: #ABD8DC;
-  --petrol-300: #74BCC4;
-  --petrol-400: #3D9AA6;
-  --petrol-500: #147888;
-  --petrol-600: #0C5F6E; /* ★ Primary brand */
-  --petrol-700: #0A4E5B;
-  --petrol-800: #083D48;
-  --petrol-900: #052730;
+  /* ---- Navy — identity scale ---- */
+  --navy-50:  #F2F5FA;
+  --navy-100: #DDE3F1;
+  --navy-200: #BFCBE3; /* ★ logo tint (sampled from the card) */
+  --navy-300: #8BA1D0;
+  --navy-400: #4A6DBF;
+  --navy-500: #214497;
+  --navy-600: #133176; /* ★ Primary brand */
+  --navy-700: #0D245C;
+  --navy-800: #081B45; /* ★ card navy (sampled from the card) */
+  --navy-900: #05112E;
 
-  /* ---- Action & semantic (unchanged from v1) ---- */
-  --marigold:      #F5A623; /* action only — CTAs, "Find my belt", add to cart */
-  --marigold-600:  #E08A00; /* marigold hover/press */
-  --green:         #12A150; /* in-stock / ships today — the planned-buy signal */
-  --green-tint:    #EAF7EF;
-  --green-line:    #BCE3CB;
-  --red:           #E5484D; /* down-now / expedite / alerts */
-  --red-tint:      #FDEDEE;
-  --red-line:      #F3C6C8;
+  /* ---- Action & semantic ---- */
+  --orange:      #EA7412; /* action only — CTAs, "Find my belt", add to cart */
+  --orange-600:  #C2600F; /* orange hover/press */
+  --green:       #12A150; /* in-stock / ships today — the planned-buy signal */
+  --green-tint:  #EAF7EF;
+  --green-line:  #BCE3CB;
+  --red:         #E5484D; /* down-now / expedite / alerts */
+  --red-tint:    #FDEDEE;
+  --red-line:    #F3C6C8;
 
-  /* ---- Warm-bone neutrals (a whisper of teal, never cold slate) ---- */
-  --ink:      #10191C; /* darkest — footers, app-icon fill background */
-  --ink-2:    #1B2529; /* primary text, ink label on marigold */
-  --muted:    #5F6F6E; /* body-text minimum on white, meta */
-  --subtle:   #96A4A2; /* placeholders, faint meta */
-  --line:     #E7EAE2; /* hairline borders, dividers */
-  --line-2:   #E7EAE2; /* alt hairline */
-  --canvas:   #F9F7F2; /* page background */
+  /* ---- Cool neutrals (a whisper of navy, never warm bone) ---- */
+  --ink:      #0A101F; /* darkest — footers, app-icon fill background */
+  --ink-2:    #1A2333; /* primary text, ink label on orange */
+  --muted:    #5B6880; /* body-text minimum on white, meta */
+  --subtle:   #93A0B8; /* placeholders, faint meta */
+  --line:     #E4E8F0; /* hairline borders, dividers */
+  --line-2:   #E4E8F0; /* alt hairline */
+  --canvas:   #FFFFFF; /* page background (white canvas — beige retired Jul 2026) */
   --surface:  #FFFFFF; /* cards, panels */
 
   /* ---------- SEMANTIC ALIASES ---------- */
-  --color-brand:        var(--petrol-600);
-  --color-brand-strong: var(--petrol-800);
-  --color-action:       var(--marigold);
-  --color-action-hover: var(--marigold-600);
+  --color-brand:        var(--navy-600);
+  --color-brand-strong: var(--navy-800);
+  --color-action:       var(--orange);
+  --color-action-hover: var(--orange-600);
   --color-success:      var(--green);
   --color-danger:       var(--red);
 
@@ -50,12 +51,12 @@
   --text-muted:       var(--muted);
   --text-subtle:      var(--subtle);
   --text-on-brand:    #FFFFFF;
-  --text-on-action:   var(--ink-2);   /* Ink text on marigold, NEVER white */
-  --text-link:        var(--petrol-600);
+  --text-on-action:   var(--ink-2);   /* Ink text on orange, NEVER white */
+  --text-link:        var(--navy-600);
 
   --surface-page:     var(--canvas);
   --surface-card:     var(--surface);
-  --surface-brand:    var(--petrol-600);
+  --surface-brand:    var(--navy-600);
   --surface-ink:      var(--ink);
   --border-hairline:  var(--line);
 }

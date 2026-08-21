@@ -54,7 +54,6 @@ export function searchCategories(query: string): CategoryMatch[] {
           category.tagline,
           category.code,
           ...category.applications,
-          ...category.specs.map((spec) => `${spec.label} ${spec.value}`),
         ].join(" ")
       );
       return queryTokens.every((t) => tokenHit(t, categoryTokens));
@@ -124,8 +123,8 @@ export function searchProducts(query: string): ProductMatch[] {
   }
 
   // 3. Product text: every query token must appear somewhere in the product.
-  // Category names count as product text, so "stonecleat" surfaces the
-  // patterns of the Stonecleat Pro™ range.
+  // Category names count as product text, so "incline" surfaces the
+  // patterns of the Incline range.
   for (const product of products) {
     const productCategories = product.categories
       .map((slug) => getCategory(slug))

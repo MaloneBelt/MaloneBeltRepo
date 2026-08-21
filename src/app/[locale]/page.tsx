@@ -26,7 +26,7 @@ export default async function HomePage({
 
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-petrol-900">
+      <section className="relative isolate overflow-hidden bg-navy-900">
         <div className="absolute inset-y-0 right-0 w-full lg:w-[55%]">
           {/* Static frame paints first and stays for prefers-reduced-motion;
              the looping belt video (same scene, first frame = poster) fades
@@ -53,11 +53,11 @@ export default async function HomePage({
           </video>
           <div
             aria-hidden="true"
-            className="absolute inset-0 hidden bg-linear-to-r from-petrol-900 from-8% via-petrol-900/35 via-45% to-transparent lg:block"
+            className="absolute inset-0 hidden bg-linear-to-r from-navy-900 from-8% via-navy-900/35 via-45% to-transparent lg:block"
           />
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-linear-to-r from-petrol-900 via-petrol-900/60 to-petrol-900/30 lg:hidden"
+            className="absolute inset-0 bg-linear-to-r from-navy-900 via-navy-900/60 to-navy-900/30 lg:hidden"
           />
         </div>
 
@@ -65,15 +65,15 @@ export default async function HomePage({
           <div className="max-w-xl lg:max-w-2xl">
             <Badge
               variant="brand"
-              className="border-white/15 bg-white/10 text-petrol-100"
+              className="border-white/15 bg-white/10 text-navy-100"
             >
               {dict.home.heroBadge}
             </Badge>
             <h1 className="mt-5 font-display text-h1 leading-[1.02] font-black tracking-tight text-white">
               {dict.home.heroTitle}{" "}
-              <span className="text-marigold">{dict.home.heroTitleAccent}</span>
+              <span className="text-orange">{dict.home.heroTitleAccent}</span>
             </h1>
-            <p className="mt-4 max-w-lg text-lead text-petrol-100">
+            <p className="mt-4 max-w-lg text-lead text-navy-100">
               {dict.home.heroLead}
             </p>
             <BeltMatch locale={locale} className="mt-7" />
@@ -101,11 +101,11 @@ export default async function HomePage({
                 className="rounded-lg border border-line bg-surface p-6 shadow-xs"
               >
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-caption text-petrol-600">
+                  <span className="font-mono text-caption text-navy-600">
                     {dict.home.stepLabel} 0{index + 1}
                   </span>
                   <Icon
-                    className="size-6 text-petrol-500"
+                    className="size-6 text-navy-500"
                     strokeWidth={2}
                     aria-hidden="true"
                   />
@@ -136,7 +136,7 @@ export default async function HomePage({
       {/* Choose your format — dark band (client-assigned). Products are
           reached via BeltMatch or the navbar only: no product section on the
           landing page (client direction) */}
-      <section className="border-y border-petrol-800 bg-linear-135 from-petrol-800 to-petrol-900">
+      <section className="border-y border-navy-800 bg-linear-135 from-navy-800 to-navy-900">
         <div className="container-shell py-16 lg:py-20">
           <SectionHeading
             tone="inverse"
@@ -152,7 +152,7 @@ export default async function HomePage({
                 key={f.id}
                 className="rounded-lg border border-line bg-surface p-5 shadow-xs"
               >
-                <div className="relative flex h-32 items-center justify-center overflow-hidden rounded-md bg-radial-[120%_140%_at_20%_0%] from-petrol-100 to-petrol-50">
+                <div className="relative flex h-32 items-center justify-center overflow-hidden rounded-md bg-radial-[120%_140%_at_20%_0%] from-navy-100 to-navy-50">
                   <Image
                     src={f.image.src}
                     alt={f.image.alt}
@@ -187,12 +187,12 @@ export default async function HomePage({
             {dict.home.stats.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-lg border border-petrol-800 bg-linear-135 from-petrol-800 to-petrol-900 p-5"
+                className="rounded-lg border border-navy-800 bg-linear-135 from-navy-800 to-navy-900 p-5"
               >
                 <div className="font-mono text-h3 font-semibold text-white">
                   {stat.value}
                 </div>
-                <div className="mt-1 text-[13px] font-semibold text-petrol-200">
+                <div className="mt-1 text-[13px] font-semibold text-navy-200">
                   {stat.label}
                 </div>
               </div>

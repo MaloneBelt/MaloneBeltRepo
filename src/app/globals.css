@@ -12,29 +12,23 @@
   --font-data: var(--font-plex-mono), ui-monospace, "SF Mono", Menlo, monospace;
 }
 
-/* Client direction (July 2026): no warm-bone beige. The page canvas is white
-   and section differentiation comes from petrol (petrol-50 bands on light
-   pages, petrol-800/900 for high-impact bands). Repointed here — token files
-   stay vendored verbatim. */
-:root {
-  --canvas: var(--surface);
-  --surface-page: var(--surface);
-}
-
 @theme inline {
   /* ---- Brand palette (values live only in tokens/colors.css) ---- */
-  --color-petrol-50: var(--petrol-50);
-  --color-petrol-100: var(--petrol-100);
-  --color-petrol-200: var(--petrol-200);
-  --color-petrol-300: var(--petrol-300);
-  --color-petrol-400: var(--petrol-400);
-  --color-petrol-500: var(--petrol-500);
-  --color-petrol-600: var(--petrol-600);
-  --color-petrol-700: var(--petrol-700);
-  --color-petrol-800: var(--petrol-800);
-  --color-petrol-900: var(--petrol-900);
-  --color-marigold: var(--marigold);
-  --color-marigold-600: var(--marigold-600);
+  --color-navy-50: var(--navy-50);
+  --color-navy-100: var(--navy-100);
+  --color-navy-200: var(--navy-200);
+  --color-navy-300: var(--navy-300);
+  --color-navy-400: var(--navy-400);
+  --color-navy-500: var(--navy-500);
+  --color-navy-600: var(--navy-600);
+  --color-navy-700: var(--navy-700);
+  --color-navy-800: var(--navy-800);
+  --color-navy-900: var(--navy-900);
+  /* Drop Tailwind's default orange-* scale so the only orange available is
+     the brand one — off-brand oranges must not compile. */
+  --color-orange-*: initial;
+  --color-orange: var(--orange);
+  --color-orange-600: var(--orange-600);
   --color-stock: var(--green);
   --color-stock-tint: var(--green-tint);
   --color-stock-line: var(--green-line);
@@ -60,19 +54,19 @@
   --color-card-foreground: var(--ink-2);
   --color-popover: var(--surface);
   --color-popover-foreground: var(--ink-2);
-  --color-primary: var(--marigold);
-  --color-primary-foreground: var(--ink-2); /* ink on marigold, NEVER white */
-  --color-secondary: var(--petrol-50);
-  --color-secondary-foreground: var(--petrol-700);
-  --color-muted: var(--petrol-50);
+  --color-primary: var(--orange);
+  --color-primary-foreground: var(--ink-2); /* ink on orange, NEVER white */
+  --color-secondary: var(--navy-50);
+  --color-secondary-foreground: var(--navy-700);
+  --color-muted: var(--navy-50);
   --color-muted-foreground: var(--muted);
-  --color-accent: var(--petrol-100);
-  --color-accent-foreground: var(--petrol-800);
+  --color-accent: var(--navy-100);
+  --color-accent-foreground: var(--navy-800);
   --color-destructive: var(--red);
   --color-destructive-foreground: #ffffff;
   --color-border: var(--line);
   --color-input: var(--line);
-  --color-ring: var(--petrol-500);
+  --color-ring: var(--navy-500);
 
   /* ---- Typography ---- */
   --font-display: var(--font-display);
@@ -96,7 +90,7 @@
   --radius-2xl: 22px;
   --radius-track: 999px;
 
-  /* ---- Shadows (petrol-tinted, from tokens/spacing.css) ---- */
+  /* ---- Shadows (navy-tinted, from tokens/spacing.css) ---- */
   --shadow-xs: var(--shadow-xs);
   --shadow-sm: var(--shadow-sm);
   --shadow-md: var(--shadow-md);
@@ -147,7 +141,7 @@
     outline-offset: 2px;
   }
   ::selection {
-    background: var(--petrol-100);
+    background: var(--navy-100);
   }
 }
 

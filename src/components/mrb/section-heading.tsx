@@ -13,7 +13,7 @@ export function SectionHeading({
   title: string;
   lead?: string;
   align?: "left" | "center";
-  /* "inverse" = light text for dark (petrol-800/900) section bands */
+  /* "inverse" = light text for dark (navy-800/900) section bands */
   tone?: "default" | "inverse";
   className?: string;
 }) {
@@ -31,7 +31,7 @@ export function SectionHeading({
         <Badge
           variant="brand"
           className={cn(
-            inverse && "border-white/15 bg-white/10 text-petrol-100"
+            inverse && "border-white/15 bg-white/10 text-navy-100"
           )}
         >
           {eyebrow}
@@ -49,7 +49,7 @@ export function SectionHeading({
         <p
           className={cn(
             "mt-3 text-lead",
-            inverse ? "text-petrol-200" : "text-body-muted"
+            inverse ? "text-navy-200" : "text-body-muted"
           )}
         >
           {lead}

@@ -15,10 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return [
       { url: base, priority: 1 },
       { url: `${base}/products`, priority: 0.9 },
-      ...categories.map((category) => ({
-        url: `${base}/products/${category.slug}`,
-        priority: 0.85,
-      })),
+      ...categories
+        .filter((category) => !category.href)
+        .map((category) => ({
+          url: `${base}/products/${category.slug}`,
+          priority: 0.85,
+        })),
       ...products.map((product) => ({
         url: `${base}/products/${product.slug}`,
         priority: 0.8,

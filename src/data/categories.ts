@@ -1,57 +1,51 @@
 import type { Category } from "@/types/product";
 
-/* Product categories — the top level of the catalog. Sourced from the Giant
-   Handbook (core ranges) and the Cleatpro X™ brochure (application-focused
-   cleated ranges). Order here drives the order of every category listing. */
+/* Product categories — the top level of the catalog (restructured at the
+   client meeting, Aug 2026): Standard multi-ply belts, Heavy-Duty &
+   Specialized constructions, the Incline cleated range, and a link-only
+   Custom / Special tile that routes straight to the contact page. Order
+   here drives the order of every category listing. */
 
 export const categories: Category[] = [
   {
-    slug: "conveyor-belts",
-    code: "MB-CB",
-    name: "Conveyor Belts",
-    subtitle: "The Core Range",
+    slug: "standard",
+    code: "MB-ST",
+    name: "Standard",
+    subtitle: "Multi-Ply Conveyor Belts",
     family: "Core range",
-    tagline: "Your machine's exact spec, ready to ship.",
+    tagline: "The stocked EP workhorse — pick your ply.",
     description: [
-      "The core Malone Road Belt range: EP multi-ply conveyor belts manufactured to DIN 22102 and supplied in the format that matches the way you work — endless and ready to fit, cut length, or ZIP CLIP® mechanically fastened. Every belt is cross-referenced to your machine or OEM part number.",
-      "Polyester-polyamide (EP) carcasses deliver high strength with negligible elongation and excellent troughability, while hot-molded cleats, siderails and chevron profiles turn any base belt into a custom conveying solution.",
+      "The standard Malone Road Belt range: EP multi-ply conveyor belts manufactured to DIN 22102 and held in stock as 2, 3 and 4 ply constructions. Polyester warp and polyamide weft give the carcass high tensile strength with negligible elongation and excellent troughability.",
+      "Match the ply count to your machine's tension rating and pulley diameters, and take the belt endless, cut-length, stripped or ZIP CLIP® prepared. Every belt is cross-referenced to your machine or OEM part number.",
     ],
     features: [
       "Manufactured to DIN 22102, routinely tested in-house",
+      "2, 3 and 4 ply EP carcasses matched to your tension rating",
       "Endless, stripped, cut-length or ZIP CLIP® supply formats",
-      "2–5 ply EP carcass matched to your tension rating",
       "Factory hot-vulcanized splices — nearly 2x cold-splice strength",
       "Cross-referenced MB part numbers for fast reordering",
     ],
-    specs: [
-      { label: "Standard", value: "DIN 22102" },
-      { label: "Belt width", value: "300–2000 mm" },
-      { label: "Carcass", value: "EP fabric, 2–5 plies" },
-      { label: "Tensile ratings", value: "228–457 PIW" },
-      { label: "Splices", value: "Hot vulcanized / ZIP CLIP®" },
-      { label: "Temperature range", value: "-30°C to +70°C" },
-    ],
     applications: [
       "Quarrying",
-      "Construction & Demolition",
+      "Crushing",
+      "Screening",
       "Recycling",
-      "Road construction",
-      "Agriculture",
+      "Aggregates",
       "Mining",
     ],
     images: {
       hero: {
-        src: "/products/photos/belt-line.jpg",
-        alt: "Black rubber conveyor belt filling the frame along its conveyor frame",
+        src: "/products/photos/belt-roll-pair.jpg",
+        alt: "Finished conveyor belt rolls wrapped for dispatch in the warehouse",
       },
       gallery: [
         {
-          src: "/products/photos/belt-rolls-yard.jpg",
-          alt: "Stacked conveyor belt rolls in a factory yard",
+          src: "/products/photos/belt-roll-spiral.jpg",
+          alt: "Face of a wound conveyor belt roll showing the ply spiral",
         },
         {
-          src: "/products/photos/stockpile-stacker.jpg",
-          alt: "Inclined stacker conveyor belt rising over aggregate stockpiles",
+          src: "/products/photos/belt-roll-stacked.jpg",
+          alt: "Wrapped conveyor belt rolls stacked in the warehouse",
         },
       ],
     },
@@ -73,13 +67,6 @@ export const categories: Category[] = [
       "Fabric Breaker: extra breaker ply protects the carcass",
       "Heat, cold & frost, flameproof and oil resistant covers",
       "Hot spliced (vulcanized) or ZIP CLIP® prepared",
-    ],
-    specs: [
-      { label: "Constructions", value: "Ironcleat® / Ripstop / Fabric Breaker" },
-      { label: "Service life", value: "Up to 4x standard EP" },
-      { label: "Reinforcement", value: "Binder warp / steel mesh / breaker ply" },
-      { label: "Extreme range", value: "-60°C to +600°C (specialized)" },
-      { label: "Cover options", value: "Heat / cold / flame / oil" },
     ],
     applications: [
       "Crushing",
@@ -107,14 +94,14 @@ export const categories: Category[] = [
     },
   },
   {
-    slug: "stonecleat-pro",
-    code: "MB-SP",
-    name: "Stonecleat Pro™",
+    slug: "incline",
+    code: "MB-IN",
+    name: "Incline",
     subtitle: "Aggregate Cleated Belts",
     family: "Cleatpro X™ cleated range",
     tagline: "Rock and no rollback.",
     description: [
-      "An Cleatpro X™ cleated belt range built for aggregate duty: crushed rock, screened material and everything a quarry throws at it. The cleat profiles are integrally hot-molded into the belt's top cover — not glued or bolted on — so they grip the belt as firmly as the belt grips the load, extending belt life and keeping material moving up steep inclines.",
+      "A Cleatpro X™ cleated belt range built for aggregate duty: crushed rock, screened material and everything a quarry throws at it. The cleat profiles are integrally hot-molded into the belt's top cover — not glued or bolted on — so they grip the belt as firmly as the belt grips the load, extending belt life and keeping material moving up steep inclines.",
       "Pair the cleat pattern with a heavy-duty base belt such as Ironcleat® for cut, impact and wear resistance with excellent troughability. Our team will match cleat profile, height and pitch to your incline angle, material and belt speed.",
     ],
     features: [
@@ -123,13 +110,6 @@ export const categories: Category[] = [
       "Popular 15 mm, 25 mm and 32 mm cleat heights, optional V-joints",
       "Ironcleat®, Fabric Breaker and Ripstop base belt options",
       "Available as full rolls, cut lengths, endless or ZIP CLIP® prepared",
-    ],
-    specs: [
-      { label: "Cleat heights", value: "15 / 25 / 26 / 32 mm" },
-      { label: "Belt width", value: "400–1600 mm" },
-      { label: "Base belt", value: "EP250/2 – EP500/3" },
-      { label: "Profiles", value: "C15 / C25 / C32 / S25 / Y26" },
-      { label: "Cleat bond", value: "Integrally hot-molded" },
     ],
     applications: ["Aggregates", "Quarrying", "Crushing", "Screening", "Stockpiling"],
     images: {
@@ -150,46 +130,24 @@ export const categories: Category[] = [
     },
   },
   {
-    slug: "roadcleat",
-    code: "MB-RD",
-    name: "ROADCLEAT™",
-    subtitle: "Road Construction Belts",
-    family: "Cleatpro X™ cleated range",
-    tagline: "Hit the road running.",
+    slug: "custom-special",
+    code: "MB-CS",
+    name: "Custom / Special",
+    subtitle: "Engineered to Order",
+    family: "Made to order",
+    tagline: "Not in the catalog? We build it to your spec.",
+    href: "/contact",
     description: [
-      "Road construction punishes conveyor belts: high belt speeds, hot abrasive asphalt and constant starts and stops. ROADCLEAT™ belts answer with cleat profiles integrally molded into the top cover, so the profile stays bonded at speeds that tear glued-on cleats loose.",
-      "Fitted to milling machines, pavers and mobile road plant, these belts are specified to go the distance between planned maintenance windows — not to fail in the middle of a pour.",
+      "Special profiles, siderails, unusual widths, exceptional compounds — if it runs on a belt, we can build it. Send us your application and our team comes back with a drawing and a straight quote.",
     ],
-    features: [
-      "Integrally molded cleats stay bonded at high belt speeds",
-      "Handles hot, abrasive milled asphalt day after day",
-      "25 mm and 32 mm cleat heights in C and Y profiles",
-      "Base belts up to EP630/3 and Ironcleat® for high-tension drives",
-      "Available as full rolls, cut lengths, endless or ZIP CLIP® prepared",
-    ],
-    specs: [
-      { label: "Cleat heights", value: "25 / 32 mm" },
-      { label: "Belt width", value: "850–1000 mm" },
-      { label: "Base belt", value: "EP400/3 – EP630/3" },
-      { label: "Profiles", value: "Y32P600 / C25P660" },
-      { label: "Cleat bond", value: "Integrally hot-molded" },
-    ],
-    applications: ["Road milling", "Paving", "Asphalt plants", "Mobile road plant"],
+    features: [],
+    applications: [],
     images: {
       hero: {
-        src: "/products/photos/paver-feed.jpg",
-        alt: "Asphalt paver being fed by a truck during road construction",
+        src: "/products/photos/belt-diamond-profile.jpg",
+        alt: "Diamond-profile rubber belt surface, one of the special patterns made to order",
       },
-      gallery: [
-        {
-          src: "/products/photos/paver-roller.jpg",
-          alt: "Paver and roller laying fresh asphalt",
-        },
-        {
-          src: "/products/photos/milling-machine.jpg",
-          alt: "Cold milling machine on a resurfacing job",
-        },
-      ],
+      gallery: [],
     },
   },
 ];

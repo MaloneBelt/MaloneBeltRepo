@@ -53,8 +53,8 @@ export function SiteHeader({ locale }: { locale: Locale }) {
               key={link.href}
               href={link.href}
               className={cn(
-                "text-sm font-semibold text-body-muted transition-colors hover:text-petrol-700",
-                pathname === link.href && "text-petrol-700"
+                "text-sm font-semibold text-body-muted transition-colors hover:text-navy-700",
+                pathname === link.href && "text-navy-700"
               )}
             >
               {link.label}
@@ -93,7 +93,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-2.5 text-sm font-semibold text-ink-2 hover:bg-petrol-50"
+                className="rounded-md px-3 py-2.5 text-sm font-semibold text-ink-2 hover:bg-navy-50"
               >
                 {link.label}
               </Link>

@@ -11,7 +11,6 @@ export const en = {
   },
   common: {
     skipToContent: "Skip to content",
-    machineDownNow: "Machine down now?",
     machineDownRightNow: "Machine down right now?",
     requestQuote: "Request a quote",
     contactUs: "Contact us",
@@ -47,8 +46,8 @@ export const en = {
   beltMatch: {
     byMachine: "By machine",
     byPart: "By OEM part #",
-    placeholderMachine: "e.g. Wirtgen W 100 Fi — main conveyor",
-    placeholderPart: "e.g. MB-4471-EP or OEM part #",
+    placeholderMachine: "e.g. Powerscreen Chieftain 1400 — main conveyor",
+    placeholderPart: "e.g. MB-8830-IC or OEM part #",
     ariaMachine: "Search by machine",
     ariaPart: "Search by OEM part number",
     searchMode: "Search mode",
@@ -106,7 +105,7 @@ export const en = {
   productsPage: {
     metaTitle: "Products",
     metaDescription:
-      "OEM-spec conveyor belts organized the way you buy them: core conveyor belts, heavy-duty & specialized constructions, and Cleatpro X™ cleated ranges for aggregate and road duty.",
+      "OEM-spec conveyor belts organized the way you buy them: standard multi-ply belts, heavy-duty & specialized constructions, the Cleatpro X™ Incline cleated range — and custom builds to your spec.",
     eyebrow: "Products",
     title: "Belts built to your machine's spec.",
     lead: "Every belt is cross-referenced to your machine or OEM part number and manufactured to DIN 22102. No pricing games — send us the spec and we quote it straight.",
@@ -121,7 +120,7 @@ export const en = {
     categoriesEyebrow: "Categories",
     categoriesTitle: "Browse by range.",
     categoriesLead:
-      "Two core catalog ranges plus two Cleatpro X™ cleated ranges, each built around one application. Open a range for the full story, then step into the belt you need.",
+      "Standard multi-ply belts, heavy-duty constructions and the Incline cleated range — each built around one application. Open a range for the full story, then step into the belt you need. Need something special? That tile takes you straight to us.",
     byCategoryEyebrow: "Products by category",
     byCategoryTitle: "Every belt, in its range.",
     specializedEyebrow: "Specialized belts",
@@ -131,7 +130,6 @@ export const en = {
   },
   categoryPage: {
     allProducts: "All products",
-    rangeSpec: "Range spec",
     applications: "Applications",
     inRangeEyebrow: "In this range",
     inRangeTitleSuffix: "ready to spec.",

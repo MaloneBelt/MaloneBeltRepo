@@ -38,7 +38,7 @@ export default async function AboutPage({
     <>
       {/* Hero + story — merged into one continuous dark zone
           (client-assigned); How we work below is white, CtaBand dark */}
-      <div className="border-b border-petrol-800 bg-linear-135 from-petrol-800 to-petrol-900">
+      <div className="border-b border-navy-800 bg-linear-135 from-navy-800 to-navy-900">
         <section className="container-shell pt-14 lg:pt-20">
           <SectionHeading
             tone="inverse"
@@ -57,7 +57,7 @@ export default async function AboutPage({
             <h2 className="font-display text-h3 font-extrabold text-white">
               {dict.about.storyTitle}
             </h2>
-            <div className="mt-4 space-y-4 text-sm leading-relaxed text-petrol-200">
+            <div className="mt-4 space-y-4 text-sm leading-relaxed text-navy-200">
               {dict.about.storyParagraphs.map((paragraph) => (
                 <p key={paragraph.slice(0, 40)}>{paragraph}</p>
               ))}
@@ -69,7 +69,7 @@ export default async function AboutPage({
                 key={stat.label}
                 className="rounded-lg border border-line bg-surface p-5"
               >
-                <div className="font-mono text-h3 font-semibold text-petrol-600">
+                <div className="font-mono text-h3 font-semibold text-navy-600">
                   {stat.value}
                 </div>
                 <div className="mt-1 text-[13px] font-semibold text-body-muted">
@@ -97,7 +97,7 @@ export default async function AboutPage({
                 className="rounded-lg border border-line bg-surface p-6 shadow-xs"
               >
                 <Icon
-                  className="size-6 text-petrol-500"
+                  className="size-6 text-navy-500"
                   strokeWidth={2}
                   aria-hidden="true"
                 />

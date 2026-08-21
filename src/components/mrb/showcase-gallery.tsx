@@ -25,7 +25,7 @@ export function ShowcaseGallery({
       {/* Back plate: offset, counter-rotated, catches the eye as depth */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 translate-x-3 translate-y-4 rotate-[1.5deg] rounded-2xl bg-petrol-300/15 sm:translate-x-5 sm:translate-y-6"
+        className="absolute inset-0 translate-x-3 translate-y-4 rotate-[1.5deg] rounded-2xl bg-navy-300/15 sm:translate-x-5 sm:translate-y-6"
       />
 
       {/* Main stage — stacked images crossfade on switch */}
@@ -46,18 +46,18 @@ export function ShowcaseGallery({
         ))}
 
         {count > 1 && (
-          <div className="absolute bottom-4 left-4 flex items-center gap-1 rounded-full bg-petrol-900/70 p-1 ring-1 ring-white/15 backdrop-blur-sm">
+          <div className="absolute bottom-4 left-4 flex items-center gap-1 rounded-full bg-navy-900/70 p-1 ring-1 ring-white/15 backdrop-blur-sm">
             <button
               type="button"
               onClick={() => show(index - 1)}
               aria-label="Previous image"
-              className="flex size-8 cursor-pointer items-center justify-center rounded-full text-petrol-100 transition-colors hover:bg-white/10 hover:text-white"
+              className="flex size-8 cursor-pointer items-center justify-center rounded-full text-navy-100 transition-colors hover:bg-white/10 hover:text-white"
             >
               <ChevronLeft className="size-4" strokeWidth={2.5} aria-hidden="true" />
             </button>
             <span
               aria-live="polite"
-              className="font-mono text-xs tabular-nums text-petrol-100"
+              className="font-mono text-xs tabular-nums text-navy-100"
             >
               {index + 1} / {count}
             </span>
@@ -65,7 +65,7 @@ export function ShowcaseGallery({
               type="button"
               onClick={() => show(index + 1)}
               aria-label="Next image"
-              className="flex size-8 cursor-pointer items-center justify-center rounded-full text-petrol-100 transition-colors hover:bg-white/10 hover:text-white"
+              className="flex size-8 cursor-pointer items-center justify-center rounded-full text-navy-100 transition-colors hover:bg-white/10 hover:text-white"
             >
               <ChevronRight className="size-4" strokeWidth={2.5} aria-hidden="true" />
             </button>
@@ -91,7 +91,7 @@ export function ShowcaseGallery({
               className="bg-white object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>
-          <span className="absolute top-2 left-2 rounded-md bg-petrol-900/70 px-2 py-0.5 font-mono text-[10px] tracking-[1px] text-petrol-100 uppercase ring-1 ring-white/15 backdrop-blur-sm">
+          <span className="absolute top-2 left-2 rounded-md bg-navy-900/70 px-2 py-0.5 font-mono text-[10px] tracking-[1px] text-navy-100 uppercase ring-1 ring-white/15 backdrop-blur-sm">
             Next
           </span>
         </button>

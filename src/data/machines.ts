@@ -26,12 +26,11 @@ export const machines: Machine[] = [
     aliases: ["chieftain"],
     fits: [
       {
-        productSlug: "ep-multi-ply",
+        productSlug: "3-ply",
         position: "Main conveyor",
         oemPartNumber: "PS-1400-2124",
       },
-      { productSlug: "endless-belt", position: "Main conveyor" },
-      { productSlug: "zip-clip", position: "Side conveyor" },
+      { productSlug: "c15p385", position: "Side conveyor" },
     ],
   },
   {
@@ -45,35 +44,7 @@ export const machines: Machine[] = [
         position: "Main conveyor",
         oemPartNumber: "PS-1800-3310",
       },
-      { productSlug: "zip-clip", position: "Side conveyor" },
-    ],
-  },
-  {
-    slug: "cat-ap555",
-    brand: "Cat",
-    model: "AP555",
-    aliases: ["caterpillar", "ap555f"],
-    fits: [
-      {
-        productSlug: "cleated-chevron",
-        position: "Feeder conveyor",
-        oemPartNumber: "CAT-460-9055",
-      },
-      { productSlug: "endless-belt", position: "Feeder conveyor" },
-    ],
-  },
-  {
-    slug: "wirtgen-w-100-fi",
-    brand: "Wirtgen",
-    model: "W 100 Fi",
-    aliases: ["w100", "w100fi"],
-    fits: [
-      {
-        productSlug: "ripstop",
-        position: "Main conveyor",
-        oemPartNumber: "WG-2308811",
-      },
-      { productSlug: "cleated-chevron", position: "Discharge conveyor" },
+      { productSlug: "2-ply", position: "Side conveyor" },
     ],
   },
   {
@@ -87,7 +58,7 @@ export const machines: Machine[] = [
         position: "Main conveyor",
         oemPartNumber: "MM-N11852341",
       },
-      { productSlug: "endless-belt", position: "Main conveyor" },
+      { productSlug: "4-ply", position: "Main conveyor" },
     ],
   },
   {
@@ -97,11 +68,11 @@ export const machines: Machine[] = [
     aliases: ["qj341"],
     fits: [
       {
-        productSlug: "ep-multi-ply",
+        productSlug: "4-ply",
         position: "Main conveyor",
         oemPartNumber: "SV-BG00534421",
       },
-      { productSlug: "zip-clip", position: "Magnet conveyor" },
+      { productSlug: "2-ply", position: "Magnet conveyor" },
     ],
   },
   {
@@ -111,11 +82,11 @@ export const machines: Machine[] = [
     aliases: ["finlay", "883"],
     fits: [
       {
-        productSlug: "ripstop",
+        productSlug: "3-ply",
         position: "Main conveyor",
         oemPartNumber: "TF-883-1102",
       },
-      { productSlug: "cleated-chevron", position: "Fines conveyor" },
+      { productSlug: "c15p540", position: "Fines conveyor" },
     ],
   },
   {
@@ -125,22 +96,21 @@ export const machines: Machine[] = [
     aliases: ["r105"],
     fits: [
       {
-        productSlug: "endless-belt",
+        productSlug: "3-ply",
         position: "Main conveyor",
         oemPartNumber: "MC-R105-0217",
       },
-      { productSlug: "zip-clip", position: "Side conveyor" },
+      { productSlug: "c15p385", position: "Side conveyor" },
     ],
   },
 ];
 
 /* MB catalog part numbers → product slug ("By OEM part #" also accepts our
-   own codes, e.g. the MB-4471-EP shown on the home hero card). */
+   own codes, e.g. the MB-8830-IC shown in the BeltMatch hint row). */
 export const mbPartNumbers: Record<string, string> = {
-  "MB-4471-EP": "ep-multi-ply",
-  "MB-6120-EB": "endless-belt",
-  "MB-2210-ZC": "zip-clip",
+  "MB-4402-2P": "2-ply",
+  "MB-4403-3P": "3-ply",
+  "MB-4404-4P": "4-ply",
   "MB-8830-IC": "ironcleat",
-  "MB-1050-RS": "ripstop",
-  "MB-3300-CC": "cleated-chevron",
+  "MB-9385-CL": "c15p385",
 };

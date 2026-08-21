@@ -40,7 +40,6 @@ export function localizeCategory(category: Category, locale: Locale): Category {
     ...(o?.tagline && { tagline: o.tagline }),
     ...(o?.description && { description: o.description }),
     ...(o?.features && { features: o.features }),
-    specs: localizeSpecs(category.specs, locale),
     applications: localizeApplications(category.applications, locale),
   };
 }

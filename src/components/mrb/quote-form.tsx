@@ -252,7 +252,7 @@ export function QuoteForm({ locale }: { locale: Locale }) {
               <FormLabel>{dict.quoteForm.product}</FormLabel>
               <Select onValueChange={field.onChange} value={field.value ?? ""}>
                 <FormControl>
-                  <SelectTrigger className="h-12 w-full rounded-track border-[1.5px] border-petrol-200 bg-surface px-[18px]">
+                  <SelectTrigger className="h-12 w-full rounded-track border-[1.5px] border-navy-200 bg-surface px-[18px]">
                     <SelectValue
                       placeholder={dict.quoteForm.productPlaceholder}
                     />

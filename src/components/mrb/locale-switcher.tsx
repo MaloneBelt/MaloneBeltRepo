@@ -49,7 +49,7 @@ export function LocaleSwitcher({
         )}
       >
         <Languages
-          className="size-4 text-petrol-600"
+          className="size-4 text-navy-600"
           strokeWidth={2.2}
           aria-hidden="true"
         />

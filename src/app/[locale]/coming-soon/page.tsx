@@ -35,12 +35,12 @@ export default async function ComingSoonPage({
   return (
     /* Single full-bleed splash (no footer on this route): stockpile conveyor
        photo (Unsplash photo-1651673206446, free license, 2400px) in grayscale
-       under an even petrol wash. Client direction: pill + heading + the full
-       logo (with contact details, on a white plate so the dark petrol artwork
+       under an even navy wash. Client direction: pill + heading + the full
+       logo (with contact details, on a white plate so the dark navy artwork
        stays legible), left-aligned, no CTA. */
     <section
       className={cn(
-        "relative isolate flex items-center overflow-hidden bg-petrol-900",
+        "relative isolate flex items-center overflow-hidden bg-navy-900",
         /* Launch mode hides the navbar, so the splash takes the full
            viewport; otherwise it fills the space below the nav. */
         launchMode
@@ -56,16 +56,16 @@ export default async function ComingSoonPage({
         sizes="100vw"
         className="object-cover object-[65%_35%] grayscale"
       />
-      <div aria-hidden="true" className="absolute inset-0 bg-petrol-900/70" />
+      <div aria-hidden="true" className="absolute inset-0 bg-navy-900/70" />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-linear-to-t from-petrol-900 from-4% to-transparent to-45%"
+        className="absolute inset-0 bg-linear-to-t from-navy-900 from-4% to-transparent to-45%"
       />
 
       <div className="container-shell relative flex flex-col items-start py-16 lg:py-20">
         <Badge
           variant="brand"
-          className="border-white/15 bg-white/10 text-petrol-100"
+          className="border-white/15 bg-white/10 text-navy-100"
         >
           {dict.comingSoon.badge}
         </Badge>
