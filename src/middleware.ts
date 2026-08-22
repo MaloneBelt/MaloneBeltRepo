@@ -61,7 +61,7 @@ async function guardStaging(request: NextRequest): Promise<NextResponse | null> 
   });
 }
 
-/* Locale routing: every page lives under /en/... or /pt/... — requests
+/* Locale routing: every page lives under a locale prefix (/en, /pt, /es) — requests
    without a locale prefix (including legacy pre-i18n URLs) are redirected,
    honoring the NEXT_LOCALE cookie set by the header's language switcher. */
 export async function middleware(request: NextRequest) {

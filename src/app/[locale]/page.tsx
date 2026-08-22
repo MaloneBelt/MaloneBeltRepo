@@ -5,7 +5,6 @@ import { Badge } from "@/components/ui/badge";
 import { BeltMatch } from "@/components/mrb/belt-match";
 import { ConveyorStrip } from "@/components/mrb/conveyor-strip";
 import { CtaBand } from "@/components/mrb/cta-band";
-import { OemCarousel } from "@/components/mrb/oem-carousel";
 import { SectionHeading } from "@/components/mrb/section-heading";
 import { TrustRow } from "@/components/mrb/trust-row";
 import { beltFormats } from "@/data/products";
@@ -120,17 +119,6 @@ export default async function HomePage({
             );
           })}
         </div>
-      </section>
-
-      {/* Allied OEMs — white section; the marquee itself rides a dark
-          info rail, keeping the dark-band alternation intact */}
-      <section className="container-shell pb-16 lg:pb-20">
-        <SectionHeading
-          eyebrow={dict.home.alliedEyebrow}
-          title={dict.home.alliedTitle}
-          lead={dict.home.alliedLead}
-        />
-        <OemCarousel className="mt-10" />
       </section>
 
       {/* Choose your format — dark band (client-assigned). Products are

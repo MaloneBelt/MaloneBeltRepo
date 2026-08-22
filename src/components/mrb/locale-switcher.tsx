@@ -3,6 +3,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import { Languages } from "lucide-react";
 
+import { LocaleFlag } from "@/components/mrb/locale-flag";
 import {
   Select,
   SelectContent,
@@ -15,11 +16,21 @@ import { cn } from "@/lib/utils";
 const LABELS: Record<Locale, string> = {
   en: "EN",
   pt: "PT",
+  es: "ES",
 };
+
+const NAMES: Record<Locale, string> = {
+  en: "English",
+  pt: "Português",
+  es: "Español",
+};
+
+const LOCALE_PREFIX = new RegExp(`^\\/(${locales.join("|")})(?=\\/|$)`);
 
 /* Navbar language dropdown (client direction, Aug 2026): swaps the locale
    prefix on the current path and remembers the choice in NEXT_LOCALE so the
-   middleware routes bare URLs to the visitor's language. */
+   middleware routes bare URLs to the visitor's language. Each option pairs
+   the language name with its flag (US / Portugal / Spain). */
 export function LocaleSwitcher({
   locale,
   label,
@@ -35,7 +46,7 @@ export function LocaleSwitcher({
   function switchTo(next: string) {
     if (next === locale) return;
     document.cookie = `NEXT_LOCALE=${next}; path=/; max-age=31536000; samesite=lax`;
-    const rest = pathname.replace(/^\/(en|pt)(?=\/|$)/, "");
+    const rest = pathname.replace(LOCALE_PREFIX, "");
     router.push(`/${next}${rest}`);
   }
 
@@ -58,7 +69,10 @@ export function LocaleSwitcher({
       <SelectContent align="end">
         {locales.map((value) => (
           <SelectItem key={value} value={value}>
-            {value === "en" ? "English" : "Português"}
+            <span className="flex items-center gap-2">
+              <LocaleFlag locale={value} />
+              {NAMES[value]}
+            </span>
           </SelectItem>
         ))}
       </SelectContent>

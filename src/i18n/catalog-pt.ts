@@ -4,7 +4,7 @@
    untranslated; spec LABELS and application chips translate via the maps
    at the bottom. */
 
-interface CategoryOverlay {
+export interface CategoryOverlay {
   name?: string;
   subtitle?: string;
   family?: string;
@@ -13,7 +13,7 @@ interface CategoryOverlay {
   features?: string[];
 }
 
-interface ProductOverlay {
+export interface ProductOverlay {
   name?: string;
   tagline?: string;
   description?: string[];

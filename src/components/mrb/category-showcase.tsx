@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, Check } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
-import { ProductCard } from "@/components/mrb/product-card";
+import { RangeProductGrid } from "@/components/mrb/range-product-grid";
 import { SectionHeading } from "@/components/mrb/section-heading";
 import { ShowcaseGallery } from "@/components/mrb/showcase-gallery";
 import { site } from "@/data/site";
@@ -125,22 +125,15 @@ export function CategoryShowcase({
                   : dict.common.belts
               }, ${dict.categoryPage.inRangeTitleSuffix}`}
             />
-            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {localizedProducts.map((product) => (
-                <ProductCard
-                  key={product.slug}
-                  headerLabel={product.sku}
-                  partNumber={product.sku}
-                  title={product.name}
-                  image={product.images.hero}
-                  specs={product.specs.slice(0, 3)}
-                  availability={product.availability}
-                  ctaLabel={dict.common.viewProduct}
-                  ctaHref={l(locale, `/products/${product.slug}`)}
-                  ctaVariant="secondary"
-                />
-              ))}
-            </div>
+            <RangeProductGrid
+              products={localizedProducts}
+              locale={locale}
+              labels={{
+                legend: dict.categoryPage.filterLegend,
+                all: dict.categoryPage.filterAll,
+                viewProduct: dict.common.viewProduct,
+              }}
+            />
           </div>
         )}
 

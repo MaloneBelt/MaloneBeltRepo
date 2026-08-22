@@ -84,10 +84,6 @@ export const en = {
         body: "Stocked belts leave the same day. ZIP CLIP® belts fit in as little as one hour, with no specialist tools.",
       },
     ],
-    alliedEyebrow: "Allied manufacturers",
-    alliedTitle: "Belts for the machines you run.",
-    alliedLead:
-      "Cross-referenced belt specs for the leading crushing, screening and recycling OEMs — from Metso and Sandvik to the full Terex family.",
     formatsEyebrow: "Choose your format",
     formatsTitle: "One belt, four ways to buy it.",
     formatsLead:
@@ -134,6 +130,8 @@ export const en = {
     inRangeEyebrow: "In this range",
     inRangeTitleSuffix: "ready to spec.",
     by: "by",
+    filterLegend: "Filter by pattern",
+    filterAll: "All patterns",
   },
   productPage: {
     aboutThisBelt: "About this belt",

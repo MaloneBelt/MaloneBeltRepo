@@ -29,7 +29,7 @@ export function ProductCard({
   title: string;
   headerLabel: string;
   liveLabel?: string;
-  image?: { src: string; alt: string };
+  image?: { src: string; alt: string; fit?: "cover" | "contain" };
   specs?: { label: string; value: string }[];
   availability?: { status: "in-stock" | "made-to-order"; label: string };
   ctaLabel?: string;
@@ -57,14 +57,19 @@ export function ProductCard({
         )}
       </div>
 
-      <div className="relative flex h-44 items-center justify-center overflow-hidden bg-radial-[120%_140%_at_20%_0%] from-navy-100 to-navy-50">
+      {/* 16:9 visual panel sized to the client renders (client direction,
+         Aug 2026): photos/renders bleed edge-to-edge; transparent diagrams
+         (fit: "contain") stay whole on the gradient. */}
+      <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-radial-[120%_140%_at_20%_0%] from-navy-100 to-navy-50">
         {image ? (
           <Image
             src={image.src}
             alt={image.alt}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1180px) 50vw, 370px"
-            className="object-contain p-4"
+            className={
+              image.fit === "contain" ? "object-contain p-3" : "object-cover"
+            }
           />
         ) : (
           <Image

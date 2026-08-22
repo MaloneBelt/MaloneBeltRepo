@@ -1,6 +1,10 @@
 export interface ProductImage {
   src: string;
   alt: string;
+  /* How the image behaves in the product card's 16:9 panel: "cover"
+     (default) for photos/renders that can bleed to the edges; "contain"
+     for transparent diagrams that must stay whole. */
+  fit?: "cover" | "contain";
 }
 
 export interface ProductSpec {

@@ -86,10 +86,6 @@ export const pt: Dictionary = {
         body: "Correias em estoque saem no mesmo dia. As correias ZIP CLIP® são instaladas em cerca de uma hora, sem ferramentas especiais.",
       },
     ],
-    alliedEyebrow: "Fabricantes parceiros",
-    alliedTitle: "Correias para as máquinas que você opera.",
-    alliedLead:
-      "Especificações com referência cruzada para os principais fabricantes de britagem, peneiramento e reciclagem — da Metso e Sandvik à família Terex completa.",
     formatsEyebrow: "Escolha o formato",
     formatsTitle: "Uma correia, quatro formas de comprar.",
     formatsLead:
@@ -136,6 +132,8 @@ export const pt: Dictionary = {
     inRangeEyebrow: "Nesta linha",
     inRangeTitleSuffix: "prontas para especificar.",
     by: "por",
+    filterLegend: "Filtrar por padrão",
+    filterAll: "Todos os padrões",
   },
   productPage: {
     aboutThisBelt: "Sobre esta correia",

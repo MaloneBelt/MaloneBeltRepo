@@ -5,7 +5,7 @@ import { HideOnRoute } from "@/components/mrb/hide-on-route";
 import { SiteFooter } from "@/components/mrb/site-footer";
 import { SiteHeader } from "@/components/mrb/site-header";
 import { launchMode } from "@/data/launch";
-import { isLocale, locales } from "@/i18n/config";
+import { isLocale, locales, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n";
 
 import "../globals.css";
@@ -20,6 +20,12 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
+
+const HTML_LANG: Record<Locale, string> = {
+  en: "en",
+  pt: "pt-BR",
+  es: "es",
+};
 
 const plexMono = IBM_Plex_Mono({
   variable: "--font-plex-mono",
@@ -60,7 +66,7 @@ export default async function RootLayout({
 
   return (
     <html
-      lang={locale === "pt" ? "pt-BR" : "en"}
+      lang={HTML_LANG[locale]}
       className={`${archivo.variable} ${inter.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
@@ -76,7 +82,7 @@ export default async function RootLayout({
           {children}
         </main>
         {!launchMode && (
-          <HideOnRoute routes={["/en/coming-soon", "/pt/coming-soon"]}>
+          <HideOnRoute routes={locales.map((loc) => `/${loc}/coming-soon`)}>
             <SiteFooter locale={locale} />
           </HideOnRoute>
         )}

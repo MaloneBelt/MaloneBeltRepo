@@ -170,8 +170,9 @@ export const products: Product[] = [
     standards: ["DIN 22102", "ISO 9001"],
     images: {
       hero: {
-        src: "/products/constructions/ironcleat.png",
-        alt: "Layer diagram of the Ironcleat construction with binder warp",
+        src: "/products/constructions/ironcleat-weave.png",
+        alt: "Cutaway illustration of the Ironcleat weave: two straight-warp fabric plies with an additional binder warp",
+        fit: "contain",
       },
       gallery: [
         {
@@ -216,17 +217,13 @@ export const products: Product[] = [
     standards: ["DIN 22102", "ISO 9001"],
     images: {
       hero: {
-        src: "/products/photos/chevron-cleats-closeup.png",
-        alt: "Molded chevron cleats on the top cover of a rubber conveyor belt",
+        src: "/products/photos/c15p385-render.png",
+        alt: "3D render of the C15P385 chevron pattern molded on a conveyor belt",
       },
       gallery: [
         {
-          src: "/products/patterns/c15.png",
-          alt: "Plan drawing of the C15 chevron pattern with pitch callout",
-        },
-        {
-          src: "/products/photos/quarry-hopper-belt.jpg",
-          alt: "Hopper feeding crushed stone onto a quarry conveyor belt",
+          src: "/products/patterns/c15p385-tech.png",
+          alt: "Technical plan drawing of the C15P385 chevron pattern with dimension callouts",
         },
       ],
     },
@@ -264,11 +261,12 @@ export const products: Product[] = [
       hero: {
         src: "/products/patterns/c15v.png",
         alt: "Plan drawing of the C15 chevron pattern with V-joint",
+        fit: "contain",
       },
       gallery: [
         {
-          src: "/products/photos/quarry-hopper-belt.jpg",
-          alt: "Hopper feeding crushed stone onto a quarry conveyor belt",
+          src: "/products/patterns/c15v450-tech.png",
+          alt: "Technical plan drawing of the C15V450 chevron pattern with dimension callouts",
         },
       ],
     },
@@ -306,11 +304,12 @@ export const products: Product[] = [
       hero: {
         src: "/products/patterns/c32.png",
         alt: "Plan drawing of the C32 heavy chevron pattern",
+        fit: "contain",
       },
       gallery: [
         {
-          src: "/products/photos/quarry-hopper-belt.jpg",
-          alt: "Hopper feeding crushed stone onto a quarry conveyor belt",
+          src: "/products/patterns/c32p460-tech.png",
+          alt: "Technical plan drawing of the C32P460 chevron pattern with dimension callouts",
         },
       ],
     },
@@ -348,11 +347,12 @@ export const products: Product[] = [
       hero: {
         src: "/products/patterns/s25.png",
         alt: "Plan drawing of the S25 profile cleat pattern",
+        fit: "contain",
       },
       gallery: [
         {
-          src: "/products/photos/quarry-hopper-belt.jpg",
-          alt: "Hopper feeding crushed stone onto a quarry conveyor belt",
+          src: "/products/patterns/s25p750-tech.png",
+          alt: "Technical plan drawing of the S25P750 cleat pattern with dimension callouts",
         },
       ],
     },
@@ -388,17 +388,13 @@ export const products: Product[] = [
     standards: ["DIN 22102", "ISO 9001"],
     images: {
       hero: {
-        src: "/products/photos/chevron-belt-stone-line.jpg",
-        alt: "Chevron-cleated conveyor belt carrying stone up an incline",
+        src: "/products/photos/c25p1000-render.png",
+        alt: "3D render of the C25P1000 chevron pattern molded on a conveyor belt",
       },
       gallery: [
         {
-          src: "/products/patterns/c25.png",
-          alt: "Plan drawing of a 25 mm chevron cleat pattern",
-        },
-        {
-          src: "/products/photos/quarry-hopper-belt.jpg",
-          alt: "Hopper feeding crushed stone onto a quarry conveyor belt",
+          src: "/products/patterns/c25p1000-tech.png",
+          alt: "Technical plan drawing of the C25P1000 chevron pattern with dimension callouts",
         },
       ],
     },
@@ -439,12 +435,8 @@ export const products: Product[] = [
       },
       gallery: [
         {
-          src: "/products/patterns/c15.png",
-          alt: "Plan drawing of the C15 chevron pattern with pitch callout",
-        },
-        {
-          src: "/products/photos/quarry-hopper-belt.jpg",
-          alt: "Hopper feeding crushed stone onto a quarry conveyor belt",
+          src: "/products/patterns/c15p540-tech.png",
+          alt: "Technical plan drawing of the C15P540 chevron pattern with dimension callouts",
         },
       ],
     },
@@ -482,11 +474,12 @@ export const products: Product[] = [
       hero: {
         src: "/products/patterns/y26.png",
         alt: "Plan drawing of the Y26 profile pattern with V-joint",
+        fit: "contain",
       },
       gallery: [
         {
-          src: "/products/photos/quarry-hopper-belt.jpg",
-          alt: "Hopper feeding crushed stone onto a quarry conveyor belt",
+          src: "/products/patterns/y26v400-tech.png",
+          alt: "Technical plan drawing of the Y26V400 cleat pattern with dimension callouts",
         },
       ],
     },
@@ -527,12 +520,8 @@ export const products: Product[] = [
       },
       gallery: [
         {
-          src: "/products/patterns/c15.png",
-          alt: "Plan drawing of the C15 chevron pattern with pitch callout",
-        },
-        {
-          src: "/products/photos/quarry-hopper-belt.jpg",
-          alt: "Hopper feeding crushed stone onto a quarry conveyor belt",
+          src: "/products/patterns/c15p800-tech.png",
+          alt: "Technical plan drawing of the C15P800 chevron pattern with dimension callouts",
         },
       ],
     },
@@ -570,7 +559,11 @@ export const products: Product[] = [
       hero: {
         src: "/products/patterns/y26.png",
         alt: "Plan drawing of the Y26 profile pattern with V-joint",
+        fit: "contain",
       },
+      /* No pattern-specific technical drawing exists for Y26V330 in the
+         client brochures (US & EU) — the quarry photo stays as the second
+         image until the client supplies one. */
       gallery: [
         {
           src: "/products/photos/quarry-hopper-belt.jpg",
@@ -615,12 +608,8 @@ export const products: Product[] = [
       },
       gallery: [
         {
-          src: "/products/patterns/c15.png",
-          alt: "Plan drawing of the C15 chevron pattern with pitch callout",
-        },
-        {
-          src: "/products/photos/quarry-hopper-belt.jpg",
-          alt: "Hopper feeding crushed stone onto a quarry conveyor belt",
+          src: "/products/patterns/c15p500-tech.png",
+          alt: "Technical plan drawing of the C15P500 chevron pattern with dimension callouts",
         },
       ],
     },
