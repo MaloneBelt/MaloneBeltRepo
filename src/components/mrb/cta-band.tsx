@@ -6,11 +6,12 @@ import { Button } from "@/components/ui/button";
 import { l, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n";
 
-/* Closing band (home): the planned-purchase CTA on the left, the looping
-   belt video — the same scene as the hero — on the right (client direction,
-   Aug 2026: no "machine down" panel here). Dark navy gradient; the page
-   places a white section right above it. The static poster paints first and
-   stays for prefers-reduced-motion. */
+/* Closing band (home): the planned-purchase CTA on the left, a looping belt
+   video on the right (client direction, Aug 2026: no "machine down" panel
+   here, and a different clip from the hero — same Pexels series, aerial
+   loaded belt; credits in docs/image-credits.md). Dark navy gradient; the
+   page places a white section right above it. The static poster paints
+   first and stays for prefers-reduced-motion. */
 export function CtaBand({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
 
@@ -34,11 +35,11 @@ export function CtaBand({ locale }: { locale: Locale }) {
 
         <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10">
           <Image
-            src="/home/hero-conveyor-poster.jpg"
+            src="/home/cta-conveyor-poster.jpg"
             alt=""
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover object-[70%_45%] grayscale"
+            className="object-cover grayscale"
           />
           <video
             autoPlay
@@ -46,11 +47,11 @@ export function CtaBand({ locale }: { locale: Locale }) {
             loop
             playsInline
             preload="metadata"
-            poster="/home/hero-conveyor-poster.jpg"
+            poster="/home/cta-conveyor-poster.jpg"
             aria-hidden="true"
-            className="absolute inset-0 size-full object-cover object-[70%_45%] grayscale motion-reduce:hidden"
+            className="absolute inset-0 size-full object-cover grayscale motion-reduce:hidden"
           >
-            <source src="/home/hero-conveyor.mp4" type="video/mp4" />
+            <source src="/home/cta-conveyor.mp4" type="video/mp4" />
           </video>
           {/* soft navy wash so the clip sits inside the band's palette */}
           <div
