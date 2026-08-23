@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 const DEFAULT_ITEMS = [
   "OEM spec, cross-referenced",
   "Made to DIN 22102",
-  "Same-day ship on stocked belts",
+  "Next-day ship on stocked belts",
 ];
 
 export function TrustRow({

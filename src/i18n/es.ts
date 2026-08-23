@@ -6,10 +6,10 @@ import type { Dictionary } from "@/i18n/en";
 export const es: Dictionary = {
   meta: {
     titleDefault:
-      "Malone Road Belt — Bandas Transportadoras OEM, Envío Rápido",
+      "Malone Road Belt — Bandas Transportadoras OEM, Envío al Día Siguiente",
     titleTemplate: "%s · Malone Road Belt",
     description:
-      "Bandas transportadoras con especificación OEM/OEA para equipos móviles de procesamiento de materiales. No vendemos bandas — vendemos disponibilidad. Envío el mismo día para bandas en stock.",
+      "Bandas transportadoras con especificación OEM/OEA para equipos móviles de procesamiento de materiales.",
   },
   common: {
     skipToContent: "Ir al contenido",
@@ -43,7 +43,7 @@ export const es: Dictionary = {
   trustRow: [
     "Especificación OEM, con referencia cruzada",
     "Fabricadas según DIN 22102",
-    "Envío el mismo día para bandas en stock",
+    "Envío al día siguiente para bandas en stock",
   ],
   beltMatch: {
     byMachine: "Por máquina",
@@ -62,44 +62,65 @@ export const es: Dictionary = {
     planBody:
       "Envíanos el modelo de tu máquina o el número de parte OEM y recibe una cotización con referencia cruzada — con el estado de stock por delante.",
     downBody:
-      "Llámanos. Las bandas en stock salen el mismo día, y la ZIP CLIP® se instala en tan solo una hora.",
+      "Llámanos. Las bandas en stock salen al día siguiente, y la ZIP CLIP® se instala en tan solo una hora.",
   },
   home: {
-    heroBadge: "Bandas transportadoras OEM · envío rápido",
+    heroBadge: "Bandas transportadoras originales · envío al día siguiente",
     heroTitle: "Moviendo tu negocio",
     heroTitleAccent: "hacia adelante.",
     heroLead:
-      "Bandas transportadoras con especificación OEM/OEA para trituración, cribado y reciclaje móviles — con referencia cruzada a tu máquina y envío el mismo día.",
+      "Bandas transportadoras con especificación original para todos los equipos móviles/portátiles de procesamiento de materiales y reciclaje — con referencia cruzada a tu máquina y envío al día siguiente.",
     howEyebrow: "Cómo funciona",
     howTitle: "Tres pasos para volver a operar.",
     stepLabel: "PASO",
     steps: [
       {
         title: "Identifica",
-        body: "Dinos el modelo de tu máquina o el número de parte OEM. Nuestra referencia cruzada lo asocia a la especificación MB exacta.",
+        body: "Dinos la marca y el modelo o los números de parte OEM. Nuestra referencia cruzada lo asocia a la especificación exacta de banda MRB.",
       },
       {
-        title: "Confirma la medida",
-        body: "Recibes las dimensiones exactas, el tipo de empalme y el grado de cubierta — todo confirmado contra la especificación OEM antes de enviar nada.",
+        title: "Confirma el empalme",
+        body: "Elige tu empalme: grapas mecánicas o vulcanizado sin fin.",
       },
       {
-        title: "Envío el mismo día",
-        body: "Las bandas en stock salen el mismo día. Las bandas ZIP CLIP® se instalan en aproximadamente una hora, sin herramientas especiales.",
+        title: "Envío con varias opciones",
+        body: "",
       },
     ],
-    formatsEyebrow: "Elige tu formato",
-    formatsTitle: "Una banda, cuatro formas de comprarla.",
-    formatsLead:
-      "Toda banda MB puede suministrarse en el formato que se ajuste a tu forma de empalmar — o sin empalme alguno.",
-    aboutEyebrow: "Sobre Malone Road Belt",
-    aboutTitle: "No vendemos bandas. Vendemos disponibilidad.",
-    aboutLead:
-      "Cada hora que una trituradora está parada cuesta más que la banda que la detuvo. Por eso fabricamos bandas de repuesto con especificación OEM para equipos móviles de procesamiento — con referencia cruzada por máquina, según DIN 22102, y enviadas el día del pedido.",
-    stats: [
-      { value: "DIN 22102", label: "En cada banda, siempre" },
-      { value: "< 1 h", label: "Tiempo de instalación de ZIP CLIP®" },
-      { value: "4x", label: "Vida útil de Ironcleat® vs. EP estándar" },
-    ],
+    gallery: {
+      eyebrow: "En el terreno",
+      title: "Donde trabajan nuestras bandas.",
+      previous: "Imagen anterior",
+      next: "Imagen siguiente",
+      goTo: "Ir a la imagen",
+      slides: [
+        {
+          title: "Canteras siempre en marcha",
+          body: "Cada hora de operación cuenta. Nuestras bandas mantienen apiladores y cribas funcionando en los turnos más duros.",
+          alt: "Apilador radial acumulando piedra triturada en una cantera",
+        },
+        {
+          title: "A la medida de tu máquina",
+          body: "Trituradoras, cribas y recicladoras — cada banda tiene referencia cruzada con la máquina exacta que la mueve.",
+          alt: "Trituradora móvil descargando material triturado por su banda",
+        },
+        {
+          title: "Agarre en cada pendiente",
+          body: "Los perfiles con nervios suben tu material por las pendientes más pronunciadas sin retroceso.",
+          alt: "Primer plano de nervios chevron en una banda transportadora",
+        },
+        {
+          title: "Fabricadas, en stock, listas",
+          body: "Fabricadas según DIN 22102 y almacenadas como rollos terminados — listas para salir al día siguiente.",
+          alt: "Rollos terminados de banda transportadora en el almacén",
+        },
+        {
+          title: "Donde se mueva el material",
+          body: "De canteras a puertos y patios de reciclaje — todo equipo móvil es equipo que cubrimos.",
+          alt: "Trituradora móvil trabajando en una terminal portuaria",
+        },
+      ],
+    },
   },
   productsPage: {
     metaTitle: "Productos",
@@ -107,7 +128,7 @@ export const es: Dictionary = {
       "Bandas transportadoras OEM organizadas como tú compras: bandas multilona estándar, construcciones reforzadas y especiales, la línea con nervios Incline Cleatpro X™ — y fabricación a medida según tu especificación.",
     eyebrow: "Productos",
     title: "Bandas fabricadas a la especificación de tu máquina.",
-    lead: "Cada banda tiene referencia cruzada con tu máquina o número de parte OEM y se fabrica según DIN 22102. Sin juegos de precios — envíanos la especificación y la cotizamos directo.",
+    lead: "Bandas transportadoras con especificación original para todos los equipos móviles/portátiles de procesamiento de materiales y reciclaje — con referencia cruzada a tu máquina y envío al día siguiente.",
     noMatchFor: "Sin resultado exacto para",
     matchFor: "resultado para",
     matchesFor: "resultados para",
@@ -146,17 +167,17 @@ export const es: Dictionary = {
   contact: {
     metaTitle: "Contacto y Cotización",
     metaDescription:
-      "Solicita una cotización de banda con referencia cruzada, o llámanos si tu máquina está parada — las bandas en stock salen el mismo día.",
+      "Solicita una cotización de banda con referencia cruzada, o llámanos si tu máquina está parada — las bandas en stock salen al día siguiente.",
     eyebrow: "Contacto",
     title: "Recibe una cotización directa.",
     lead: "Envíanos el modelo de tu máquina o el número de parte OEM. Recibirás la especificación con referencia cruzada, el estado de stock y el precio — sin rodeos.",
     downBody:
-      "Sáltate el formulario. Llámanos y hacemos la referencia cruzada de tu banda por teléfono — las bandas en stock salen hoy.",
+      "Sáltate el formulario. Llámanos y hacemos la referencia cruzada de tu banda por teléfono — las bandas en stock salen al día siguiente.",
   },
   quoteForm: {
     urgencyLabel: "¿Qué tan urgente es?",
     downNowTitle: "Máquina parada ahora",
-    downNowSub: "Priorizamos y enviamos el mismo día",
+    downNowSub: "Priorizamos y enviamos al día siguiente",
     plannedTitle: "Compra planificada",
     plannedSub: "Cotización para un próximo cambio de banda",
     name: "Nombre",
@@ -179,7 +200,7 @@ export const es: Dictionary = {
     submit: "Solicitar mi cotización",
     successTitle: "Solicitud de cotización recibida.",
     successBody:
-      "Te responderemos en menos de una hora hábil con la especificación de referencia cruzada y el precio directo. Si tu máquina está parada, llámanos — las bandas en stock salen hoy.",
+      "Te responderemos en menos de una hora hábil con la especificación de referencia cruzada y el precio directo. Si tu máquina está parada, llámanos — las bandas en stock salen al día siguiente.",
     errName: "Ingresa tu nombre",
     errEmail: "Ingresa un correo electrónico válido",
     errMessage: "El mensaje es demasiado largo",
@@ -187,10 +208,10 @@ export const es: Dictionary = {
   about: {
     metaTitle: "Nosotros",
     metaDescription:
-      "Malone Road Belt fabrica bandas transportadoras de repuesto con especificación OEM para trituración, cribado y reciclaje móviles — referencia cruzada por máquina, DIN 22102, envío el mismo día.",
+      "Malone Road Belt fabrica bandas transportadoras de repuesto con especificación OEM para trituración, cribado y reciclaje móviles — referencia cruzada por máquina, DIN 22102, envío al día siguiente.",
     eyebrow: "Sobre Malone Road Belt",
     title: "No vendemos bandas. Vendemos disponibilidad.",
-    lead: "Cada hora que una trituradora está parada cuesta más que la banda que la detuvo. Por eso fabricamos bandas de repuesto con especificación OEM para equipos móviles de procesamiento — con referencia cruzada por máquina, según DIN 22102, y enviadas el día del pedido.",
+    lead: "Cada hora que una trituradora está parada cuesta más que la banda que la detuvo. Por eso fabricamos bandas de repuesto con especificación OEM para equipos móviles de procesamiento — con referencia cruzada por máquina, según DIN 22102, y enviadas al día siguiente del pedido.",
     storyTitle: "Gente de bandas.",
     storyParagraphs: [
       "Malone Road Belt existe para un único momento de compra: el día en que tu trituradora, cribadora o recicladora necesita una banda nueva. El equipo móvil no espera — así que, en lugar de vender caucho genérico por metro, mantenemos bandas con especificación OEM para las máquinas que realmente trabajan en canteras, plantas de reciclaje y obras viales, listas para enviar.",
@@ -198,10 +219,26 @@ export const es: Dictionary = {
       "Atendemos a operadores y distribuidores en Irlanda, el Reino Unido y más allá — y cada vez que llamas, una persona contesta el teléfono.",
     ],
     stats: [
-      { value: "DIN 22102", label: "En cada banda, siempre" },
-      { value: "Mismo día", label: "Despacho de bandas en stock" },
-      { value: "< 1 h", label: "Tiempo de instalación de ZIP CLIP®" },
-      { value: "4x", label: "Vida útil de Ironcleat® vs. EP estándar" },
+      {
+        value: "DIN 22102",
+        label: "Todas las bandas se fabrican según DIN 22102",
+        ring: "Sello de calidad",
+      },
+      {
+        value: "Día siguiente",
+        label: "Despacho de bandas en stock",
+        ring: "Despacho de stock",
+      },
+      {
+        value: "< 1 h",
+        label: "Tiempo de instalación de ZIP CLIP®",
+        ring: "Montaje rápido",
+      },
+      {
+        value: "4x",
+        label: "Vida útil de Ironcleat® vs. EP estándar",
+        ring: "Vida útil",
+      },
     ],
     howEyebrow: "Cómo trabajamos",
     howTitle: "Tres promesas en cada pedido.",
@@ -216,7 +253,7 @@ export const es: Dictionary = {
       },
       {
         title: "Construido en torno a tu parada",
-        body: "Las bandas en stock salen el mismo día. Cuando la máquina ya está parada, la ZIP CLIP® te pone a rodar de nuevo en una hora — sin cuadrilla de empalme, sin tiempo de curado.",
+        body: "Las bandas en stock salen al día siguiente. Cuando la máquina ya está parada, la ZIP CLIP® te pone a rodar de nuevo en una hora — sin cuadrilla de empalme, sin tiempo de curado.",
       },
     ],
     manufacturedTo: "Fabricadas según:",

@@ -4,10 +4,10 @@
 
 export const en = {
   meta: {
-    titleDefault: "Malone Road Belt — OEM Conveyor Belts, Shipped Fast",
+    titleDefault: "Malone Road Belt — OEM Conveyor Belts, Shipped Next Day",
     titleTemplate: "%s · Malone Road Belt",
     description:
-      "OEM/OEA-spec conveyor belts for mobile material processing equipment. We don't sell belts — we sell uptime. Same-day shipping on stocked belts.",
+      "OEM/OEA-spec conveyor belts for mobile material processing equipment.",
   },
   common: {
     skipToContent: "Skip to content",
@@ -41,7 +41,7 @@ export const en = {
   trustRow: [
     "OEM spec, cross-referenced",
     "Made to DIN 22102",
-    "Same-day ship on stocked belts",
+    "Next-day ship on stocked belts",
   ],
   beltMatch: {
     byMachine: "By machine",
@@ -59,44 +59,69 @@ export const en = {
     planBody:
       "Send us your machine or OEM part number and get a cross-referenced quote — with stock status up front.",
     downBody:
-      "Call us. Stocked belts ship same day, and ZIP CLIP® fits in as little as one hour.",
+      "Call us. Stocked belts ship next day, and ZIP CLIP® fits in as little as one hour.",
   },
   home: {
-    heroBadge: "OEM conveyor belts · shipped fast",
+    heroBadge: "Original conveyor belts · shipped the next day",
     heroTitle: "Moving your business",
     heroTitleAccent: "forward.",
     heroLead:
-      "OEM/OEA-spec conveyor belts for mobile crushing, screening and recycling equipment — cross-referenced to your machine and shipped the same day.",
+      "Original-spec conveyor belts for all mobile/portable material process and recycling equipment — cross-referenced to your machine and shipped the next day.",
     howEyebrow: "How it works",
     howTitle: "Three steps to back-in-service.",
     stepLabel: "STEP",
+    /* An empty body marks a title-only step (client wants the last step to
+       read as fast — the card renders it with an express treatment). */
     steps: [
       {
         title: "Identify",
-        body: "Tell us your machine model or OEM part number. Our cross-reference matches it to the exact MB belt spec.",
+        body: "Tell us your make and model or OEM part numbers. Our cross-reference matches it to the exact MRB belt spec.",
       },
       {
-        title: "Confirm the fit",
-        body: "You get the exact dimensions, splice type and cover grade back — confirmed against OEM spec before anything ships.",
+        title: "Confirm the joint",
+        body: "Select your splice from mechanical clips or vulcanized endless.",
       },
       {
-        title: "Ship it today",
-        body: "Stocked belts leave the same day. ZIP CLIP® belts fit in as little as one hour, with no specialist tools.",
+        title: "Shipped from several options",
+        body: "",
       },
     ],
-    formatsEyebrow: "Choose your format",
-    formatsTitle: "One belt, four ways to buy it.",
-    formatsLead:
-      "Every MB belt can be supplied to match the way you splice — or skip splicing entirely.",
-    aboutEyebrow: "About Malone Road Belt",
-    aboutTitle: "We don't sell belts. We sell uptime.",
-    aboutLead:
-      "Every hour a crusher stands still costs more than the belt that stopped it. That's why we manufacture OEM-spec replacement belts for mobile material processing equipment — cross-referenced by machine, made to DIN 22102, and shipped the day you order them.",
-    stats: [
-      { value: "DIN 22102", label: "Every belt, every time" },
-      { value: "< 1 hr", label: "ZIP CLIP® fitting time" },
-      { value: "4x", label: "Ironcleat® service life vs standard EP" },
-    ],
+    /* Closing image carousel — slide order must match GALLERY_IMAGES in
+       src/app/[locale]/page.tsx */
+    gallery: {
+      eyebrow: "Out in the field",
+      title: "Where our belts go to work.",
+      previous: "Previous image",
+      next: "Next image",
+      goTo: "Go to image",
+      slides: [
+        {
+          title: "Keeping quarries moving",
+          body: "Every hour of uptime matters. Our belts keep stackers and screeners running through the hardest shifts.",
+          alt: "Radial stacker conveyor piling crushed stone in a quarry",
+        },
+        {
+          title: "Matched to your machine",
+          body: "Crushers, screeners and recyclers — every belt is cross-referenced to the exact machine it drives.",
+          alt: "Mobile crusher discharging crushed material from its conveyor",
+        },
+        {
+          title: "Grip for every incline",
+          body: "Cleated profiles carry your material up the steepest inclines without rollback.",
+          alt: "Close-up of chevron cleats on a conveyor belt",
+        },
+        {
+          title: "Built, stocked, ready",
+          body: "Manufactured to DIN 22102 and stocked as finished rolls — ready to ship the next day.",
+          alt: "Finished conveyor belt rolls in the warehouse",
+        },
+        {
+          title: "Wherever material moves",
+          body: "From quarries to ports and recycling yards — mobile equipment anywhere is equipment we cover.",
+          alt: "Mobile crusher working at a harbor terminal",
+        },
+      ],
+    },
   },
   productsPage: {
     metaTitle: "Products",
@@ -104,7 +129,7 @@ export const en = {
       "OEM-spec conveyor belts organized the way you buy them: standard multi-ply belts, heavy-duty & specialized constructions, the Cleatpro X™ Incline cleated range — and custom builds to your spec.",
     eyebrow: "Products",
     title: "Belts built to your machine's spec.",
-    lead: "Every belt is cross-referenced to your machine or OEM part number and manufactured to DIN 22102. No pricing games — send us the spec and we quote it straight.",
+    lead: "Original-spec conveyor belts for all mobile/portable material process and recycling equipment — cross-referenced to your machine and shipped the next day.",
     noMatchFor: "No exact match for",
     matchFor: "match for",
     matchesFor: "matches for",
@@ -143,17 +168,17 @@ export const en = {
   contact: {
     metaTitle: "Contact & Quote Request",
     metaDescription:
-      "Request a cross-referenced conveyor belt quote, or call us if your machine is down — stocked belts ship same day.",
+      "Request a cross-referenced conveyor belt quote, or call us if your machine is down — stocked belts ship next day.",
     eyebrow: "Contact",
     title: "Get a straight quote.",
     lead: "Send us your machine model or OEM part number. You'll get back a cross-referenced spec, stock status and pricing — no games.",
     downBody:
-      "Skip the form. Call us and we'll cross-reference your belt on the phone — stocked belts ship today.",
+      "Skip the form. Call us and we'll cross-reference your belt on the phone — stocked belts ship next day.",
   },
   quoteForm: {
     urgencyLabel: "How urgent is it?",
     downNowTitle: "Machine is down now",
-    downNowSub: "We prioritize and ship same day",
+    downNowSub: "We prioritize and ship next day",
     plannedTitle: "Planned purchase",
     plannedSub: "Quote for an upcoming belt change",
     name: "Name",
@@ -176,7 +201,7 @@ export const en = {
     submit: "Request my quote",
     successTitle: "Quote request received.",
     successBody:
-      "We'll get back to you within one business hour with a cross-referenced spec and straight pricing. If your machine is down, call us — stocked belts ship today.",
+      "We'll get back to you within one business hour with a cross-referenced spec and straight pricing. If your machine is down, call us — stocked belts ship next day.",
     errName: "Please enter your name",
     errEmail: "Please enter a valid email address",
     errMessage: "Message is too long",
@@ -184,21 +209,35 @@ export const en = {
   about: {
     metaTitle: "About",
     metaDescription:
-      "Malone Road Belt manufactures OEM-spec replacement conveyor belts for mobile crushing, screening and recycling equipment — cross-referenced by machine, made to DIN 22102, shipped same day.",
+      "Malone Road Belt manufactures OEM-spec replacement conveyor belts for mobile crushing, screening and recycling equipment — cross-referenced by machine, made to DIN 22102, shipped next day.",
     eyebrow: "About Malone Road Belt",
     title: "We don't sell belts. We sell uptime.",
-    lead: "Every hour a crusher stands still costs more than the belt that stopped it. That's why we manufacture OEM-spec replacement belts for mobile material processing equipment — cross-referenced by machine, made to DIN 22102, and shipped the day you order them.",
+    lead: "Every hour a crusher stands still costs more than the belt that stopped it. That's why we manufacture OEM-spec replacement belts for mobile material processing equipment — cross-referenced by machine, made to DIN 22102, and shipped the day after you order them.",
     storyTitle: "Belt people.",
     storyParagraphs: [
       "Malone Road Belt exists for one buying moment: the day your crusher, screener or recycler needs a new belt. Mobile processing equipment doesn't wait — so instead of selling generic rubber by the metre, we hold OEM-spec belts for the machines actually working in quarries, recycling yards and road projects, ready to ship.",
       "Behind the range is a cross-reference engine: machine models and OEM part numbers mapped to exact MB belt specs — width, length, plies, splice and cover grade. Send us either one and you get the confirmed fit back, not a catalogue to decode.",
       "We serve operators and dealers across Ireland, the UK and beyond — and whenever you call, a person answers the phone.",
     ],
+    /* `ring` is the arc text of each stat's stamp badge (StampBadge) — keep
+       it to ~17 characters or fewer so the banner doesn't cover its ends. */
     stats: [
-      { value: "DIN 22102", label: "Every belt, every time" },
-      { value: "Same day", label: "Dispatch on stocked belts" },
-      { value: "< 1 hr", label: "ZIP CLIP® fitting time" },
-      { value: "4x", label: "Ironcleat® service life vs standard EP" },
+      {
+        value: "DIN 22102",
+        label: "All belts are manufactured with DIN 22102",
+        ring: "Quality assurance",
+      },
+      {
+        value: "Next day",
+        label: "Dispatch on stocked belts",
+        ring: "Next-day dispatch",
+      },
+      { value: "< 1 hr", label: "ZIP CLIP® fitting time", ring: "Rapid fitting" },
+      {
+        value: "4x",
+        label: "Ironcleat® service life vs standard EP",
+        ring: "Service life",
+      },
     ],
     howEyebrow: "How we work",
     howTitle: "Three promises on every order.",
@@ -213,7 +252,7 @@ export const en = {
       },
       {
         title: "Built around your downtime",
-        body: "Stocked belts leave the same day. When the machine is already down, ZIP CLIP® has you running again within the hour — no splicing crew, no curing time.",
+        body: "Stocked belts ship the next day. When the machine is already down, ZIP CLIP® has you running again within the hour — no splicing crew, no curing time.",
       },
     ],
     manufacturedTo: "Manufactured to:",

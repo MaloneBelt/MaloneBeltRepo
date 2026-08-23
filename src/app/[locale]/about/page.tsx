@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { ClipboardCheck, SearchCheck, Truck } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
-import { CtaBand } from "@/components/mrb/cta-band";
 import { OemGrid } from "@/components/mrb/oem-grid";
 import { SectionHeading } from "@/components/mrb/section-heading";
+import { StampBadge } from "@/components/mrb/stamp-badge";
 import { TrustRow } from "@/components/mrb/trust-row";
 import { isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n";
@@ -37,7 +37,8 @@ export default async function AboutPage({
   return (
     <>
       {/* Hero + story — merged into one continuous dark zone
-          (client-assigned); How we work below is white, CtaBand dark */}
+          (client-assigned); everything below is white (no CtaBand — removed
+          on client direction, Aug 2026) */}
       <div className="border-b border-navy-800 bg-linear-135 from-navy-800 to-navy-900">
         <section className="container-shell pt-14 lg:pt-20">
           <SectionHeading
@@ -63,16 +64,20 @@ export default async function AboutPage({
               ))}
             </div>
           </div>
+          {/* Stat boxes read as stamped seals (client direction, Aug 2026):
+              the badge is the dominant element, the caption secondary */}
           <div className="grid content-center gap-4 sm:grid-cols-2">
             {dict.about.stats.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-lg border border-line bg-surface p-5"
+                className="flex flex-col items-center rounded-lg border border-line bg-surface p-6 text-center"
               >
-                <div className="font-mono text-h3 font-semibold text-navy-600">
-                  {stat.value}
-                </div>
-                <div className="mt-1 text-[13px] font-semibold text-body-muted">
+                <StampBadge
+                  value={stat.value}
+                  ring={stat.ring}
+                  className="size-28 shrink-0"
+                />
+                <div className="mt-5 text-[13px] font-semibold leading-relaxed text-body-muted">
                   {stat.label}
                 </div>
               </div>
@@ -81,8 +86,7 @@ export default async function AboutPage({
         </section>
       </div>
 
-      {/* How we work — white layer between the dark hero+story zone and the
-          dark CtaBand */}
+      {/* How we work — white zone below the dark hero+story */}
       <section className="container-shell py-16 lg:py-20">
         <SectionHeading
           eyebrow={dict.about.howEyebrow}
@@ -133,8 +137,6 @@ export default async function AboutPage({
         />
         <OemGrid className="mt-10" />
       </section>
-
-      <CtaBand locale={locale} />
     </>
   );
 }

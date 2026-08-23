@@ -67,7 +67,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
             <li>
               <a
                 href={`mailto:${site.email}`}
-                className="font-mono text-white/80 transition-colors hover:text-white"
+                className="text-white/80 transition-colors hover:text-white"
               >
                 {site.email}
               </a>
@@ -81,7 +81,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
           <span>
             © {new Date().getFullYear()} {site.name}. {dict.footer.rights}
           </span>
-          <span className="font-mono">{dict.common.motto}</span>
+          <span>{dict.common.motto}</span>
         </div>
       </div>
     </footer>

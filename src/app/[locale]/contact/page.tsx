@@ -79,7 +79,7 @@ export default async function ContactPage({
             />
             <a
               href={`mailto:${site.email}`}
-              className="font-mono text-ink-2 hover:text-navy-700"
+              className="text-ink-2 hover:text-navy-700"
             >
               {site.email}
             </a>

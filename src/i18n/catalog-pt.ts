@@ -348,7 +348,7 @@ export const applicationPt: Record<string, string> = {
 
 /* Availability chips */
 export const availabilityPt: Record<string, string> = {
-  "Ships today": "Sai hoje",
+  "Ships next day": "Sai no dia seguinte",
   "Made to order": "Sob encomenda",
 };
 

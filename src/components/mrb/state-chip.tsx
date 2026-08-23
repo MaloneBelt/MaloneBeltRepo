@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /* Green and red are RESERVED for availability & urgency — never decoration.
-   `stock` = "Ships today" (planned buy) · `down` = machine-down urgency. */
+   `stock` = "Ships next day" (planned buy) · `down` = machine-down urgency. */
 export function StateChip({
   children,
   variant = "stock",

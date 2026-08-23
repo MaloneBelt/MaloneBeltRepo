@@ -12,7 +12,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { BeltMatch } from "@/components/mrb/belt-match";
 import { CategoryCard } from "@/components/mrb/category-card";
-import { CtaBand } from "@/components/mrb/cta-band";
 import { ProductCard } from "@/components/mrb/product-card";
 import { SectionHeading } from "@/components/mrb/section-heading";
 import { categories } from "@/data/categories";
@@ -65,8 +64,9 @@ export default async function ProductsPage({
 
   return (
     <>
-      {/* Products header + search + catalog — one continuous dark zone
-          (client-assigned); the specialized section below is white */}
+      {/* The whole products page is one continuous dark canvas (client
+          direction, Aug 2026): header + search + catalog + specialized
+          teaser, no CtaBand */}
       <div className="border-b border-navy-800 bg-linear-135 from-navy-800 to-navy-900">
       <section className="container-shell pt-14 lg:pt-16">
         <SectionHeading
@@ -268,19 +268,19 @@ export default async function ProductsPage({
         </div>
       </section>
 
-      </div>
-
-      {/* Specialized belts teaser — white section (client-assigned), between
-          the dark catalog zone above and the dark CtaBand below */}
-      <section>
+      {/* Specialized belts teaser — dark like the rest of the page; its
+          cards stay white so they hold their own on the gradient. With the
+          CtaBand gone this button is the page's one orange CTA. */}
+      <section className="border-t border-white/10">
         <div className="container-shell py-14 lg:py-16">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading
+              tone="inverse"
               eyebrow={dict.productsPage.specializedEyebrow}
               title={dict.productsPage.specializedTitle}
               lead={dict.productsPage.specializedLead}
             />
-            <Button asChild variant="secondary">
+            <Button asChild variant="primary">
               <Link href={l(locale, "/contact")}>{dict.common.talkToUs}</Link>
             </Button>
           </div>
@@ -313,7 +313,7 @@ export default async function ProductsPage({
         </div>
       </section>
 
-      <CtaBand locale={locale} />
+      </div>
     </>
   );
 }

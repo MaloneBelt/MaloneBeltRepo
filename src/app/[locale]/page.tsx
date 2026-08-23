@@ -4,15 +4,22 @@ import { ClipboardCheck, SearchCheck, Truck } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { BeltMatch } from "@/components/mrb/belt-match";
 import { ConveyorStrip } from "@/components/mrb/conveyor-strip";
-import { CtaBand } from "@/components/mrb/cta-band";
+import { HomeCarousel } from "@/components/mrb/home-carousel";
 import { SectionHeading } from "@/components/mrb/section-heading";
-import { TrustRow } from "@/components/mrb/trust-row";
-import { beltFormats } from "@/data/products";
 import { isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n";
-import { localizeBeltFormat } from "@/i18n/localize";
 
 const STEP_ICONS = [SearchCheck, ClipboardCheck, Truck];
+
+/* Order must match dict.home.gallery.slides. All are licensed photos already
+   in the shared pool (credits in docs/image-credits.md). */
+const GALLERY_IMAGES = [
+  "/products/photos/quarry-stacker.jpg",
+  "/products/photos/crusher-discharge.jpg",
+  "/products/photos/chevron-cleats-closeup.jpg",
+  "/products/photos/belt-roll-pair.jpg",
+  "/products/photos/crusher-harbor.jpg",
+];
 
 export default async function HomePage({
   params,
@@ -76,9 +83,6 @@ export default async function HomePage({
               {dict.home.heroLead}
             </p>
             <BeltMatch locale={locale} className="mt-7" />
-            <div className="mt-6">
-              <TrustRow tone="inverse" items={dict.trustRow} />
-            </div>
           </div>
         </div>
       </section>
@@ -94,6 +98,10 @@ export default async function HomePage({
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {dict.home.steps.map((step, index) => {
             const Icon = STEP_ICONS[index] ?? SearchCheck;
+            // Title-only steps (empty body) get an express treatment — the
+            // client wants the shipping step to read as fast without
+            // clashing with the other two cards.
+            const express = step.body === "";
             return (
               <div
                 key={step.title}
@@ -104,92 +112,46 @@ export default async function HomePage({
                     {dict.home.stepLabel} 0{index + 1}
                   </span>
                   <Icon
-                    className="size-6 text-navy-500"
-                    strokeWidth={2}
+                    className={express ? "size-6 text-orange" : "size-6 text-navy-500"}
+                    strokeWidth={express ? 2.5 : 2}
                     aria-hidden="true"
                   />
                 </div>
                 <h3 className="mt-4 font-display text-h3 font-extrabold text-ink-2">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-body-muted">
-                  {step.body}
-                </p>
+                {step.body && (
+                  <p className="mt-2 text-sm leading-relaxed text-body-muted">
+                    {step.body}
+                  </p>
+                )}
               </div>
             );
           })}
         </div>
       </section>
 
-      {/* Choose your format — dark band (client-assigned). Products are
-          reached via BeltMatch or the navbar only: no product section on the
-          landing page (client direction) */}
-      <section className="border-y border-navy-800 bg-linear-135 from-navy-800 to-navy-900">
+      {/* Field gallery carousel — dark closing band (replaced the CtaBand on
+          client direction, Aug 2026): the mission told in pictures */}
+      <section className="border-t border-navy-800 bg-linear-135 from-navy-800 to-navy-900">
         <div className="container-shell py-16 lg:py-20">
           <SectionHeading
             tone="inverse"
-            eyebrow={dict.home.formatsEyebrow}
-            title={dict.home.formatsTitle}
-            lead={dict.home.formatsLead}
+            eyebrow={dict.home.gallery.eyebrow}
+            title={dict.home.gallery.title}
           />
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {beltFormats.map((format) => {
-            const f = localizeBeltFormat(format, locale);
-            return (
-              <div
-                key={f.id}
-                className="rounded-lg border border-line bg-surface p-5 shadow-xs"
-              >
-                <div className="relative flex h-32 items-center justify-center overflow-hidden rounded-md bg-radial-[120%_140%_at_20%_0%] from-navy-100 to-navy-50">
-                  <Image
-                    src={f.image.src}
-                    alt={f.image.alt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 270px"
-                    className="object-contain p-3"
-                  />
-                </div>
-                <h3 className="mt-4 font-display text-base font-extrabold text-ink-2">
-                  {f.name}
-                </h3>
-                <p className="mt-1.5 text-[13px] leading-relaxed text-body-muted">
-                  {f.description}
-                </p>
-              </div>
-            );
-          })}
-        </div>
+          <HomeCarousel
+            className="mt-10"
+            slides={dict.home.gallery.slides.map((slide, index) => ({
+              ...slide,
+              src: GALLERY_IMAGES[index],
+            }))}
+            prevLabel={dict.home.gallery.previous}
+            nextLabel={dict.home.gallery.next}
+            goToLabel={dict.home.gallery.goTo}
+          />
         </div>
       </section>
-
-      {/* About — white section (client-assigned); the stats read as dark
-          info panels so they hold their own against the white canvas */}
-      <section id="about" className="scroll-mt-nav">
-        <div className="container-shell grid gap-10 py-16 lg:grid-cols-2 lg:py-20">
-          <SectionHeading
-            eyebrow={dict.home.aboutEyebrow}
-            title={dict.home.aboutTitle}
-            lead={dict.home.aboutLead}
-          />
-          <div className="grid content-center gap-4 sm:grid-cols-3 lg:grid-cols-1">
-            {dict.home.stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-lg border border-navy-800 bg-linear-135 from-navy-800 to-navy-900 p-5"
-              >
-                <div className="font-mono text-h3 font-semibold text-white">
-                  {stat.value}
-                </div>
-                <div className="mt-1 text-[13px] font-semibold text-navy-200">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <CtaBand locale={locale} />
     </>
   );
 }
