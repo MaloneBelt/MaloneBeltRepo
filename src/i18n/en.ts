@@ -58,8 +58,6 @@ export const en = {
     planTitle: "Planning your next belt change?",
     planBody:
       "Send us your machine or OEM part number and get a cross-referenced quote — with stock status up front.",
-    downBody:
-      "Call us. Stocked belts ship next day, and ZIP CLIP® fits in as little as one hour.",
   },
   home: {
     heroBadge: "Original conveyor belts · shipped the next day",
@@ -86,42 +84,6 @@ export const en = {
         body: "",
       },
     ],
-    /* Closing image carousel — slide order must match GALLERY_IMAGES in
-       src/app/[locale]/page.tsx */
-    gallery: {
-      eyebrow: "Out in the field",
-      title: "Where our belts go to work.",
-      previous: "Previous image",
-      next: "Next image",
-      goTo: "Go to image",
-      slides: [
-        {
-          title: "Keeping quarries moving",
-          body: "Every hour of uptime matters. Our belts keep stackers and screeners running through the hardest shifts.",
-          alt: "Radial stacker conveyor piling crushed stone in a quarry",
-        },
-        {
-          title: "Matched to your machine",
-          body: "Crushers, screeners and recyclers — every belt is cross-referenced to the exact machine it drives.",
-          alt: "Mobile crusher discharging crushed material from its conveyor",
-        },
-        {
-          title: "Grip for every incline",
-          body: "Cleated profiles carry your material up the steepest inclines without rollback.",
-          alt: "Close-up of chevron cleats on a conveyor belt",
-        },
-        {
-          title: "Built, stocked, ready",
-          body: "Manufactured to DIN 22102 and stocked as finished rolls — ready to ship the next day.",
-          alt: "Finished conveyor belt rolls in the warehouse",
-        },
-        {
-          title: "Wherever material moves",
-          body: "From quarries to ports and recycling yards — mobile equipment anywhere is equipment we cover.",
-          alt: "Mobile crusher working at a harbor terminal",
-        },
-      ],
-    },
   },
   productsPage: {
     metaTitle: "Products",

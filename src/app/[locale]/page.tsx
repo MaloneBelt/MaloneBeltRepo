@@ -4,22 +4,12 @@ import { ClipboardCheck, SearchCheck, Truck } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { BeltMatch } from "@/components/mrb/belt-match";
 import { ConveyorStrip } from "@/components/mrb/conveyor-strip";
-import { HomeCarousel } from "@/components/mrb/home-carousel";
+import { CtaBand } from "@/components/mrb/cta-band";
 import { SectionHeading } from "@/components/mrb/section-heading";
 import { isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n";
 
 const STEP_ICONS = [SearchCheck, ClipboardCheck, Truck];
-
-/* Order must match dict.home.gallery.slides. All are licensed photos already
-   in the shared pool (credits in docs/image-credits.md). */
-const GALLERY_IMAGES = [
-  "/products/photos/quarry-stacker.jpg",
-  "/products/photos/crusher-discharge.jpg",
-  "/products/photos/chevron-cleats-closeup.jpg",
-  "/products/photos/belt-roll-pair.jpg",
-  "/products/photos/crusher-harbor.jpg",
-];
 
 export default async function HomePage({
   params,
@@ -131,27 +121,7 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* Field gallery carousel — dark closing band (replaced the CtaBand on
-          client direction, Aug 2026): the mission told in pictures */}
-      <section className="border-t border-navy-800 bg-linear-135 from-navy-800 to-navy-900">
-        <div className="container-shell py-16 lg:py-20">
-          <SectionHeading
-            tone="inverse"
-            eyebrow={dict.home.gallery.eyebrow}
-            title={dict.home.gallery.title}
-          />
-          <HomeCarousel
-            className="mt-10"
-            slides={dict.home.gallery.slides.map((slide, index) => ({
-              ...slide,
-              src: GALLERY_IMAGES[index],
-            }))}
-            prevLabel={dict.home.gallery.previous}
-            nextLabel={dict.home.gallery.next}
-            goToLabel={dict.home.gallery.goTo}
-          />
-        </div>
-      </section>
+      <CtaBand locale={locale} />
     </>
   );
 }

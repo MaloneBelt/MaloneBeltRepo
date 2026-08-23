@@ -61,8 +61,6 @@ export const es: Dictionary = {
     planTitle: "¿Planeando tu próximo cambio de banda?",
     planBody:
       "Envíanos el modelo de tu máquina o el número de parte OEM y recibe una cotización con referencia cruzada — con el estado de stock por delante.",
-    downBody:
-      "Llámanos. Las bandas en stock salen al día siguiente, y la ZIP CLIP® se instala en tan solo una hora.",
   },
   home: {
     heroBadge: "Bandas transportadoras originales · envío al día siguiente",
@@ -87,40 +85,6 @@ export const es: Dictionary = {
         body: "",
       },
     ],
-    gallery: {
-      eyebrow: "En el terreno",
-      title: "Donde trabajan nuestras bandas.",
-      previous: "Imagen anterior",
-      next: "Imagen siguiente",
-      goTo: "Ir a la imagen",
-      slides: [
-        {
-          title: "Canteras siempre en marcha",
-          body: "Cada hora de operación cuenta. Nuestras bandas mantienen apiladores y cribas funcionando en los turnos más duros.",
-          alt: "Apilador radial acumulando piedra triturada en una cantera",
-        },
-        {
-          title: "A la medida de tu máquina",
-          body: "Trituradoras, cribas y recicladoras — cada banda tiene referencia cruzada con la máquina exacta que la mueve.",
-          alt: "Trituradora móvil descargando material triturado por su banda",
-        },
-        {
-          title: "Agarre en cada pendiente",
-          body: "Los perfiles con nervios suben tu material por las pendientes más pronunciadas sin retroceso.",
-          alt: "Primer plano de nervios chevron en una banda transportadora",
-        },
-        {
-          title: "Fabricadas, en stock, listas",
-          body: "Fabricadas según DIN 22102 y almacenadas como rollos terminados — listas para salir al día siguiente.",
-          alt: "Rollos terminados de banda transportadora en el almacén",
-        },
-        {
-          title: "Donde se mueva el material",
-          body: "De canteras a puertos y patios de reciclaje — todo equipo móvil es equipo que cubrimos.",
-          alt: "Trituradora móvil trabajando en una terminal portuaria",
-        },
-      ],
-    },
   },
   productsPage: {
     metaTitle: "Productos",

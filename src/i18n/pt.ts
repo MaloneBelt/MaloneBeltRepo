@@ -60,8 +60,6 @@ export const pt: Dictionary = {
     planTitle: "Planejando a próxima troca de correia?",
     planBody:
       "Envie o modelo da sua máquina ou o número de peça OEM e receba uma cotação com referência cruzada — com a disponibilidade de estoque logo de cara.",
-    downBody:
-      "Ligue para nós. Correias em estoque saem no dia seguinte, e a ZIP CLIP® é instalada em apenas uma hora.",
   },
   home: {
     heroBadge: "Correias transportadoras originais · envio no dia seguinte",
@@ -86,40 +84,6 @@ export const pt: Dictionary = {
         body: "",
       },
     ],
-    gallery: {
-      eyebrow: "No campo",
-      title: "Onde as nossas correias trabalham.",
-      previous: "Imagem anterior",
-      next: "Próxima imagem",
-      goTo: "Ir para a imagem",
-      slides: [
-        {
-          title: "Pedreiras sempre em movimento",
-          body: "Cada hora de operação conta. Nossas correias mantêm empilhadores e peneiras rodando nos turnos mais pesados.",
-          alt: "Empilhador radial acumulando pedra britada em uma pedreira",
-        },
-        {
-          title: "Na medida da sua máquina",
-          body: "Britadores, peneiras e recicladoras — cada correia tem referência cruzada com a máquina exata que ela move.",
-          alt: "Britador móvel descarregando material britado pela sua correia",
-        },
-        {
-          title: "Aderência em cada rampa",
-          body: "Os perfis com taliscas sobem o seu material pelas rampas mais íngremes sem retorno.",
-          alt: "Close das taliscas chevron de uma correia transportadora",
-        },
-        {
-          title: "Fabricadas, em estoque, prontas",
-          body: "Fabricadas conforme DIN 22102 e armazenadas como rolos acabados — prontas para sair no dia seguinte.",
-          alt: "Rolos acabados de correia transportadora no armazém",
-        },
-        {
-          title: "Onde o material se mover",
-          body: "De pedreiras a portos e pátios de reciclagem — todo equipamento móvel é equipamento que cobrimos.",
-          alt: "Britador móvel trabalhando em um terminal portuário",
-        },
-      ],
-    },
   },
   productsPage: {
     metaTitle: "Produtos",
