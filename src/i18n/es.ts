@@ -263,10 +263,6 @@ export const es: Dictionary = {
     ],
     standardPunch:
       "Y cuando algo sale mal, no nos escondemos detrás de correos, políticas ni departamentos — trabajamos el problema.",
-    visionQuote:
-      "Queremos construir el Amazon de las bandas — sin perder el servicio personal de una empresa pequeña.",
-    visionBody:
-      "No buscamos ser la empresa más grande por serlo. Queremos ser la empresa en la que los clientes confían para hacerlo bien — capaz de resolver una sola banda de repuesto hoy mientras construimos los sistemas, el inventario y el conocimiento para dar soporte a miles de máquinas mañana.",
     marketsLabel: "A quiénes servimos:",
     markets: [
       "Propietarios y operadores de equipos",

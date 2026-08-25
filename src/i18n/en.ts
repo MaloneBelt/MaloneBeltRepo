@@ -259,10 +259,6 @@ export const en = {
     ],
     standardPunch:
       "And when something goes wrong, we don't hide behind emails, policies or departments — we work the problem.",
-    visionQuote:
-      "We want to build the Amazon of belting — without losing the personal service of a small company.",
-    visionBody:
-      "We aren't trying to be the biggest company for the sake of being big. We want to be the company customers trust to get it right — able to support a single replacement belt today while building the systems, inventory and knowledge to support thousands of machines tomorrow.",
     marketsLabel: "Who we serve:",
     markets: [
       "Equipment owners & operators",

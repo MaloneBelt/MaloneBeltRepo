@@ -262,10 +262,6 @@ export const pt: Dictionary = {
     ],
     standardPunch:
       "E quando algo dá errado, não nos escondemos atrás de e-mails, políticas ou departamentos — nós resolvemos o problema.",
-    visionQuote:
-      "Queremos construir a Amazon das correias — sem perder o atendimento pessoal de uma empresa pequena.",
-    visionBody:
-      "Não queremos ser a maior empresa só por ser grande. Queremos ser a empresa em que os clientes confiam para acertar — capaz de resolver uma única correia de reposição hoje enquanto construímos os sistemas, o estoque e o conhecimento para dar suporte a milhares de máquinas amanhã.",
     marketsLabel: "Quem atendemos:",
     markets: [
       "Proprietários e operadores de equipamentos",

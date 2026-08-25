@@ -159,7 +159,9 @@ export default async function AboutPage({
       {/* Our standard + vision — dark info panel on the white canvas */}
       <section className="container-shell pb-16 lg:pb-20">
         <div className="rounded-2xl bg-linear-135 from-navy-800 to-navy-900 p-8 lg:p-12">
-          <div className="grid gap-10 lg:grid-cols-2">
+          {/* Single column since the vision quote was removed
+             (client direction, 25 Aug 2026) */}
+          <div className="max-w-2xl">
             <div>
               <p className="font-display text-caption font-bold tracking-eyebrow uppercase text-navy-200">
                 {dict.about.standardEyebrow}
@@ -184,14 +186,6 @@ export default async function AboutPage({
               </ul>
               <p className="mt-6 text-sm leading-relaxed text-navy-200">
                 {dict.about.standardPunch}
-              </p>
-            </div>
-            <div className="flex flex-col justify-center">
-              <blockquote className="border-l-4 border-orange pl-5 font-display text-h3 font-extrabold leading-snug text-white">
-                “{dict.about.visionQuote}”
-              </blockquote>
-              <p className="mt-5 text-sm leading-relaxed text-navy-200">
-                {dict.about.visionBody}
               </p>
             </div>
           </div>
