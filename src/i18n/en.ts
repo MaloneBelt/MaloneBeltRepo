@@ -31,7 +31,6 @@ export const en = {
     products: "Products",
     about: "About",
     contact: "Contact",
-    comingSoon: "Coming Soon",
   },
   footer: {
     productsHeading: "Products",

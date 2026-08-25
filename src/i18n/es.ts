@@ -33,7 +33,6 @@ export const es: Dictionary = {
     products: "Productos",
     about: "Nosotros",
     contact: "Contacto",
-    comingSoon: "Próximamente",
   },
   footer: {
     productsHeading: "Productos",

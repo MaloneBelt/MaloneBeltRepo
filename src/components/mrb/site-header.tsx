@@ -25,9 +25,8 @@ export function SiteHeader({ locale }: { locale: Locale }) {
     { label: dict.nav.products, href: l(locale, "/products") },
     { label: dict.nav.about, href: l(locale, "/about") },
     { label: dict.nav.contact, href: l(locale, "/contact") },
-    /* Interim launch page — remove from the nav once the final version
-       is approved and it takes over as the live-launch landing. */
-    { label: dict.nav.comingSoon, href: l(locale, "/coming-soon") },
+    /* The interim /coming-soon page left the nav at the production launch
+       (client direction, 25 Aug 2026); the route itself remains. */
   ];
 
   return (
