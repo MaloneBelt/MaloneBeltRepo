@@ -3,21 +3,22 @@ import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { CardImageRotator } from "@/components/mrb/card-image-rotator";
 import { SpecList } from "@/components/mrb/spec-row";
 import { StateChip } from "@/components/mrb/state-chip";
 import { cn } from "@/lib/utils";
 
 /* The canonical belt card: navy-300 header (mono meta + live status) — the
    mid-teal pops against the dark section backgrounds these cards sit on —
-   visual panel (product photo, or the brand emblem on a navy wash), mono
-   spec rows,
+   visual panel (product photos auto-rotating when there's more than one, or
+   the brand emblem on a navy wash), mono spec rows,
    footer CTA. `ctaVariant` exists to honor one-orange-per-view. */
 export function ProductCard({
   partNumber,
   title,
   headerLabel,
   liveLabel,
-  image,
+  images = [],
   specs = [],
   availability,
   ctaLabel = "View product",
@@ -29,7 +30,7 @@ export function ProductCard({
   title: string;
   headerLabel: string;
   liveLabel?: string;
-  image?: { src: string; alt: string; fit?: "cover" | "contain" };
+  images?: { src: string; alt: string; fit?: "cover" | "contain" }[];
   specs?: { label: string; value: string }[];
   availability?: { status: "in-stock" | "made-to-order"; label: string };
   ctaLabel?: string;
@@ -61,15 +62,10 @@ export function ProductCard({
          Aug 2026): photos/renders bleed edge-to-edge; transparent diagrams
          (fit: "contain") stay whole on the gradient. */}
       <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-radial-[120%_140%_at_20%_0%] from-navy-100 to-navy-50">
-        {image ? (
-          <Image
-            src={image.src}
-            alt={image.alt}
-            fill
+        {images.length > 0 ? (
+          <CardImageRotator
+            images={images}
             sizes="(max-width: 768px) 100vw, (max-width: 1180px) 50vw, 370px"
-            className={
-              image.fit === "contain" ? "object-contain p-3" : "object-cover"
-            }
           />
         ) : (
           <Image

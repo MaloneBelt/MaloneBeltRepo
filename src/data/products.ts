@@ -211,6 +211,7 @@ export const products: Product[] = [
         {
           src: "/products/patterns/c15p385-tech.png",
           alt: "Technical plan drawing of the C15P385 chevron pattern with dimension callouts",
+          fit: "contain",
         },
       ],
     },
@@ -256,6 +257,7 @@ export const products: Product[] = [
         {
           src: "/products/patterns/c15v450-tech.png",
           alt: "Technical plan drawing of the C15V450 chevron pattern with dimension callouts",
+          fit: "contain",
         },
       ],
     },
@@ -298,6 +300,7 @@ export const products: Product[] = [
         {
           src: "/products/patterns/c32p460-tech.png",
           alt: "Technical plan drawing of the C32P460 chevron pattern with dimension callouts",
+          fit: "contain",
         },
       ],
     },
@@ -378,6 +381,7 @@ export const products: Product[] = [
         {
           src: "/products/patterns/c25p1000-tech.png",
           alt: "Technical plan drawing of the C25P1000 chevron pattern with dimension callouts",
+          fit: "contain",
         },
       ],
     },
@@ -420,6 +424,7 @@ export const products: Product[] = [
         {
           src: "/products/patterns/c15p540-tech.png",
           alt: "Technical plan drawing of the C15P540 chevron pattern with dimension callouts",
+          fit: "contain",
         },
       ],
     },
@@ -462,6 +467,7 @@ export const products: Product[] = [
         {
           src: "/products/patterns/y26v400-tech.png",
           alt: "Technical plan drawing of the Y26V400 cleat pattern with dimension callouts",
+          fit: "contain",
         },
       ],
     },
@@ -504,6 +510,7 @@ export const products: Product[] = [
         {
           src: "/products/patterns/c15p800-tech.png",
           alt: "Technical plan drawing of the C15P800 chevron pattern with dimension callouts",
+          fit: "contain",
         },
       ],
     },
@@ -586,6 +593,7 @@ export const products: Product[] = [
         {
           src: "/products/patterns/c15p500-tech.png",
           alt: "Technical plan drawing of the C15P500 chevron pattern with dimension callouts",
+          fit: "contain",
         },
       ],
     },

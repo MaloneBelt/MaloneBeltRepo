@@ -35,12 +35,15 @@ import { localizeCategory, localizeProduct } from "@/i18n/localize";
 import { makeQuoteSchema, type QuoteFormValues } from "@/lib/validators/quote";
 import { cn } from "@/lib/utils";
 
-/* Quote-request form. Phase 1 is UI-only: client-side Zod validation and an
-   inline success state — no network request. The payload shape mirrors the
-   Prisma Lead model so Phase 2 can wire it straight to the database. */
+/* Quote-request form. Client-side Zod validation, then the validated
+   payload POSTs to /api/quote which forwards the lead by email (the Phase
+   1.5 bridge — Phase 2 persists it as a Prisma Lead behind the same
+   contract). */
 export function QuoteForm({ locale }: { locale: Locale }) {
   const searchParams = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const dict = getDictionary(locale);
 
   const urgencyParam = searchParams.get("urgency");
@@ -73,10 +76,22 @@ export function QuoteForm({ locale }: { locale: Locale }) {
     },
   });
 
-  function onSubmit() {
-    // Phase 2: POST the validated QuoteFormValues to a route handler and
-    // persist as a Lead.
-    setSubmitted(true);
+  async function onSubmit(values: QuoteFormValues) {
+    setSending(true);
+    setSubmitError(false);
+    try {
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      if (!response.ok) throw new Error(`quote POST ${response.status}`);
+      setSubmitted(true);
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setSending(false);
+    }
   }
 
   if (submitted) {
@@ -340,7 +355,18 @@ export function QuoteForm({ locale }: { locale: Locale }) {
           )}
         />
 
-        <Button type="submit" variant="primary" size="lg" block>
+        {submitError && (
+          <p role="alert" className="text-sm font-semibold text-down-strong">
+            {dict.quoteForm.errSubmit}
+          </p>
+        )}
+        <Button
+          type="submit"
+          variant="primary"
+          size="lg"
+          block
+          disabled={sending}
+        >
           {dict.quoteForm.submit}
         </Button>
       </form>

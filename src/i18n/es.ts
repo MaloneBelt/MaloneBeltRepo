@@ -167,6 +167,8 @@ export const es: Dictionary = {
     errName: "Ingresa tu nombre",
     errEmail: "Ingresa un correo electrónico válido",
     errMessage: "El mensaje es demasiado largo",
+    errSubmit:
+      "Algo salió mal al enviar tu solicitud. Inténtalo de nuevo — o llámanos y la tomamos por teléfono.",
   },
   about: {
     metaTitle: "Nosotros",

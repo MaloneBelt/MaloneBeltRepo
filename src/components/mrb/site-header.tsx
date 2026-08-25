@@ -42,12 +42,12 @@ export function SiteHeader({ locale }: { locale: Locale }) {
           className="shrink-0"
         >
           <Image
-            src="/brand/Final-logo-sin-contacto.svg"
+            src="/brand/Final-logo-sin-contacto.png"
             alt=""
             width={1272}
             height={480}
             priority
-            className="h-16 w-auto md:h-[82px]"
+            className="h-[84px] w-auto md:h-[128px]"
           />
         </Link>
 

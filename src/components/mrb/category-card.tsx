@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+import { CardImageRotator } from "@/components/mrb/card-image-rotator";
 import { l, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n";
 import { localizeCategory } from "@/i18n/localize";
@@ -35,12 +35,12 @@ export function CategoryCard({
       )}
     >
       <div className="relative h-40 overflow-hidden">
-        <Image
-          src={localized.images.hero.src}
-          alt={localized.images.hero.alt}
-          fill
+        {/* Rotates through hero + gallery when the range has several photos
+           (client direction, Aug 2026) */}
+        <CardImageRotator
+          images={[localized.images.hero, ...localized.images.gallery]}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 370px"
-          className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+          imageClassName="group-hover:scale-[1.03]"
         />
         <div
           aria-hidden="true"

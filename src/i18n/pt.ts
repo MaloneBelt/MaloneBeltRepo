@@ -166,6 +166,8 @@ export const pt: Dictionary = {
     errName: "Informe o seu nome",
     errEmail: "Informe um e-mail válido",
     errMessage: "A mensagem é longa demais",
+    errSubmit:
+      "Algo deu errado ao enviar sua solicitação. Tente novamente — ou ligue e resolvemos por telefone.",
   },
   about: {
     metaTitle: "Sobre nós",

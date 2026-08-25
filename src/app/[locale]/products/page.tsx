@@ -152,7 +152,7 @@ export default async function ProductsPage({
                         headerLabel={p.sku}
                         partNumber={p.sku}
                         title={p.name}
-                        image={p.images.hero}
+                        images={[p.images.hero, ...p.images.gallery]}
                         specs={p.specs.slice(0, 3)}
                         availability={p.availability}
                         ctaLabel={dict.common.viewProduct}
@@ -251,7 +251,7 @@ export default async function ProductsPage({
                           headerLabel={p.sku}
                           partNumber={p.sku}
                           title={p.name}
-                          image={p.images.hero}
+                          images={[p.images.hero, ...p.images.gallery]}
                           specs={p.specs.slice(0, 3)}
                           availability={p.availability}
                           ctaLabel={dict.common.viewProduct}

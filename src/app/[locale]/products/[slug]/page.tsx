@@ -245,7 +245,7 @@ export default async function ProductDetailPage({
                 headerLabel={relatedProduct.sku}
                 partNumber={relatedProduct.sku}
                 title={relatedProduct.name}
-                image={relatedProduct.images.hero}
+                images={[relatedProduct.images.hero, ...relatedProduct.images.gallery]}
                 specs={relatedProduct.specs.slice(0, 2)}
                 availability={relatedProduct.availability}
                 ctaLabel={dict.common.viewProduct}

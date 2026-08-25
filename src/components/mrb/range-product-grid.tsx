@@ -69,7 +69,7 @@ export function RangeProductGrid({
             headerLabel={product.sku}
             partNumber={product.sku}
             title={product.name}
-            image={product.images.hero}
+            images={[product.images.hero, ...product.images.gallery]}
             specs={product.specs.slice(0, 3)}
             availability={product.availability}
             ctaLabel={labels.viewProduct}

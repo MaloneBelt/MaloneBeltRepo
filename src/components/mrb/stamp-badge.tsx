@@ -9,9 +9,21 @@
    Aug 2026). Pure SVG so it stays crisp at any size and inherits the DS
    tokens (no raster asset to recolor on the next rebrand). */
 
-import type { LucideIcon } from "lucide-react";
+import {
+  Check,
+  Hourglass,
+  Timer,
+  Truck,
+  type LucideIcon,
+} from "lucide-react";
 
 import { cn } from "@/lib/utils";
+
+/* One pictogram per stat seal (client direction, Aug 2026): DIN = check,
+   next-day shipping = truck, ZIP CLIP fitting = hourglass, service life =
+   stopwatch. Order matches dict.about.stats — shared by the About stat
+   cards, the home hero strip and the footer. */
+export const STAT_ICONS: LucideIcon[] = [Check, Truck, Hourglass, Timer];
 
 const STAR_PATH =
   "M0-4.6 1.1-1.5 4.4-1.4 1.8.6 2.7 3.7 0 1.8-2.7 3.7-1.8.6-4.4-1.4-1.1-1.5Z";
@@ -118,6 +130,11 @@ export function StampBadge({
         </mask>
       </defs>
 
+      {/* White paper only inside the seal — everything around it stays
+         transparent (client direction, Aug 2026), so the stamp sits
+         directly on dark sections without a plate. Kept outside the grunge
+         mask: worn ink reveals the paper, not the page background. */}
+      <circle cx="70" cy="70" r="64.5" fill="white" />
       <g mask={`url(#${id}-grunge)`}>
         {/* solid double ring, like the reference seal */}
         <circle

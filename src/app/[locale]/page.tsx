@@ -5,6 +5,7 @@ import { BeltMatch } from "@/components/mrb/belt-match";
 import { ConveyorStrip } from "@/components/mrb/conveyor-strip";
 import { CtaBand } from "@/components/mrb/cta-band";
 import { SectionHeading } from "@/components/mrb/section-heading";
+import { STAT_ICONS, StampBadge } from "@/components/mrb/stamp-badge";
 import { isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n";
 
@@ -65,6 +66,22 @@ export default async function HomePage({
             <p className="mt-4 max-w-lg text-lead text-navy-100">
               {dict.home.heroLead}
             </p>
+            {/* The four brand seals ride between the pitch and the search
+               (client direction, Aug 2026) — no plates: the seal carries
+               its own white paper disc, the rest stays transparent */}
+            <ul className="mt-6 flex flex-wrap items-center gap-4">
+              {dict.about.stats.map((stat, index) => (
+                <li key={stat.value}>
+                  <StampBadge
+                    value={stat.value}
+                    arcTop={stat.arcTop}
+                    arcBottom={stat.arcBottom}
+                    icon={STAT_ICONS[index]}
+                    className="size-24 drop-shadow-lg sm:size-28"
+                  />
+                </li>
+              ))}
+            </ul>
             <BeltMatch locale={locale} className="mt-7" />
           </div>
         </div>

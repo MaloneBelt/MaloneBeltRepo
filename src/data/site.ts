@@ -11,6 +11,20 @@ export const site = {
   phone: "270-777-7727",
   phoneHref: "tel:+12707777727",
   email: "sales@malonebelt.com",
+  social: [
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/malone.roadbelt/",
+    },
+    {
+      name: "Facebook",
+      href: "https://www.facebook.com/people/Malone-Road-Belt/61592525823213/?ref=1",
+    },
+    {
+      name: "X",
+      href: "https://x.com/Malone_roadbelt",
+    },
+  ],
 };
 
 /* Nav labels and footer link labels live in the locale dictionaries

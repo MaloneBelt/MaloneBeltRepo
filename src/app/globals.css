@@ -98,8 +98,9 @@
 
   /* ---- Layout ---- */
   /* Tall enough for the full lockup — down to the "moving your business
-     forward" strapline — to stay legible (client direction, Aug 2026) */
-  --spacing-nav: 96px;
+     forward" strapline — to stay legible (client direction, Aug 2026;
+     raised again 25 Aug: the strapline must read comfortably) */
+  --spacing-nav: 148px;
 
   /* ---- Motion ---- */
   --animate-roll: roll 22s linear infinite;

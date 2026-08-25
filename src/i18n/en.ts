@@ -166,6 +166,8 @@ export const en = {
     errName: "Please enter your name",
     errEmail: "Please enter a valid email address",
     errMessage: "Message is too long",
+    errSubmit:
+      "Something went wrong sending your request. Please try again — or call us and we'll take it over the phone.",
   },
   about: {
     metaTitle: "About",
@@ -178,7 +180,6 @@ export const en = {
     storyParagraphs: [
       "Our background comes from the equipment side of the industry — and that matters. Instead of expecting you to tell us exactly what belt you need, we work the chain ourselves: manufacturer → machine → model → application → belt → part number → correct replacement.",
       "We are continuously developing an extensive equipment and belt database covering machines from Wirtgen, McCloskey, Powerscreen, Terex Finlay, Sandvik, Extec, Rubble Master, Anaconda, Roadtec, Vermeer, Doppstadt, Komptech and many others across crushing, screening, grinding, recycling and milling.",
-      "As an authorized Smiley Monroe OEM conveyor belt distributor, MRB pairs that machine knowledge with a broad range of conveyor belting — and with people who actually care whether your machine gets back to work.",
     ],
     storyPunch: "Give us the machine. We'll help find the belt.",
     /* `ring` is the arc text of each stat's stamp badge (StampBadge) — keep
@@ -214,19 +215,15 @@ export const en = {
     values: [
       {
         title: "People first, no scripts",
-        body: "Real people who understand your equipment: fast answers, straightforward communication, accurate cross-referencing and ownership until the machine is moving again. We don't want price to be the reason you choose MRB — we want to make your job easier.",
+        body: "Real people who understand your equipment: fast answers, straightforward communication, accurate cross-referencing and ownership until the machine is up and running again.",
       },
       {
         title: "Same-day mindset",
-        body: "When a belt fails, the machine is sitting still right now, and downtime costs money. Our inventory, supplier network and logistics are built around speed — where they permit, we provide same-day and expedited solutions. Sometimes the most valuable belt isn't the cheapest; it's the one you can actually get.",
+        body: "When a belt fails, the machine is sitting still right now, and downtime costs money. Our inventory and logistics are built around speed — where they permit, we provide same-day and expedited solutions.",
       },
       {
         title: "Road milling specialists",
         body: "Milling is one of our core specialties. We support replacement belts for milling equipment with a growing cross-reference of machines, belt dimensions, specifications and OEM part numbers. Tell us the machine and model — we do the homework.",
-      },
-      {
-        title: "Data is part of our product",
-        body: "Our biggest investment isn't sitting on a warehouse shelf — it's information. Cross-reference databases organized by manufacturer, model, conveyor position, dimensions and OEM numbers help us solve problems faster. Know the machine. Know the belt. Get the customer moving.",
       },
     ],
     manufacturedTo: "Manufactured to:",

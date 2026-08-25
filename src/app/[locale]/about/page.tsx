@@ -3,17 +3,14 @@ import {
   Check,
   Database,
   HeartHandshake,
-  Hourglass,
   Route,
-  Timer,
-  Truck,
   Zap,
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { OemGrid } from "@/components/mrb/oem-grid";
 import { SectionHeading } from "@/components/mrb/section-heading";
-import { StampBadge } from "@/components/mrb/stamp-badge";
+import { STAT_ICONS, StampBadge } from "@/components/mrb/stamp-badge";
 import { TrustRow } from "@/components/mrb/trust-row";
 import { isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n";
@@ -21,10 +18,6 @@ import { getDictionary } from "@/i18n";
 /* Icons for the four "how we work" pillars (order matches dict.about.values):
    people-first, same-day mindset, road milling, data. */
 const VALUE_ICONS = [HeartHandshake, Zap, Route, Database];
-/* One pictogram per stat seal (client direction, Aug 2026): DIN = check,
-   next-day shipping = truck, ZIP CLIP fitting = hourglass, service life =
-   stopwatch. Order matches dict.about.stats. */
-const STAT_ICONS = [Check, Truck, Hourglass, Timer];
 const STANDARDS = ["DIN 22102", "ISO 9001"];
 
 export async function generateMetadata({
