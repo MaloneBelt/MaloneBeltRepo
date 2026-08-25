@@ -8,12 +8,12 @@
    Driven by NEXT_PUBLIC_LAUNCH_MODE, read at build time (next.config.ts
    imports this module, so the value is baked into each deployment):
 
-     unset / anything else → true   fail-safe: production stays on the splash
-                                    even if someone forgets to set the var
-     "false"               → false  full site — set this on Preview only
+     "true"                → true   splash-only (pre-launch freeze)
+     unset / anything else → false  full site
 
-   In Vercel: Settings → Environment Variables → NEXT_PUBLIC_LAUNCH_MODE
-   = "false" scoped to Preview. Leave Production unset until go-live.
-   Locally it comes from .env. Kept dependency-free because next.config.ts
+   The site went live on 25 Aug 2026, so the default flipped: the full site
+   is the normal state everywhere, and the splash is opt-in (set the var to
+   "true" in Vercel only if the client ever needs to freeze the site behind
+   the coming-soon page again). Kept dependency-free because next.config.ts
    imports it. */
-export const launchMode = process.env.NEXT_PUBLIC_LAUNCH_MODE !== "false";
+export const launchMode = process.env.NEXT_PUBLIC_LAUNCH_MODE === "true";
