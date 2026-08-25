@@ -2,7 +2,7 @@ import type { Category } from "@/types/product";
 
 /* Product categories — the top level of the catalog (restructured at the
    client meeting, Aug 2026): Standard multi-ply belts, Heavy-Duty &
-   Specialized constructions, the Incline cleated range, and a link-only
+   Specialized constructions, the MRB CleatMax cleated range, and a link-only
    Custom / Special tile that routes straight to the contact page. Order
    here drives the order of every category listing. */
 
@@ -42,10 +42,6 @@ export const categories: Category[] = [
         {
           src: "/products/photos/belt-roll-spiral.jpg",
           alt: "Face of a wound conveyor belt roll showing the ply spiral",
-        },
-        {
-          src: "/products/photos/belt-roll-stacked.jpg",
-          alt: "Wrapped conveyor belt rolls stacked in the warehouse",
         },
       ],
     },
@@ -89,12 +85,12 @@ export const categories: Category[] = [
   {
     slug: "incline",
     code: "MB-IN",
-    name: "Incline",
+    name: "MRB CleatMax",
     subtitle: "Aggregate Cleated Belts",
-    family: "Cleatpro X™ cleated range",
+    family: "MRB CleatMax™ cleated range",
     tagline: "Rock and no rollback.",
     description: [
-      "A Cleatpro X™ cleated belt range built for aggregate duty: crushed rock, screened material and everything a quarry throws at it. The cleat profiles are integrally hot-molded into the belt's top cover — not glued or bolted on — so they grip the belt as firmly as the belt grips the load, extending belt life and keeping material moving up steep inclines.",
+      "A MRB CleatMax™ cleated belt range built for aggregate duty: crushed rock, screened material and everything a quarry throws at it. The cleat profiles are integrally hot-molded into the belt's top cover — not glued or bolted on — so they grip the belt as firmly as the belt grips the load, extending belt life and keeping material moving up steep inclines.",
       "Pair the cleat pattern with a heavy-duty base belt such as Ironcleat® for cut, impact and wear resistance with excellent troughability. Our team will match cleat profile, height and pitch to your incline angle, material and belt speed.",
     ],
     features: [
@@ -105,19 +101,23 @@ export const categories: Category[] = [
       "Available as full rolls, cut lengths, endless or ZIP CLIP® prepared",
     ],
     applications: ["Aggregates", "Quarrying", "Crushing", "Screening", "Stockpiling"],
+    /* Machine-portrait imagery (client direction, 24 Aug 2026, modeled on
+       the "MRB Cleatmax" references): mobile plant with the incline
+       conveyors CleatMax belts actually run on — the hero even shows a
+       chevron-cleated belt on the raised boom. */
     images: {
       hero: {
-        src: "/products/photos/quarry-stacker.jpg",
-        alt: "Tall stacker conveyor piling crushed aggregate at a quarry",
+        src: "/products/photos/quarry-cleated-conveyor.jpg",
+        alt: "Mobile crushing and screening plant in a quarry, its raised incline conveyor fitted with a chevron-cleated belt",
       },
       gallery: [
         {
-          src: "/products/photos/quarry-hopper-belt.jpg",
-          alt: "Hopper feeding crushed stone onto a quarry conveyor belt",
+          src: "/products/photos/crusher-incline-boom.jpg",
+          alt: "Tracked mobile crusher with its long incline discharge conveyor raised against the sky",
         },
         {
-          src: "/products/photos/crusher-harbor.jpg",
-          alt: "Tracked mobile crusher with discharge conveyors",
+          src: "/products/photos/crusher-side-profile.jpg",
+          alt: "Side profile of a tracked mobile crusher with folded incline conveyor",
         },
       ],
     },

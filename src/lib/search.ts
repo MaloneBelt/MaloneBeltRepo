@@ -124,7 +124,7 @@ export function searchProducts(query: string): ProductMatch[] {
 
   // 3. Product text: every query token must appear somewhere in the product.
   // Category names count as product text, so "incline" surfaces the
-  // patterns of the Incline range.
+  // patterns of the MRB CleatMax range.
   for (const product of products) {
     const productCategories = product.categories
       .map((slug) => getCategory(slug))

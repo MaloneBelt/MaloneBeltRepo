@@ -4,7 +4,7 @@ import type { Category, Product } from "@/types/product";
 /* The purchasable catalog. Every product belongs to at least one category
    (see src/data/categories.ts); the first slug in `categories` is the
    primary one used for breadcrumbs and grouping. Cleat-pattern products and
-   their spec tables come from the Cleatpro X™ brochure; belt constructions
+   their spec tables come from the MRB CleatMax™ brochure; belt constructions
    come from the Giant Handbook. The first 3 entries of `specs` are the rows
    shown on the product card. */
 
@@ -174,7 +174,7 @@ export const products: Product[] = [
   },
 
   /* ------------------------------------------------------------------ */
-  /* Incline patterns — aggregate duty                                   */
+  /* MRB CleatMax patterns — aggregate duty                                   */
   /* ------------------------------------------------------------------ */
   {
     slug: "c15p385",
@@ -183,7 +183,7 @@ export const products: Product[] = [
     name: "C15P385 Chevron Pattern",
     tagline: "The all-round 15 mm chevron for 400–800 mm belts.",
     description: [
-      "The most versatile pattern in the Incline range: a 15 mm chevron hot-molded integrally into the top cover, covering belt widths from 400 to 800 mm. It keeps screened aggregate, sand and crop material climbing without rollback at the inclines mobile plant actually runs.",
+      "The most versatile pattern in the MRB CleatMax range: a 15 mm chevron hot-molded integrally into the top cover, covering belt widths from 400 to 800 mm. It keeps screened aggregate, sand and crop material climbing without rollback at the inclines mobile plant actually runs.",
       "Available on EP315/3 base belts across the width range, or stepped up to EP500/3 at 650 and 800 mm for harder-working drives. Also specified for harvesting and stockpiling duty.",
     ],
     features: [
@@ -226,7 +226,7 @@ export const products: Product[] = [
     tagline: "15 mm chevron with V-joint for 900 mm belts.",
     description: [
       "A 15 mm chevron with the V-joint option, molded for 900 mm belts on an EP500/3 carcass. The V-joint closes the pattern at the belt centre so fine material can't find a straight path back down the incline.",
-      "Like every Cleatpro X™ pattern, the cleats are hot-molded into the top cover for adhesion that outlasts glued or bolted profiles.",
+      "Like every MRB CleatMax™ pattern, the cleats are hot-molded into the top cover for adhesion that outlasts glued or bolted profiles.",
     ],
     features: [
       "V-joint closes the pattern against fines rollback",
@@ -245,14 +245,19 @@ export const products: Product[] = [
     applications: ["Aggregates", "Screening", "Sand & gravel"],
     standards: ["DIN 22102", "ISO 9001"],
     images: {
-      /* No 3D render delivered for this pattern yet — the brochure plan
-         drawing is the only image for now (client review, Aug 2026). */
+      /* No render exists for this exact pattern — the closest client render
+         in the range stands in (client direction, 24 Aug 2026: match by
+         profile family, C15 -> C15 render). */
       hero: {
-        src: "/products/patterns/c15v450-tech.png",
-        alt: "Technical plan drawing of the C15V450 chevron pattern with dimension callouts",
-        fit: "contain",
+        src: "/products/photos/c15p385-render.png",
+        alt: "3D render of the C15 chevron profile (C15P385 pattern shown, representative of the range)",
       },
-      gallery: [],
+      gallery: [
+        {
+          src: "/products/patterns/c15v450-tech.png",
+          alt: "Technical plan drawing of the C15V450 chevron pattern with dimension callouts",
+        },
+      ],
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
@@ -266,7 +271,7 @@ export const products: Product[] = [
     tagline: "32 mm bite for steep, coarse aggregate.",
     description: [
       "When the incline gets steep and the material gets coarse, the C32P460's 32 mm cleats give crushed rock something to lean on. The 330 mm pitch keeps lumps seated between cleats instead of bouncing over them.",
-      "Molded on EP250/2 at 500 mm or EP400/3 at 650 mm belt widths, with the same integral hot-molded bond as the rest of the Incline range.",
+      "Molded on EP250/2 at 500 mm or EP400/3 at 650 mm belt widths, with the same integral hot-molded bond as the rest of the MRB CleatMax range.",
     ],
     features: [
       "32 mm cleat height for steep inclines and coarse material",
@@ -286,11 +291,15 @@ export const products: Product[] = [
     standards: ["DIN 22102", "ISO 9001"],
     images: {
       hero: {
-        src: "/products/patterns/c32p460-tech.png",
-        alt: "Technical plan drawing of the C32P460 chevron pattern with dimension callouts",
-        fit: "contain",
+        src: "/products/photos/c32p580-render.png",
+        alt: "3D render of the C32 heavy chevron profile (C32P580 pattern shown, representative of the range)",
       },
-      gallery: [],
+      gallery: [
+        {
+          src: "/products/patterns/c32p460-tech.png",
+          alt: "Technical plan drawing of the C32P460 chevron pattern with dimension callouts",
+        },
+      ],
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
@@ -384,7 +393,7 @@ export const products: Product[] = [
     tagline: "Tight 182 mm pitch keeps fines climbing.",
     description: [
       "A 15 mm chevron at the tightest pitch in the range — 182 mm — so fine, free-flowing material meets a cleat before it can slide back. Specified for 1050 mm belts on an EP400/3 carcass.",
-      "The go-to Incline pattern for fines conveyors and secondary screened material.",
+      "The go-to MRB CleatMax pattern for fines conveyors and secondary screened material.",
     ],
     features: [
       "Tight 182 mm pitch for fine, free-flowing material",
@@ -404,11 +413,15 @@ export const products: Product[] = [
     standards: ["DIN 22102", "ISO 9001"],
     images: {
       hero: {
-        src: "/products/patterns/c15p540-tech.png",
-        alt: "Technical plan drawing of the C15P540 chevron pattern with dimension callouts",
-        fit: "contain",
+        src: "/products/photos/c15p385-render.png",
+        alt: "3D render of the C15 chevron profile (C15P385 pattern shown, representative of the range)",
       },
-      gallery: [],
+      gallery: [
+        {
+          src: "/products/patterns/c15p540-tech.png",
+          alt: "Technical plan drawing of the C15P540 chevron pattern with dimension callouts",
+        },
+      ],
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
@@ -442,11 +455,15 @@ export const products: Product[] = [
     standards: ["DIN 22102", "ISO 9001"],
     images: {
       hero: {
-        src: "/products/patterns/y26v400-tech.png",
-        alt: "Technical plan drawing of the Y26V400 cleat pattern with dimension callouts",
-        fit: "contain",
+        src: "/products/photos/y32p600-render.png",
+        alt: "3D render of the Y-profile cleat pattern (Y32P600 shown, representative of the range)",
       },
-      gallery: [],
+      gallery: [
+        {
+          src: "/products/patterns/y26v400-tech.png",
+          alt: "Technical plan drawing of the Y26V400 cleat pattern with dimension callouts",
+        },
+      ],
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
@@ -480,11 +497,15 @@ export const products: Product[] = [
     standards: ["DIN 22102", "ISO 9001"],
     images: {
       hero: {
-        src: "/products/patterns/c15p800-tech.png",
-        alt: "Technical plan drawing of the C15P800 chevron pattern with dimension callouts",
-        fit: "contain",
+        src: "/products/photos/c15p750-render.png",
+        alt: "3D render of the wide C15 chevron profile (C15P750 pattern shown, representative of the range)",
       },
-      gallery: [],
+      gallery: [
+        {
+          src: "/products/patterns/c15p800-tech.png",
+          alt: "Technical plan drawing of the C15P800 chevron pattern with dimension callouts",
+        },
+      ],
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
@@ -518,12 +539,11 @@ export const products: Product[] = [
     standards: ["DIN 22102", "ISO 9001"],
     images: {
       /* No pattern-specific technical drawing exists for Y26V330 in the
-         client brochures (US & EU) and no 3D render either — the quarry
-         photo stands in as the only image until the client supplies the
-         drawing (client review, Aug 2026). */
+         client brochures (US & EU) — the closest client render is its only
+         image (client direction, 24 Aug 2026). */
       hero: {
-        src: "/products/photos/quarry-hopper-belt.jpg",
-        alt: "Hopper feeding crushed stone onto a quarry conveyor belt",
+        src: "/products/photos/y32p600-render.png",
+        alt: "3D render of the Y-profile cleat pattern (Y32P600 shown, representative of the range)",
       },
       gallery: [],
     },
@@ -559,11 +579,15 @@ export const products: Product[] = [
     standards: ["DIN 22102", "ISO 9001"],
     images: {
       hero: {
-        src: "/products/patterns/c15p500-tech.png",
-        alt: "Technical plan drawing of the C15P500 chevron pattern with dimension callouts",
-        fit: "contain",
+        src: "/products/photos/c15p385-render.png",
+        alt: "3D render of the C15 chevron profile (C15P385 pattern shown, representative of the range)",
       },
-      gallery: [],
+      gallery: [
+        {
+          src: "/products/patterns/c15p500-tech.png",
+          alt: "Technical plan drawing of the C15P500 chevron pattern with dimension callouts",
+        },
+      ],
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",

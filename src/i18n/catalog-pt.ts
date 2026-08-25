@@ -56,12 +56,12 @@ export const categoryPt: Record<string, CategoryOverlay> = {
     ],
   },
   incline: {
-    name: "Incline",
+    name: "MRB CleatMax",
     subtitle: "Correias com Taliscas para Agregados",
-    family: "Linha com taliscas Cleatpro X™",
+    family: "Linha com taliscas MRB CleatMax™",
     tagline: "Rocha sem retorno.",
     description: [
-      "Uma linha de correias com taliscas Cleatpro X™ construída para o trabalho com agregados: rocha britada, material peneirado e tudo o que uma pedreira aguenta jogar. Os perfis de talisca são moldados a quente integralmente na cobertura superior da correia — nada de cola ou parafuso — agarrando a correia com a mesma firmeza com que a correia agarra a carga, prolongando a vida útil e mantendo o material subindo em inclinações fortes.",
+      "Uma linha de correias com taliscas MRB CleatMax™ construída para o trabalho com agregados: rocha britada, material peneirado e tudo o que uma pedreira aguenta jogar. Os perfis de talisca são moldados a quente integralmente na cobertura superior da correia — nada de cola ou parafuso — agarrando a correia com a mesma firmeza com que a correia agarra a carga, prolongando a vida útil e mantendo o material subindo em inclinações fortes.",
       "Combine o padrão de taliscas com uma correia base reforçada como a Ironcleat® para resistência a corte, impacto e desgaste com excelente acomodação em calha. Nossa equipe ajusta perfil, altura e passo das taliscas ao ângulo de inclinação, ao material e à velocidade da correia.",
     ],
     features: [
@@ -147,7 +147,7 @@ export const productPt: Record<string, ProductOverlay> = {
     name: "Padrão Chevron C15P385",
     tagline: "O chevron de 15 mm mais versátil, para correias de 400–800 mm.",
     description: [
-      "O padrão mais versátil da linha Incline: um chevron de 15 mm moldado a quente integralmente na cobertura superior, cobrindo larguras de correia de 400 a 800 mm. Mantém agregado peneirado, areia e produtos agrícolas subindo sem retorno nas inclinações que os equipamentos móveis realmente usam.",
+      "O padrão mais versátil da linha MRB CleatMax: um chevron de 15 mm moldado a quente integralmente na cobertura superior, cobrindo larguras de correia de 400 a 800 mm. Mantém agregado peneirado, areia e produtos agrícolas subindo sem retorno nas inclinações que os equipamentos móveis realmente usam.",
       "Disponível sobre correia base EP315/3 em toda a faixa de largura, ou reforçada para EP500/3 em 650 e 800 mm para acionamentos mais exigidos. Também especificada para colheita e armazenagem.",
     ],
     features: [
@@ -163,7 +163,7 @@ export const productPt: Record<string, ProductOverlay> = {
     tagline: "Chevron de 15 mm com junta em V para correias de 900 mm.",
     description: [
       "Um chevron de 15 mm com a opção de junta em V, moldado para correias de 900 mm sobre carcaça EP500/3. A junta em V fecha o padrão no centro da correia para que os finos não encontrem um caminho reto de volta rampa abaixo.",
-      "Como todo padrão Cleatpro X™, as taliscas são moldadas a quente na cobertura superior, com adesão que dura mais que perfis colados ou aparafusados.",
+      "Como todo padrão MRB CleatMax™, as taliscas são moldadas a quente na cobertura superior, com adesão que dura mais que perfis colados ou aparafusados.",
     ],
     features: [
       "Junta em V fecha o padrão contra o retorno de finos",
@@ -178,7 +178,7 @@ export const productPt: Record<string, ProductOverlay> = {
     tagline: "Mordida de 32 mm para agregado grosso e rampas fortes.",
     description: [
       "Quando a rampa fica íngreme e o material fica grosso, as taliscas de 32 mm do C32P460 dão à rocha britada um apoio de verdade. O passo de 330 mm mantém os blocos assentados entre as taliscas em vez de quicando por cima delas.",
-      "Moldado sobre EP250/2 em 500 mm ou EP400/3 em 650 mm de largura, com a mesma união moldada a quente do restante da linha Incline.",
+      "Moldado sobre EP250/2 em 500 mm ou EP400/3 em 650 mm de largura, com a mesma união moldada a quente do restante da linha MRB CleatMax.",
     ],
     features: [
       "Talisca de 32 mm para rampas fortes e material grosso",
@@ -223,7 +223,7 @@ export const productPt: Record<string, ProductOverlay> = {
     tagline: "Passo curto de 182 mm mantém os finos subindo.",
     description: [
       "Um chevron de 15 mm com o passo mais curto da linha — 182 mm — para que material fino e de fluxo livre encontre uma talisca antes de escorregar de volta. Especificado para correias de 1050 mm sobre carcaça EP400/3.",
-      "O padrão Incline preferido para transportadores de finos e material peneirado secundário.",
+      "O padrão MRB CleatMax preferido para transportadores de finos e material peneirado secundário.",
     ],
     features: [
       "Passo curto de 182 mm para material fino de fluxo livre",

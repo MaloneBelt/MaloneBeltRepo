@@ -12,7 +12,8 @@ import { l, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n";
 import { cn } from "@/lib/utils";
 
-/* Sticky frosted nav (68px): brand lockup, nav links, language dropdown and
+/* Sticky frosted nav (96px): brand lockup (v3 — strapline bold inside the
+   artwork, full logo width), nav links, language dropdown and
    the red pulsing "Machine down now?" escape hatch for the urgent buying
    moment. */
 export function SiteHeader({ locale }: { locale: Locale }) {
@@ -32,18 +33,21 @@ export function SiteHeader({ locale }: { locale: Locale }) {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-canvas/80 backdrop-blur-md">
       <div className="container-shell flex h-nav items-center justify-between gap-4">
+        {/* Brand lockup v3 (client direction, Aug 2026): the strapline is part
+            of the logo artwork — bold, full lockup width — so it reads at nav
+            size while staying one single mark. */}
         <Link
           href={l(locale, "/")}
           aria-label={`${site.name} — ${dict.common.home}`}
           className="shrink-0"
         >
           <Image
-            src="/brand/Final-logo-sin-contacto.png"
+            src="/brand/Final-logo-sin-contacto.svg"
             alt=""
             width={1272}
-            height={409}
+            height={480}
             priority
-            className="h-14 w-auto"
+            className="h-16 w-auto md:h-[82px]"
           />
         </Link>
 

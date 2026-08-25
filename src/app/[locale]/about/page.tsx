@@ -1,5 +1,14 @@
 import type { Metadata } from "next";
-import { ClipboardCheck, SearchCheck, Truck } from "lucide-react";
+import {
+  Check,
+  Database,
+  HeartHandshake,
+  Hourglass,
+  Route,
+  Timer,
+  Truck,
+  Zap,
+} from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { OemGrid } from "@/components/mrb/oem-grid";
@@ -9,7 +18,13 @@ import { TrustRow } from "@/components/mrb/trust-row";
 import { isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n";
 
-const VALUE_ICONS = [SearchCheck, ClipboardCheck, Truck];
+/* Icons for the four "how we work" pillars (order matches dict.about.values):
+   people-first, same-day mindset, road milling, data. */
+const VALUE_ICONS = [HeartHandshake, Zap, Route, Database];
+/* One pictogram per stat seal (client direction, Aug 2026): DIN = check,
+   next-day shipping = truck, ZIP CLIP fitting = hourglass, service life =
+   stopwatch. Order matches dict.about.stats. */
+const STAT_ICONS = [Check, Truck, Hourglass, Timer];
 const STANDARDS = ["DIN 22102", "ISO 9001"];
 
 export async function generateMetadata({
@@ -37,8 +52,8 @@ export default async function AboutPage({
   return (
     <>
       {/* Hero + story — merged into one continuous dark zone
-          (client-assigned); everything below is white (no CtaBand — removed
-          on client direction, Aug 2026) */}
+          (client-assigned); everything below is white. Content restructured
+          from the client's functional_docs/About.md (Aug 2026). */}
       <div className="border-b border-navy-800 bg-linear-135 from-navy-800 to-navy-900">
         <section className="container-shell pt-14 lg:pt-20">
           <SectionHeading
@@ -63,11 +78,14 @@ export default async function AboutPage({
                 <p key={paragraph.slice(0, 40)}>{paragraph}</p>
               ))}
             </div>
+            <p className="mt-6 border-l-4 border-orange pl-4 font-display text-lead font-extrabold text-white">
+              {dict.about.storyPunch}
+            </p>
           </div>
           {/* Stat boxes read as stamped seals (client direction, Aug 2026):
               the badge is the dominant element, the caption secondary */}
           <div className="grid content-center gap-4 sm:grid-cols-2">
-            {dict.about.stats.map((stat) => (
+            {dict.about.stats.map((stat, index) => (
               <div
                 key={stat.label}
                 className="flex flex-col items-center rounded-lg border border-line bg-surface p-6 text-center"
@@ -76,7 +94,8 @@ export default async function AboutPage({
                   value={stat.value}
                   arcTop={stat.arcTop}
                   arcBottom={stat.arcBottom}
-                  className="size-32 shrink-0"
+                  icon={STAT_ICONS[index]}
+                  className="size-36 shrink-0"
                 />
                 <div className="mt-5 text-[13px] font-semibold leading-relaxed text-body-muted">
                   {stat.label}
@@ -93,9 +112,9 @@ export default async function AboutPage({
           eyebrow={dict.about.howEyebrow}
           title={dict.about.howTitle}
         />
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
           {dict.about.values.map((value, index) => {
-            const Icon = VALUE_ICONS[index] ?? SearchCheck;
+            const Icon = VALUE_ICONS[index] ?? HeartHandshake;
             return (
               <div
                 key={value.title}
@@ -125,6 +144,79 @@ export default async function AboutPage({
               {standard}
             </Badge>
           ))}
+        </div>
+      </section>
+
+      {/* What we supply — the client's full product breadth as a chip wall */}
+      <section className="container-shell pb-16 lg:pb-20">
+        <SectionHeading
+          eyebrow={dict.about.supplyEyebrow}
+          title={dict.about.supplyTitle}
+          lead={dict.about.supplyLead}
+        />
+        <ul className="mt-8 flex flex-wrap gap-2.5">
+          {dict.about.supplyItems.map((item) => (
+            <li key={item}>
+              <Badge variant="mono">{item}</Badge>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Our standard + vision — dark info panel on the white canvas */}
+      <section className="container-shell pb-16 lg:pb-20">
+        <div className="rounded-2xl bg-linear-135 from-navy-800 to-navy-900 p-8 lg:p-12">
+          <div className="grid gap-10 lg:grid-cols-2">
+            <div>
+              <p className="font-display text-caption font-bold tracking-eyebrow uppercase text-navy-200">
+                {dict.about.standardEyebrow}
+              </p>
+              <h2 className="mt-3 font-display text-h3 font-extrabold text-white">
+                {dict.about.standardTitle}
+              </h2>
+              <ul className="mt-6 space-y-3">
+                {dict.about.standardItems.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-center gap-3 text-sm font-semibold text-navy-100"
+                  >
+                    <Check
+                      className="size-4 shrink-0 text-orange"
+                      strokeWidth={2.5}
+                      aria-hidden="true"
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 text-sm leading-relaxed text-navy-200">
+                {dict.about.standardPunch}
+              </p>
+            </div>
+            <div className="flex flex-col justify-center">
+              <blockquote className="border-l-4 border-orange pl-5 font-display text-h3 font-extrabold leading-snug text-white">
+                “{dict.about.visionQuote}”
+              </blockquote>
+              <p className="mt-5 text-sm leading-relaxed text-navy-200">
+                {dict.about.visionBody}
+              </p>
+            </div>
+          </div>
+          <div className="mt-10 border-t border-white/10 pt-6">
+            <span className="text-[13px] font-semibold text-navy-200">
+              {dict.about.marketsLabel}
+            </span>
+            <ul className="mt-3 flex flex-wrap gap-2">
+              {dict.about.markets.map((market) => (
+                <li
+                  key={market}
+                  className="rounded-full border border-white/15 bg-white/5 px-3 py-1 font-mono text-xs text-navy-100"
+                >
+                  {market}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 

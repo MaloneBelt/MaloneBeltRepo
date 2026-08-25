@@ -15,14 +15,16 @@ export function SiteFooter({ locale }: { locale: Locale }) {
       <div className="container-shell grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           {/* The final client logo has no reversed (light) variant yet, so it
-              sits on a white plate to stay legible on the dark footer. */}
-          <div className="inline-block rounded-md bg-white px-3 py-2">
+              sits on a white plate to stay legible on the dark footer. Lockup
+              v3 carries the bold full-width strapline inside the artwork
+              (client direction, Aug 2026). */}
+          <div className="inline-block rounded-md bg-white px-4 py-3">
             <Image
-              src="/brand/Final-logo-sin-contacto.png"
+              src="/brand/Final-logo-sin-contacto.svg"
               alt={site.name}
               width={1272}
-              height={409}
-              className="h-14 w-auto"
+              height={480}
+              className="h-24 w-auto"
             />
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">

@@ -97,7 +97,9 @@
   --shadow-lg: var(--shadow-lg);
 
   /* ---- Layout ---- */
-  --spacing-nav: 68px;
+  /* Tall enough for the full lockup — down to the "moving your business
+     forward" strapline — to stay legible (client direction, Aug 2026) */
+  --spacing-nav: 96px;
 
   /* ---- Motion ---- */
   --animate-roll: roll 22s linear infinite;

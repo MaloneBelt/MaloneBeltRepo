@@ -16,15 +16,15 @@ export type BuyingMoment = "down-now" | "planned";
 
 /* A category groups the products the customer can actually buy. Three kinds:
    the core catalog ranges (Standard, Heavy-Duty & Specialized) whose products
-   are belt constructions, the Cleatpro X™-style application range (Incline)
+   are belt constructions, the MRB CleatMax™-style application range (MRB CleatMax)
    whose products are cleat patterns, and link-only tiles (Custom / Special)
    that send the visitor somewhere else instead of a range page. */
 export interface Category {
   slug: string;
   code: string; // range code, e.g. "MB-IN" — rendered in IBM Plex Mono
-  name: string; // masthead name, e.g. "Incline"
+  name: string; // masthead name, e.g. "MRB CleatMax"
   subtitle: string; // e.g. "Aggregate Cleated Belts"
-  family: string; // badge label, e.g. "Cleatpro X™ cleated range"
+  family: string; // badge label, e.g. "MRB CleatMax™ cleated range"
   tagline: string;
   description: string[]; // paragraphs
   features: string[];

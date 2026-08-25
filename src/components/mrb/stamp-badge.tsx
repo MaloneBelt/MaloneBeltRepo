@@ -1,12 +1,15 @@
 /* Vector "rubber stamp" seal for the About stats — original in-house artwork
    modeled closely on the client's reference (functional_docs/Insignia
-   tipo.jpeg), drawn in brand navy instead of the reference red: solid double
+   tipo.jpeg), drawn two-tone in brand navy + orange (client direction,
+   Aug 2026): solid double
    ring, big arc words top and bottom, a small-large-small star row on each
    side of a horizontal overhanging banner with a white inset keyline, and a
    worn-ink grunge mask. The seal carries only short stamped words — the
    explanatory sentence lives below it in the stat card (client direction,
    Aug 2026). Pure SVG so it stays crisp at any size and inherits the DS
    tokens (no raster asset to recolor on the next rebrand). */
+
+import type { LucideIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -30,8 +33,17 @@ function bottomArcFontSize(text: string) {
   return text.length <= 8 ? 14.5 : text.length <= 11 ? 12.5 : text.length <= 15 ? 10.5 : 9;
 }
 
+/* Slightly tighter than before — the banner now shares its width with the
+   value icon (client direction, Aug 2026). */
 function bannerFontSize(text: string) {
-  return text.length <= 8 ? 17 : text.length <= 10 ? 15 : 12.5;
+  return text.length <= 8 ? 16 : text.length <= 10 ? 14.5 : 11.5;
+}
+
+/* Archivo Black uppercase runs ~0.66 em per glyph — close enough to center
+   the icon + text pair as one group without measuring real glyphs. */
+function bannerTextWidth(text: string) {
+  const fs = bannerFontSize(text);
+  return text.length * fs * 0.66 + (text.length - 1) * 1.2;
 }
 
 function StarRow({ y }: { y: number }) {
@@ -48,6 +60,7 @@ export function StampBadge({
   value,
   arcTop,
   arcBottom,
+  icon: Icon,
   className,
 }: {
   /* Punchy stat stamped on the banner (e.g. "DIN 22102", "NEXT DAY") */
@@ -56,8 +69,18 @@ export function StampBadge({
   arcTop: string;
   /* Short word on the seal's bottom arc (e.g. "ASSURED") */
   arcBottom: string;
+  /* Lucide icon stamped on the banner beside the value (client direction,
+     Aug 2026: every seal carries a pictogram of its claim) */
+  icon?: LucideIcon;
   className?: string;
 }) {
+  /* Icon + value render as one centered group on the banner */
+  const iconSize = 20;
+  const iconGap = 6;
+  const groupW = bannerTextWidth(value) + (Icon ? iconSize + iconGap : 0);
+  const iconX = 70 - groupW / 2;
+  const textCx = Icon ? iconX + iconSize + iconGap + bannerTextWidth(value) / 2 : 70;
+
   /* textPath/mask need document-unique ids; the value is unique per page and
      this is a server component, so derive them from it instead of useId */
   const id = `stamp-${value.replace(/[^a-zA-Z0-9]/g, "")}`;
@@ -141,39 +164,52 @@ export function StampBadge({
         </text>
 
         {/* small-large-small star rows framing the banner */}
-        <g className="fill-navy-700">
+        <g className="fill-orange">
           <StarRow y={46} />
           <StarRow y={94} />
         </g>
 
-        {/* horizontal banner overhanging the seal, white inset keyline */}
+        {/* horizontal banner overhanging the seal, white inset keyline —
+           tall enough for the icon + value pair */}
         <rect
           x="-8"
-          y="56"
+          y="54"
           width="156"
-          height="28"
+          height="32"
           rx="4"
-          className="fill-navy-700"
+          className="fill-orange"
         />
         <rect
           x="-4.5"
-          y="59.5"
+          y="57.5"
           width="149"
-          height="21"
+          height="25"
           rx="2.5"
           fill="none"
           strokeWidth="1.5"
           className="stroke-white"
         />
+        {/* DS rule: content on orange is ink, never white */}
+        {Icon && (
+          <Icon
+            x={iconX}
+            y={70 - iconSize / 2}
+            width={iconSize}
+            height={iconSize}
+            strokeWidth={2.5}
+            className="text-primary-foreground"
+            aria-hidden="true"
+          />
+        )}
         <text
-          x="70"
+          x={textCx}
           y="70.5"
           textAnchor="middle"
           dominantBaseline="central"
           fontSize={bannerFontSize(value)}
           fontWeight="900"
           letterSpacing="1.2"
-          className="fill-white font-display uppercase"
+          className="fill-primary-foreground font-display uppercase"
         >
           {value}
         </text>

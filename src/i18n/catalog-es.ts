@@ -42,12 +42,12 @@ export const categoryEs: Record<string, CategoryOverlay> = {
     ],
   },
   incline: {
-    name: "Incline",
+    name: "MRB CleatMax",
     subtitle: "Bandas con Nervios para Agregados",
-    family: "Línea con nervios Cleatpro X™",
+    family: "Línea con nervios MRB CleatMax™",
     tagline: "Roca sin retroceso.",
     description: [
-      "Una línea de bandas con nervios Cleatpro X™ construida para el trabajo con agregados: roca triturada, material cribado y todo lo que una cantera pueda arrojarle. Los perfiles de nervio se moldean en caliente integralmente en la cubierta superior de la banda — nada de pegamento ni tornillos — agarrándose a la banda con la misma firmeza con que la banda agarra la carga, alargando la vida útil y manteniendo el material subiendo en inclinaciones fuertes.",
+      "Una línea de bandas con nervios MRB CleatMax™ construida para el trabajo con agregados: roca triturada, material cribado y todo lo que una cantera pueda arrojarle. Los perfiles de nervio se moldean en caliente integralmente en la cubierta superior de la banda — nada de pegamento ni tornillos — agarrándose a la banda con la misma firmeza con que la banda agarra la carga, alargando la vida útil y manteniendo el material subiendo en inclinaciones fuertes.",
       "Combina el patrón de nervios con una banda base reforzada como la Ironcleat® para resistencia al corte, al impacto y al desgaste con excelente acanalamiento. Nuestro equipo ajusta el perfil, la altura y el paso de los nervios al ángulo de inclinación, al material y a la velocidad de la banda.",
     ],
     features: [
@@ -133,7 +133,7 @@ export const productEs: Record<string, ProductOverlay> = {
     name: "Patrón Chevron C15P385",
     tagline: "El chevron de 15 mm más versátil, para bandas de 400–800 mm.",
     description: [
-      "El patrón más versátil de la línea Incline: un chevron de 15 mm moldeado en caliente integralmente en la cubierta superior, cubriendo anchos de banda de 400 a 800 mm. Mantiene el agregado cribado, la arena y los productos agrícolas subiendo sin retroceso en las inclinaciones que los equipos móviles realmente usan.",
+      "El patrón más versátil de la línea MRB CleatMax: un chevron de 15 mm moldeado en caliente integralmente en la cubierta superior, cubriendo anchos de banda de 400 a 800 mm. Mantiene el agregado cribado, la arena y los productos agrícolas subiendo sin retroceso en las inclinaciones que los equipos móviles realmente usan.",
       "Disponible sobre banda base EP315/3 en todo el rango de anchos, o reforzada a EP500/3 en 650 y 800 mm para accionamientos más exigidos. También se especifica para cosecha y acopio.",
     ],
     features: [
@@ -149,7 +149,7 @@ export const productEs: Record<string, ProductOverlay> = {
     tagline: "Chevron de 15 mm con junta en V para bandas de 900 mm.",
     description: [
       "Un chevron de 15 mm con la opción de junta en V, moldeado para bandas de 900 mm sobre carcasa EP500/3. La junta en V cierra el patrón en el centro de la banda para que los finos no encuentren un camino recto de vuelta rampa abajo.",
-      "Como todo patrón Cleatpro X™, los nervios se moldean en caliente en la cubierta superior, con una adhesión que dura más que los perfiles pegados o atornillados.",
+      "Como todo patrón MRB CleatMax™, los nervios se moldean en caliente en la cubierta superior, con una adhesión que dura más que los perfiles pegados o atornillados.",
     ],
     features: [
       "La junta en V cierra el patrón contra el retroceso de finos",
@@ -164,7 +164,7 @@ export const productEs: Record<string, ProductOverlay> = {
     tagline: "Mordida de 32 mm para agregado grueso y rampas fuertes.",
     description: [
       "Cuando la rampa se empina y el material se vuelve grueso, los nervios de 32 mm del C32P460 le dan a la roca triturada un verdadero apoyo. El paso de 330 mm mantiene los bloques asentados entre nervios en lugar de rebotando por encima de ellos.",
-      "Moldeado sobre EP250/2 en 500 mm o EP400/3 en 650 mm de ancho, con la misma unión moldeada en caliente del resto de la línea Incline.",
+      "Moldeado sobre EP250/2 en 500 mm o EP400/3 en 650 mm de ancho, con la misma unión moldeada en caliente del resto de la línea MRB CleatMax.",
     ],
     features: [
       "Nervio de 32 mm para rampas fuertes y material grueso",
@@ -209,7 +209,7 @@ export const productEs: Record<string, ProductOverlay> = {
     tagline: "El paso corto de 182 mm mantiene los finos subiendo.",
     description: [
       "Un chevron de 15 mm con el paso más corto de la línea — 182 mm — para que el material fino y de flujo libre encuentre un nervio antes de deslizarse de vuelta. Especificado para bandas de 1050 mm sobre carcasa EP400/3.",
-      "El patrón Incline preferido para transportadores de finos y material cribado secundario.",
+      "El patrón MRB CleatMax preferido para transportadores de finos y material cribado secundario.",
     ],
     features: [
       "Paso corto de 182 mm para material fino de flujo libre",

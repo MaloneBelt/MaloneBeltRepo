@@ -87,7 +87,7 @@ export const en = {
   productsPage: {
     metaTitle: "Products",
     metaDescription:
-      "OEM-spec conveyor belts organized the way you buy them: standard multi-ply belts, heavy-duty & specialized constructions, the Cleatpro X™ Incline cleated range — and custom builds to your spec.",
+      "OEM-spec conveyor belts organized the way you buy them: standard multi-ply belts, heavy-duty & specialized constructions, the MRB CleatMax™ cleated range — and custom builds to your spec.",
     eyebrow: "Products",
     title: "Belts built to your machine's spec.",
     lead: "Original-spec conveyor belts for all mobile/portable material process and recycling equipment — cross-referenced to your machine and shipped the next day.",
@@ -102,7 +102,7 @@ export const en = {
     categoriesEyebrow: "Categories",
     categoriesTitle: "Browse by range.",
     categoriesLead:
-      "Standard multi-ply belts, heavy-duty constructions and the Incline cleated range — each built around one application. Open a range for the full story, then step into the belt you need. Need something special? That tile takes you straight to us.",
+      "Standard multi-ply belts, heavy-duty constructions and the MRB CleatMax cleated range — each built around one application. Open a range for the full story, then step into the belt you need. Need something special? That tile takes you straight to us.",
     byCategoryEyebrow: "Products by category",
     byCategoryTitle: "Every belt, in its range.",
     specializedEyebrow: "Specialized belts",
@@ -170,16 +170,17 @@ export const en = {
   about: {
     metaTitle: "About",
     metaDescription:
-      "Malone Road Belt manufactures OEM-spec replacement conveyor belts for mobile crushing, screening and recycling equipment — cross-referenced by machine, made to DIN 22102, shipped next day.",
+      "Malone Road Belt is a specialized conveyor belting and replacement-parts company — an authorized Smiley Monroe OEM conveyor belt distributor serving the United States, the Caribbean and Latin America.",
     eyebrow: "About Malone Road Belt",
-    title: "We don't sell belts. We sell uptime.",
-    lead: "Every hour a crusher stands still costs more than the belt that stopped it. That's why we manufacture OEM-spec replacement belts for mobile material processing equipment — cross-referenced by machine, made to DIN 22102, and shipped the day after you order them.",
-    storyTitle: "Belt people.",
+    title: "Moving your business forward.",
+    lead: "Malone Road Belt is a specialized conveyor belting and replacement-parts company built around a straightforward idea: make buying the right belt easier, faster and more dependable. We serve material processing, aggregate, recycling, road construction, milling, wood, waste, agricultural and industrial operations across the United States — with additional support for the Caribbean and Latin America.",
+    storyTitle: "We know equipment.",
     storyParagraphs: [
-      "Malone Road Belt exists for one buying moment: the day your crusher, screener or recycler needs a new belt. Mobile processing equipment doesn't wait — so instead of selling generic rubber by the metre, we hold OEM-spec belts for the machines actually working in quarries, recycling yards and road projects, ready to ship.",
-      "Behind the range is a cross-reference engine: machine models and OEM part numbers mapped to exact MB belt specs — width, length, plies, splice and cover grade. Send us either one and you get the confirmed fit back, not a catalogue to decode.",
-      "We serve operators and dealers across Ireland, the UK and beyond — and whenever you call, a person answers the phone.",
+      "Our background comes from the equipment side of the industry — and that matters. Instead of expecting you to tell us exactly what belt you need, we work the chain ourselves: manufacturer → machine → model → application → belt → part number → correct replacement.",
+      "We are continuously developing an extensive equipment and belt database covering machines from Wirtgen, McCloskey, Powerscreen, Terex Finlay, Sandvik, Extec, Rubble Master, Anaconda, Roadtec, Vermeer, Doppstadt, Komptech and many others across crushing, screening, grinding, recycling and milling.",
+      "As an authorized Smiley Monroe OEM conveyor belt distributor, MRB pairs that machine knowledge with a broad range of conveyor belting — and with people who actually care whether your machine gets back to work.",
     ],
+    storyPunch: "Give us the machine. We'll help find the belt.",
     /* `ring` is the arc text of each stat's stamp badge (StampBadge) — keep
        it to ~17 characters or fewer so the banner doesn't cover its ends. */
     stats: [
@@ -209,26 +210,87 @@ export const en = {
       },
     ],
     howEyebrow: "How we work",
-    howTitle: "Three promises on every order.",
+    howTitle: "Built around the customer.",
     values: [
       {
-        title: "Cross-referenced, not guessed",
-        body: "Every order starts from your machine model or OEM part number. Our cross-reference desk confirms the exact dimensions, splice and cover grade against OEM spec before anything ships.",
+        title: "People first, no scripts",
+        body: "Real people who understand your equipment: fast answers, straightforward communication, accurate cross-referencing and ownership until the machine is moving again. We don't want price to be the reason you choose MRB — we want to make your job easier.",
       },
       {
-        title: "OEM spec, certified",
-        body: "Belts are manufactured to DIN 22102 in an ISO 9001 certified process, and every MB part number is recorded so your next reorder is a one-line email.",
+        title: "Same-day mindset",
+        body: "When a belt fails, the machine is sitting still right now, and downtime costs money. Our inventory, supplier network and logistics are built around speed — where they permit, we provide same-day and expedited solutions. Sometimes the most valuable belt isn't the cheapest; it's the one you can actually get.",
       },
       {
-        title: "Built around your downtime",
-        body: "Stocked belts ship the next day. When the machine is already down, ZIP CLIP® has you running again within the hour — no splicing crew, no curing time.",
+        title: "Road milling specialists",
+        body: "Milling is one of our core specialties. We support replacement belts for milling equipment with a growing cross-reference of machines, belt dimensions, specifications and OEM part numbers. Tell us the machine and model — we do the homework.",
+      },
+      {
+        title: "Data is part of our product",
+        body: "Our biggest investment isn't sitting on a warehouse shelf — it's information. Cross-reference databases organized by manufacturer, model, conveyor position, dimensions and OEM numbers help us solve problems faster. Know the machine. Know the belt. Get the customer moving.",
       },
     ],
     manufacturedTo: "Manufactured to:",
+    supplyEyebrow: "What we supply",
+    supplyTitle: "From the mobile machine to the stationary line.",
+    supplyLead:
+      "Conveyor belting and related products for both mobile and stationary equipment — from quarries, aggregate and asphalt plants to concrete, recycling, scrap, waste, wood processing, agricultural, mining and water-management operations. Our job isn't to sell a piece of rubber; it's to help keep the customer's machine moving.",
+    supplyItems: [
+      "Road milling machine belts",
+      "Crusher belts",
+      "Screener belts",
+      "Stacker & radial conveyor belts",
+      "Wood grinder belts",
+      "Recycling equipment belts",
+      "Aggregate & quarry belts",
+      "Asphalt & concrete plant belting",
+      "Waste-processing belts",
+      "Agricultural belting",
+      "Elevator belts",
+      "Cleated & specialty belts",
+      "V-belts & machine drive belts",
+      "Belt components & spares",
+      "Custom & specialty solutions",
+    ],
+    standardEyebrow: "Our standard",
+    standardTitle: "Doing business with MRB should feel simple.",
+    standardItems: [
+      "Listen first",
+      "Understand the application",
+      "Find the correct product",
+      "Communicate clearly",
+      "Move quickly",
+      "Stand behind what we sell",
+    ],
+    standardPunch:
+      "And when something goes wrong, we don't hide behind emails, policies or departments — we work the problem.",
+    visionQuote:
+      "We want to build the Amazon of belting — without losing the personal service of a small company.",
+    visionBody:
+      "We aren't trying to be the biggest company for the sake of being big. We want to be the company customers trust to get it right — able to support a single replacement belt today while building the systems, inventory and knowledge to support thousands of machines tomorrow.",
+    marketsLabel: "Who we serve:",
+    markets: [
+      "Equipment owners & operators",
+      "Crushing & screening contractors",
+      "Road milling contractors",
+      "Asphalt producers",
+      "Aggregate producers",
+      "Quarries & mines",
+      "Concrete producers",
+      "Recycling companies",
+      "Scrap processors",
+      "Waste management",
+      "Wood grinding & biomass",
+      "Agricultural businesses",
+      "Equipment dealers",
+      "OEM manufacturers",
+      "Municipal & government",
+      "Industrial facilities",
+      "Caribbean & Latin America export",
+    ],
     oemEyebrow: "Manufacturers",
     oemTitle: "The OEM brands we cover.",
     oemLead:
-      "Every belt starts from a machine. These are the manufacturers whose crushers, screeners, washers and recyclers our cross-reference desk matches every day.",
+      "Every belt starts from a machine. These are the manufacturers whose crushers, screeners, grinders and recyclers our cross-reference desk matches every day.",
   },
   comingSoon: {
     metaTitle: "Coming Soon",
