@@ -25,19 +25,15 @@ export const categoryEs: Record<string, CategoryOverlay> = {
     ],
   },
   "heavy-duty-specialized": {
-    name: "Reforzadas & Especiales",
+    name: "Heavy-Duty",
     subtitle: "Bandas de Alto Desempeño",
     family: "Línea de desempeño",
     tagline: "Hechas para los impactos más duros.",
     description: [
-      "Cuando la multilona estándar no alcanza: bandas Ironcleat® de tejido reforzado que duran hasta cuatro veces más, y bandas Ripstop con malla de acero que frenan la chatarra y las varillas que rasgarían una banda común. Las construcciones Fabric Breaker, con una lona amortiguadora extra, absorben el impacto de bloques grandes en trituración y cribado.",
-      "Para aplicaciones excepcionales, la línea se extiende a cubiertas resistentes al calor, al frío intenso, a la llama y a aceites y grasas — especificadas caso por caso según el estudio de tu aplicación.",
+      "Cuando la multilona estándar no alcanza: bandas Ironcleat® de tejido reforzado que duran hasta cuatro veces más.",
     ],
     features: [
       "Ironcleat®: dura hasta 4x más que la EP multilona estándar",
-      "Ripstop: malla de acero reforzada frena rasgaduras y perforaciones",
-      "Fabric Breaker: lona amortiguadora extra protege la carcasa",
-      "Cubiertas resistentes al calor, al frío, a la llama y al aceite",
       "Empalme vulcanizado en caliente o preparación ZIP CLIP®",
     ],
   },
@@ -54,7 +50,7 @@ export const categoryEs: Record<string, CategoryOverlay> = {
       "Nervios moldeados en caliente en la cubierta superior, con adhesión superior",
       "Perfiles ajustados al ángulo de inclinación, al material y a la velocidad",
       "Alturas populares de 15, 25 y 32 mm, con opción de junta en V",
-      "Bandas base Ironcleat®, Fabric Breaker y Ripstop",
+      "Bandas base Ironcleat®",
       "Suministrada en rollo, corte, sin fin o preparada para ZIP CLIP®",
     ],
   },
@@ -115,10 +111,10 @@ export const productEs: Record<string, ProductOverlay> = {
       "Números de parte MB con referencia cruzada para recompra rápida",
     ],
   },
-  ironcleat: {
+  "hd-flat": {
     tagline: "Dura hasta 4x más que la EP multilona estándar.",
     description: [
-      "La Ironcleat® usa un tejido especial de urdimbre recta con dos lonas reforzadas más una urdimbre de amarre adicional. El resultado es una carcasa que resiste perforaciones y dura hasta cuatro veces más que una banda EP multilona estándar en la misma aplicación, bajo cubiertas resistentes al corte, al impacto y al desgaste.",
+      "HD Flat es nuestra banda Ironcleat® de superficie lisa. Usa un tejido especial de urdimbre recta con dos lonas reforzadas más una urdimbre de amarre adicional. El resultado es una carcasa que resiste perforaciones y dura hasta cuatro veces más que una banda EP multilona estándar en la misma aplicación, bajo cubiertas resistentes al corte, al impacto y al desgaste.",
       "Cuando los cambios de banda se están comiendo tus ventanas de mantenimiento, la Ironcleat® es la mejora que se paga sola en disponibilidad.",
     ],
     features: [
@@ -127,6 +123,20 @@ export const productEs: Record<string, ProductOverlay> = {
       "Cubiertas superiores resistentes al corte, al impacto y al desgaste",
       "Menos cambios de banda — más tiempo productivo programado",
       "Disponible sin fin, en corte a medida o preparada para ZIP CLIP®",
+    ],
+  },
+  "hd-cleat": {
+    tagline: "La resistencia Ironcleat® con nervios chevron moldeados en caliente para inclinados.",
+    description: [
+      "HD Cleat pone un patrón de nervios chevron sobre la misma carcasa Ironcleat® de la HD Flat: un tejido especial de urdimbre recta con dos lonas reforzadas más una urdimbre de amarre adicional, bajo cubiertas pesadas resistentes al corte, al impacto y al desgaste. Los nervios se moldean en caliente sobre la superficie de carga, de modo que forman parte integral de la banda y no son un añadido pegado.",
+      "Especificada para transportadores principales y laterales inclinados en plantas móviles de trituración y cribado, donde una banda chevron estándar se rasgaría o perforaría mucho antes de que se desgasten los nervios.",
+    ],
+    features: [
+      "Misma carcasa Ironcleat® que la HD Flat — dura hasta 4x más que la EP multilona estándar",
+      "Nervios chevron moldeados en caliente: integrales a la banda, sin fallas de pegado en frío",
+      "Lonas reforzadas de urdimbre recta que resisten perforaciones y rasgaduras",
+      "Cubiertas superiores resistentes al corte, al impacto y al desgaste",
+      "Empalme vulcanizado en caliente sin fin o preparada para ZIP CLIP®",
     ],
   },
   c15p385: {
@@ -296,6 +306,7 @@ export const specLabelEs: Record<string, string> = {
   "Cleat height": "Altura de nervio",
   "Cleat width": "Ancho de nervio",
   "Base belts": "Bandas base",
+  Covers: "Cubiertas",
 };
 
 /* Spec values that are prose rather than data */
@@ -307,6 +318,8 @@ export const specValueEs: Record<string, string> = {
   "Cut / impact / wear resistant": "Resistente a corte / impacto / desgaste",
   "Up to 4x standard EP": "Hasta 4x la EP estándar",
   "Puncture / rip": "Perforación / rasgadura",
+  Chevron: "Chevron",
+  "36″–59″ stock": "36″–59″ en stock",
 };
 
 /* Application chips */

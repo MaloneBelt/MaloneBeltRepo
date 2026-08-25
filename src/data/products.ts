@@ -32,8 +32,8 @@ export const products: Product[] = [
     specs: [
       { label: "Standard", value: "DIN 22102" },
       { label: "Carcass", value: "EP fabric, 2 plies" },
-      { label: "Tensile rating", value: "EP250/2" },
-      { label: "Belt width", value: "300–1200 mm" },
+      { label: "Tensile rating", value: "EP400/2 - PIW220/2" },
+      { label: "Belt width", value: "8″–48″" },
       { label: "Temperature range", value: "-30°C to +70°C" },
     ],
     applications: ["Screening", "Recycling", "Aggregates", "Transfer conveyors"],
@@ -51,7 +51,7 @@ export const products: Product[] = [
     },
     availability: { status: "in-stock", label: "Ships next day" },
     buyingMoment: "planned",
-    related: ["3-ply", "4-ply", "ironcleat"],
+    related: ["3-ply", "4-ply", "hd-flat"],
   },
   {
     slug: "3-ply",
@@ -73,8 +73,8 @@ export const products: Product[] = [
     specs: [
       { label: "Standard", value: "DIN 22102" },
       { label: "Carcass", value: "EP fabric, 3 plies" },
-      { label: "Tensile rating", value: "EP400/3" },
-      { label: "Belt width", value: "400–1600 mm" },
+      { label: "Tensile rating", value: "EP578/3 - PIW330/3" },
+      { label: "Belt width", value: "16″–63″ (400–1600 mm)" },
       { label: "Temperature range", value: "-30°C to +70°C" },
     ],
     applications: ["Crushing", "Screening", "Quarrying", "Aggregates"],
@@ -89,7 +89,7 @@ export const products: Product[] = [
     },
     availability: { status: "in-stock", label: "Ships next day" },
     buyingMoment: "planned",
-    related: ["2-ply", "4-ply", "ironcleat"],
+    related: ["2-ply", "4-ply", "hd-flat"],
   },
   {
     slug: "4-ply",
@@ -111,8 +111,8 @@ export const products: Product[] = [
     specs: [
       { label: "Standard", value: "DIN 22102" },
       { label: "Carcass", value: "EP fabric, 4 plies" },
-      { label: "Tensile rating", value: "EP500/4" },
-      { label: "Belt width", value: "500–2000 mm" },
+      { label: "Tensile rating", value: "EP630/4 - PIW360/4" },
+      { label: "Belt width", value: "20″–79″ (500–2000 mm)" },
       { label: "Temperature range", value: "-30°C to +70°C" },
     ],
     applications: ["Crushing", "Quarrying", "Mining", "Aggregates"],
@@ -127,20 +127,20 @@ export const products: Product[] = [
     },
     availability: { status: "in-stock", label: "Ships next day" },
     buyingMoment: "planned",
-    related: ["3-ply", "2-ply", "ironcleat"],
+    related: ["3-ply", "2-ply", "hd-flat"],
   },
 
   /* ------------------------------------------------------------------ */
-  /* Heavy-Duty & Specialized                                            */
+  /* Heavy-Duty                                                         */
   /* ------------------------------------------------------------------ */
   {
-    slug: "ironcleat",
+    slug: "hd-flat",
     categories: ["heavy-duty-specialized"],
-    sku: "MB-IC",
-    name: "Ironcleat®",
+    sku: "MB-HD-F",
+    name: "HD Flat",
     tagline: "Lasts up to 4x longer than standard EP multi-ply.",
     description: [
-      "Ironcleat® uses a special straight-warp weave of two reinforced plies plus an additional binder warp. The result is a carcass that resists puncturing and lasts up to four times longer than a standard EP multi-ply belt in the same application, under cut, impact and wear resistant covers.",
+      "HD Flat is our plain-surface Ironcleat® belt. It uses a special straight-warp weave of two reinforced plies plus an additional binder warp. The result is a carcass that resists puncturing and lasts up to four times longer than a standard EP multi-ply belt in the same application, under cut, impact and wear resistant covers.",
       "When belt changes are eating your maintenance windows, Ironcleat® is the upgrade that pays for itself in uptime.",
     ],
     features: [
@@ -161,16 +161,66 @@ export const products: Product[] = [
     standards: ["DIN 22102", "ISO 9001"],
     images: {
       hero: {
-        src: "/products/constructions/ironcleat-weave.png",
-        alt: "Cutaway illustration of the Ironcleat weave: two straight-warp fabric plies with an additional binder warp",
+        src: "/products/photos/hd-flat.png",
+        alt: "HD Flat belt render: plain heavy-duty top cover with the two reinforced straight-warp plies exposed at the corner",
         fit: "contain",
       },
-      /* Main image only for now (client review, Aug 2026). */
-      gallery: [],
+      gallery: [
+        {
+          src: "/products/constructions/ironcleat-weave.png",
+          alt: "Cutaway illustration of the Ironcleat weave: two straight-warp fabric plies with an additional binder warp",
+          fit: "contain",
+        },
+      ],
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
-    related: ["3-ply", "4-ply"],
+    related: ["hd-cleat", "3-ply", "4-ply"],
+  },
+  {
+    slug: "hd-cleat",
+    categories: ["heavy-duty-specialized"],
+    sku: "MB-HD-C",
+    name: "HD Cleat",
+    tagline: "Ironcleat® toughness with hot-molded chevron cleats for inclines.",
+    description: [
+      "HD Cleat puts a chevron cleat pattern on the same Ironcleat® carcass as HD Flat: a special straight-warp weave of two reinforced plies plus an additional binder warp, under heavy-duty cut, impact and wear resistant covers. The cleats are hot-molded to the carrying surface so they become an integral part of the belt rather than a bonded add-on.",
+      "Specified for inclined main and side conveyors on mobile crushing and screening plant, where a standard chevron belt would rip or puncture long before the cleats wear out.",
+    ],
+    features: [
+      "Same Ironcleat® carcass as HD Flat — lasts up to 4x longer than standard EP multi-ply",
+      "Hot-molded chevron cleats: integral to the belt, no cold-bond failure",
+      "Reinforced straight-warp plies resist puncturing and rips",
+      "Superior cut, impact and wear resistant covers",
+      "Hot spliced (vulcanized) endless or ZIP CLIP® prepared",
+    ],
+    specs: [
+      { label: "Carcass", value: "2 Straight warp" },
+      { label: "Profile", value: "Chevron" },
+      { label: "Tensile rating", value: "360 PIW" },
+      { label: "Covers", value: "3/8″ + 1/8″" },
+      { label: "Belt width", value: "36″–59″ stock" },
+      { label: "Standard", value: "DIN 22102" },
+    ],
+    applications: ["Crushing", "Screening", "Recycling", "Demolition waste"],
+    standards: ["DIN 22102", "ISO 9001"],
+    images: {
+      hero: {
+        src: "/products/photos/hd-cleat.png",
+        alt: "HD Cleat belt render: heavy-duty belt roll with hot-molded chevron cleats",
+        fit: "contain",
+      },
+      gallery: [
+        {
+          src: "/products/constructions/ironcleat-weave.png",
+          alt: "Cutaway illustration of the Ironcleat weave: two straight-warp fabric plies with an additional binder warp",
+          fit: "contain",
+        },
+      ],
+    },
+    availability: { status: "made-to-order", label: "Made to order" },
+    buyingMoment: "planned",
+    related: ["hd-flat", "c15p385", "c25p1000"],
   },
 
   /* ------------------------------------------------------------------ */
@@ -263,7 +313,7 @@ export const products: Product[] = [
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
-    related: ["c15p385", "c15p500", "ironcleat"],
+    related: ["c15p385", "c15p500", "hd-flat"],
   },
   {
     slug: "c32p460",
@@ -306,7 +356,7 @@ export const products: Product[] = [
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
-    related: ["c15p385", "y26v400", "ironcleat"],
+    related: ["c15p385", "y26v400", "hd-flat"],
   },
   {
     slug: "s25p750",
@@ -387,7 +437,7 @@ export const products: Product[] = [
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
-    related: ["c15p385", "s25p750", "ironcleat"],
+    related: ["c15p385", "s25p750", "hd-flat"],
   },
   {
     slug: "c15p540",
@@ -516,7 +566,7 @@ export const products: Product[] = [
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
-    related: ["c15p540", "c25p1000", "ironcleat"],
+    related: ["c15p540", "c25p1000", "hd-flat"],
   },
   {
     slug: "y26v330",
@@ -556,7 +606,7 @@ export const products: Product[] = [
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
-    related: ["y26v400", "c15p500", "ironcleat"],
+    related: ["y26v400", "c15p500", "hd-flat"],
   },
   {
     slug: "c15p500",

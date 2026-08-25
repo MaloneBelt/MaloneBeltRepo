@@ -39,19 +39,15 @@ export const categoryPt: Record<string, CategoryOverlay> = {
     ],
   },
   "heavy-duty-specialized": {
-    name: "Reforçadas & Especiais",
+    name: "Heavy-Duty",
     subtitle: "Correias de Alto Desempenho",
     family: "Linha de desempenho",
     tagline: "Feitas para os impactos mais duros.",
     description: [
-      "Quando a multilonas padrão não basta: correias Ironcleat® de trama reforçada que duram até quatro vezes mais, e correias Ripstop com malha de aço que barram sucata e vergalhão que rasgariam uma correia comum. As construções Fabric Breaker, com lona amortecedora extra, absorvem o impacto de blocos grandes em britagem e peneiramento.",
-      "Para aplicações excepcionais, a linha se estende a coberturas resistentes a calor, frio intenso, chama e óleos e gorduras — especificadas caso a caso conforme o levantamento da sua aplicação.",
+      "Quando a multilonas padrão não basta: correias Ironcleat® de trama reforçada que duram até quatro vezes mais.",
     ],
     features: [
       "Ironcleat®: dura até 4x mais que a EP multilonas padrão",
-      "Ripstop: malha de aço reforçada barra rasgos e perfurações",
-      "Fabric Breaker: lona amortecedora extra protege a carcaça",
-      "Coberturas resistentes a calor, frio, chama e óleo",
       "Emenda vulcanizada a quente ou preparação ZIP CLIP®",
     ],
   },
@@ -68,7 +64,7 @@ export const categoryPt: Record<string, CategoryOverlay> = {
       "Taliscas moldadas a quente na cobertura superior, com adesão superior",
       "Perfis ajustados ao ângulo de inclinação, material e velocidade",
       "Alturas populares de 15, 25 e 32 mm, com opção de junta em V",
-      "Correias base Ironcleat®, Fabric Breaker e Ripstop",
+      "Correias base Ironcleat®",
       "Fornecida em rolo, corte, sem-fim ou preparada para ZIP CLIP®",
     ],
   },
@@ -129,10 +125,10 @@ export const productPt: Record<string, ProductOverlay> = {
       "Números de peça MB com referência cruzada para recompra rápida",
     ],
   },
-  ironcleat: {
+  "hd-flat": {
     tagline: "Dura até 4x mais que a EP multilonas padrão.",
     description: [
-      "A Ironcleat® usa uma trama especial de urdume reto com duas lonas reforçadas mais um urdume de amarração adicional. O resultado é uma carcaça que resiste a perfurações e dura até quatro vezes mais que uma correia EP multilonas padrão na mesma aplicação, sob coberturas resistentes a corte, impacto e desgaste.",
+      "A HD Flat é a nossa correia Ironcleat® de superfície lisa. Usa uma trama especial de urdume reto com duas lonas reforçadas mais um urdume de amarração adicional. O resultado é uma carcaça que resiste a perfurações e dura até quatro vezes mais que uma correia EP multilonas padrão na mesma aplicação, sob coberturas resistentes a corte, impacto e desgaste.",
       "Quando as trocas de correia estão consumindo as suas janelas de manutenção, a Ironcleat® é o upgrade que se paga em disponibilidade.",
     ],
     features: [
@@ -141,6 +137,20 @@ export const productPt: Record<string, ProductOverlay> = {
       "Coberturas superiores resistentes a corte, impacto e desgaste",
       "Menos trocas de correia — mais tempo produtivo programado",
       "Disponível sem-fim, em corte ou preparada para ZIP CLIP®",
+    ],
+  },
+  "hd-cleat": {
+    tagline: "A resistência Ironcleat® com taliscas chevron moldadas a quente para inclinados.",
+    description: [
+      "A HD Cleat coloca um padrão de taliscas chevron sobre a mesma carcaça Ironcleat® da HD Flat: uma trama especial de urdume reto com duas lonas reforçadas mais um urdume de amarração adicional, sob coberturas pesadas resistentes a corte, impacto e desgaste. As taliscas são moldadas a quente na superfície de transporte, tornando-se parte integral da correia e não um acessório colado.",
+      "Especificada para transportadores principais e laterais inclinados em plantas móveis de britagem e peneiramento, onde uma correia chevron padrão rasgaria ou furaria muito antes de as taliscas se desgastarem.",
+    ],
+    features: [
+      "Mesma carcaça Ironcleat® da HD Flat — dura até 4x mais que a EP multilonas padrão",
+      "Taliscas chevron moldadas a quente: integrais à correia, sem falhas de colagem a frio",
+      "Lonas reforçadas de urdume reto que resistem a perfurações e rasgos",
+      "Coberturas superiores resistentes a corte, impacto e desgaste",
+      "Emenda vulcanizada a quente sem-fim ou preparada para ZIP CLIP®",
     ],
   },
   c15p385: {
@@ -310,6 +320,7 @@ export const specLabelPt: Record<string, string> = {
   "Cleat height": "Altura da talisca",
   "Cleat width": "Largura da talisca",
   "Base belts": "Correias base",
+  Covers: "Coberturas",
 };
 
 /* Spec values that are prose rather than data */
@@ -321,6 +332,8 @@ export const specValuePt: Record<string, string> = {
   "Cut / impact / wear resistant": "Resistente a corte / impacto / desgaste",
   "Up to 4x standard EP": "Até 4x a EP padrão",
   "Puncture / rip": "Perfuração / rasgo",
+  Chevron: "Chevron",
+  "36″–59″ stock": "36″–59″ em estoque",
 };
 
 /* Application chips */

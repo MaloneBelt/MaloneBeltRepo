@@ -49,19 +49,15 @@ export const categories: Category[] = [
   {
     slug: "heavy-duty-specialized",
     code: "MB-HD",
-    name: "Heavy-Duty & Specialized",
+    name: "Heavy-Duty",
     subtitle: "Performance Belts",
     family: "Performance range",
     tagline: "Built for the hardest hits.",
     description: [
-      "When standard multi-ply isn't enough: Ironcleat® reinforced-weave belts that last up to four times longer, and Ripstop steel-mesh belts that stop the tramp metal and rebar that slice ordinary belts. Fabric Breaker constructions with an extra breaker ply absorb the impact of large lumps in crushing and screening duty.",
-      "For exceptional applications the range extends to heat, cold & frost, flameproof and oil & fat resistant cover compounds — specified case by case against your application survey.",
+      "When standard multi-ply isn't enough: Ironcleat® reinforced-weave belts that last up to four times longer.",
     ],
     features: [
       "Ironcleat®: lasts up to 4x longer than standard EP multi-ply",
-      "Ripstop: reinforced steel wire mesh stops rips and punctures",
-      "Fabric Breaker: extra breaker ply protects the carcass",
-      "Heat, cold & frost, flameproof and oil resistant covers",
       "Hot spliced (vulcanized) or ZIP CLIP® prepared",
     ],
     applications: [
@@ -97,7 +93,7 @@ export const categories: Category[] = [
       "Cleats hot-molded into the top cover for superior adhesion",
       "Profiles matched to incline angle, material type and belt speed",
       "Popular 15 mm, 25 mm and 32 mm cleat heights, optional V-joints",
-      "Ironcleat®, Fabric Breaker and Ripstop base belt options",
+      "Ironcleat® base belt options",
       "Available as full rolls, cut lengths, endless or ZIP CLIP® prepared",
     ],
     applications: ["Aggregates", "Quarrying", "Crushing", "Screening", "Stockpiling"],
