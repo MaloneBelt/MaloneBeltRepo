@@ -60,7 +60,6 @@ export const en = {
       "Send us your machine or OEM part number and get a cross-referenced quote — with stock status up front.",
   },
   home: {
-    heroBadge: "Original conveyor belts · shipped the next day",
     heroTitle: "Moving your business",
     heroTitleAccent: "forward.",
     heroLead:
@@ -186,19 +185,27 @@ export const en = {
     stats: [
       {
         value: "DIN 22102",
-        label: "All belts are manufactured with DIN 22102",
-        ring: "Quality assurance",
+        arcTop: "Quality",
+        arcBottom: "Assurance",
+        label: "All belts are manufactured and tested to DIN 22102",
       },
       {
         value: "Next day",
-        label: "Dispatch on stocked belts",
-        ring: "Next-day dispatch",
+        arcTop: "From stock",
+        arcBottom: "Shipping",
+        label: "Stocked belts are dispatched the next working day",
       },
-      { value: "< 1 hr", label: "ZIP CLIP® fitting time", ring: "Rapid fitting" },
       {
-        value: "4x",
-        label: "Ironcleat® service life vs standard EP",
-        ring: "Service life",
+        value: "< 1 hour",
+        arcTop: "Zip Clip®",
+        arcBottom: "Fitting",
+        label: "A ZIP CLIP® prepared belt is fitted in under an hour",
+      },
+      {
+        value: "4x longer",
+        arcTop: "Ironcleat®",
+        arcBottom: "Service life",
+        label: "Ironcleat® lasts up to 4x longer than standard EP multi-ply",
       },
     ],
     howEyebrow: "How we work",

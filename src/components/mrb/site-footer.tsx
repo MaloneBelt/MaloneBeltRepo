@@ -22,7 +22,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
               alt={site.name}
               width={1272}
               height={409}
-              className="h-9 w-auto"
+              className="h-14 w-auto"
             />
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">

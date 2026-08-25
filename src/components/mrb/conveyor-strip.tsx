@@ -13,26 +13,27 @@ import { oems, type Oem } from "@/data/oems";
 
 function LogoUnit({ oem }: { oem: Oem }) {
   return (
-    <span className="flex items-center gap-8">
-      {/* Points left — the direction the strip travels */}
+    <span className="flex items-center gap-10">
+      {/* Points right — the direction the strip travels (client direction,
+         Aug 2026) */}
       <span
         aria-hidden="true"
-        className="font-display text-sm font-black tracking-[2px] text-orange"
+        className="font-display text-lg font-black tracking-[2px] text-orange"
       >
-        ‹‹‹
+        ›››
       </span>
       <span
         className={
           oem.tone === "dark"
-            ? "relative block h-10 w-32 shrink-0"
-            : "relative flex h-10 w-32 shrink-0 items-center justify-center rounded-lg bg-white px-2.5 py-1"
+            ? "relative block h-14 w-44 shrink-0"
+            : "relative flex h-14 w-44 shrink-0 items-center justify-center rounded-lg bg-white px-3 py-1.5"
         }
       >
         <Image
           src={oem.logo}
           alt=""
           fill
-          sizes="128px"
+          sizes="176px"
           className="object-contain p-1"
         />
       </span>
@@ -42,7 +43,7 @@ function LogoUnit({ oem }: { oem: Oem }) {
 
 function StripUnit() {
   return (
-    <div className="flex shrink-0 items-center gap-8 pr-8">
+    <div className="flex shrink-0 items-center gap-10 pr-10">
       {oems.map((oem) => (
         <LogoUnit key={oem.slug} oem={oem} />
       ))}
@@ -52,7 +53,7 @@ function StripUnit() {
 
 export function ConveyorStrip() {
   return (
-    <div className="overflow-hidden border-y border-navy-800 bg-navy-900 py-3">
+    <div className="overflow-hidden border-y border-navy-800 bg-navy-900 py-5">
       <div
         aria-hidden="true"
         className="flex w-max animate-roll [animation-duration:80s] motion-reduce:animate-none"

@@ -74,8 +74,9 @@ export default async function AboutPage({
               >
                 <StampBadge
                   value={stat.value}
-                  ring={stat.ring}
-                  className="size-28 shrink-0"
+                  arcTop={stat.arcTop}
+                  arcBottom={stat.arcBottom}
+                  className="size-32 shrink-0"
                 />
                 <div className="mt-5 text-[13px] font-semibold leading-relaxed text-body-muted">
                   {stat.label}

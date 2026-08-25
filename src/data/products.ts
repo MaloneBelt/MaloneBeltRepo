@@ -39,16 +39,15 @@ export const products: Product[] = [
     applications: ["Screening", "Recycling", "Aggregates", "Transfer conveyors"],
     standards: ["DIN 22102", "ISO 9001"],
     images: {
+      /* Single image per ply product (client review, 24 Aug 2026): the
+         anatomy render built from the client's "Belt example" reference,
+         with the layer stack surgically matched to the ply count. */
       hero: {
-        src: "/products/photos/belt-roll-face.jpg",
-        alt: "Wound conveyor belt roll seen face-on, wrapped for dispatch",
+        src: "/products/constructions/anatomy-2-ply.png",
+        alt: "Anatomy of a 2-ply conveyor belt: top cover, two nylon plies with a rubber skim between, bottom cover",
+        fit: "contain",
       },
-      gallery: [
-        {
-          src: "/products/photos/belt-roll-pair.jpg",
-          alt: "Finished conveyor belt rolls wrapped for dispatch in the warehouse",
-        },
-      ],
+      gallery: [],
     },
     availability: { status: "in-stock", label: "Ships next day" },
     buyingMoment: "planned",
@@ -82,15 +81,11 @@ export const products: Product[] = [
     standards: ["DIN 22102", "ISO 9001"],
     images: {
       hero: {
-        src: "/products/photos/belt-roll-stacked.jpg",
-        alt: "Wrapped conveyor belt rolls stacked in the warehouse",
+        src: "/products/constructions/anatomy-3-ply.png",
+        alt: "Anatomy of a 3-ply conveyor belt: top cover, three nylon plies with rubber skims between, bottom cover",
+        fit: "contain",
       },
-      gallery: [
-        {
-          src: "/products/photos/belt-roll-spiral.jpg",
-          alt: "Face of a wound conveyor belt roll showing the ply spiral",
-        },
-      ],
+      gallery: [],
     },
     availability: { status: "in-stock", label: "Ships next day" },
     buyingMoment: "planned",
@@ -124,15 +119,11 @@ export const products: Product[] = [
     standards: ["DIN 22102", "ISO 9001"],
     images: {
       hero: {
-        src: "/products/photos/belt-roll-tall.jpg",
-        alt: "Large wound conveyor belt roll standing in the warehouse",
+        src: "/products/constructions/anatomy-4-ply.png",
+        alt: "Anatomy of a 4-ply conveyor belt: top cover, four nylon plies with rubber skims between, bottom cover",
+        fit: "contain",
       },
-      gallery: [
-        {
-          src: "/products/photos/belt-roll-spiral.jpg",
-          alt: "Face of a wound conveyor belt roll showing the ply spiral",
-        },
-      ],
+      gallery: [],
     },
     availability: { status: "in-stock", label: "Ships next day" },
     buyingMoment: "planned",
@@ -174,12 +165,8 @@ export const products: Product[] = [
         alt: "Cutaway illustration of the Ironcleat weave: two straight-warp fabric plies with an additional binder warp",
         fit: "contain",
       },
-      gallery: [
-        {
-          src: "/products/photos/crusher-discharge.jpg",
-          alt: "Mobile crusher discharging rock over its incline conveyor",
-        },
-      ],
+      /* Main image only for now (client review, Aug 2026). */
+      gallery: [],
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
@@ -258,17 +245,14 @@ export const products: Product[] = [
     applications: ["Aggregates", "Screening", "Sand & gravel"],
     standards: ["DIN 22102", "ISO 9001"],
     images: {
+      /* No 3D render delivered for this pattern yet — the brochure plan
+         drawing is the only image for now (client review, Aug 2026). */
       hero: {
-        src: "/products/patterns/c15v.png",
-        alt: "Plan drawing of the C15 chevron pattern with V-joint",
+        src: "/products/patterns/c15v450-tech.png",
+        alt: "Technical plan drawing of the C15V450 chevron pattern with dimension callouts",
         fit: "contain",
       },
-      gallery: [
-        {
-          src: "/products/patterns/c15v450-tech.png",
-          alt: "Technical plan drawing of the C15V450 chevron pattern with dimension callouts",
-        },
-      ],
+      gallery: [],
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
@@ -302,16 +286,11 @@ export const products: Product[] = [
     standards: ["DIN 22102", "ISO 9001"],
     images: {
       hero: {
-        src: "/products/patterns/c32.png",
-        alt: "Plan drawing of the C32 heavy chevron pattern",
+        src: "/products/patterns/c32p460-tech.png",
+        alt: "Technical plan drawing of the C32P460 chevron pattern with dimension callouts",
         fit: "contain",
       },
-      gallery: [
-        {
-          src: "/products/patterns/c32p460-tech.png",
-          alt: "Technical plan drawing of the C32P460 chevron pattern with dimension callouts",
-        },
-      ],
+      gallery: [],
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
@@ -345,16 +324,11 @@ export const products: Product[] = [
     standards: ["DIN 22102", "ISO 9001"],
     images: {
       hero: {
-        src: "/products/patterns/s25.png",
-        alt: "Plan drawing of the S25 profile cleat pattern",
+        src: "/products/patterns/s25p750-tech.png",
+        alt: "Technical plan drawing of the S25P750 cleat pattern with dimension callouts",
         fit: "contain",
       },
-      gallery: [
-        {
-          src: "/products/patterns/s25p750-tech.png",
-          alt: "Technical plan drawing of the S25P750 cleat pattern with dimension callouts",
-        },
-      ],
+      gallery: [],
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
@@ -430,15 +404,11 @@ export const products: Product[] = [
     standards: ["DIN 22102", "ISO 9001"],
     images: {
       hero: {
-        src: "/products/photos/chevron-belt-stone-line.jpg",
-        alt: "Chevron-cleated conveyor belt carrying stone up an incline",
+        src: "/products/patterns/c15p540-tech.png",
+        alt: "Technical plan drawing of the C15P540 chevron pattern with dimension callouts",
+        fit: "contain",
       },
-      gallery: [
-        {
-          src: "/products/patterns/c15p540-tech.png",
-          alt: "Technical plan drawing of the C15P540 chevron pattern with dimension callouts",
-        },
-      ],
+      gallery: [],
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
@@ -472,16 +442,11 @@ export const products: Product[] = [
     standards: ["DIN 22102", "ISO 9001"],
     images: {
       hero: {
-        src: "/products/patterns/y26.png",
-        alt: "Plan drawing of the Y26 profile pattern with V-joint",
+        src: "/products/patterns/y26v400-tech.png",
+        alt: "Technical plan drawing of the Y26V400 cleat pattern with dimension callouts",
         fit: "contain",
       },
-      gallery: [
-        {
-          src: "/products/patterns/y26v400-tech.png",
-          alt: "Technical plan drawing of the Y26V400 cleat pattern with dimension callouts",
-        },
-      ],
+      gallery: [],
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
@@ -515,15 +480,11 @@ export const products: Product[] = [
     standards: ["DIN 22102", "ISO 9001"],
     images: {
       hero: {
-        src: "/products/photos/chevron-cleats-closeup.jpg",
-        alt: "Molded chevron cleats on the top cover of a rubber conveyor belt",
+        src: "/products/patterns/c15p800-tech.png",
+        alt: "Technical plan drawing of the C15P800 chevron pattern with dimension callouts",
+        fit: "contain",
       },
-      gallery: [
-        {
-          src: "/products/patterns/c15p800-tech.png",
-          alt: "Technical plan drawing of the C15P800 chevron pattern with dimension callouts",
-        },
-      ],
+      gallery: [],
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
@@ -556,20 +517,15 @@ export const products: Product[] = [
     applications: ["Aggregates", "Transfer conveyors", "Screening"],
     standards: ["DIN 22102", "ISO 9001"],
     images: {
-      hero: {
-        src: "/products/patterns/y26.png",
-        alt: "Plan drawing of the Y26 profile pattern with V-joint",
-        fit: "contain",
-      },
       /* No pattern-specific technical drawing exists for Y26V330 in the
-         client brochures (US & EU) — the quarry photo stays as the second
-         image until the client supplies one. */
-      gallery: [
-        {
-          src: "/products/photos/quarry-hopper-belt.jpg",
-          alt: "Hopper feeding crushed stone onto a quarry conveyor belt",
-        },
-      ],
+         client brochures (US & EU) and no 3D render either — the quarry
+         photo stands in as the only image until the client supplies the
+         drawing (client review, Aug 2026). */
+      hero: {
+        src: "/products/photos/quarry-hopper-belt.jpg",
+        alt: "Hopper feeding crushed stone onto a quarry conveyor belt",
+      },
+      gallery: [],
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
@@ -603,15 +559,11 @@ export const products: Product[] = [
     standards: ["DIN 22102", "ISO 9001"],
     images: {
       hero: {
-        src: "/products/photos/chevron-belt-stone-line.jpg",
-        alt: "Chevron-cleated conveyor belt carrying stone up an incline",
+        src: "/products/patterns/c15p500-tech.png",
+        alt: "Technical plan drawing of the C15P500 chevron pattern with dimension callouts",
+        fit: "contain",
       },
-      gallery: [
-        {
-          src: "/products/patterns/c15p500-tech.png",
-          alt: "Technical plan drawing of the C15P500 chevron pattern with dimension callouts",
-        },
-      ],
+      gallery: [],
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",

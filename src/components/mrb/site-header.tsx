@@ -43,7 +43,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
             width={1272}
             height={409}
             priority
-            className="h-10 w-auto"
+            className="h-14 w-auto"
           />
         </Link>
 

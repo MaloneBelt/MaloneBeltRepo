@@ -63,7 +63,6 @@ export const es: Dictionary = {
       "Envíanos el modelo de tu máquina o el número de parte OEM y recibe una cotización con referencia cruzada — con el estado de stock por delante.",
   },
   home: {
-    heroBadge: "Bandas transportadoras originales · envío al día siguiente",
     heroTitle: "Moviendo tu negocio",
     heroTitleAccent: "hacia adelante.",
     heroLead:
@@ -185,23 +184,27 @@ export const es: Dictionary = {
     stats: [
       {
         value: "DIN 22102",
-        label: "Todas las bandas se fabrican según DIN 22102",
-        ring: "Sello de calidad",
+        arcTop: "Calidad",
+        arcBottom: "Garantizada",
+        label: "Todas las bandas se fabrican y ensayan según DIN 22102",
       },
       {
         value: "Día siguiente",
-        label: "Despacho de bandas en stock",
-        ring: "Despacho de stock",
+        arcTop: "En stock",
+        arcBottom: "Envío",
+        label: "Las bandas en stock se despachan al día hábil siguiente",
       },
       {
-        value: "< 1 h",
-        label: "Tiempo de instalación de ZIP CLIP®",
-        ring: "Montaje rápido",
+        value: "< 1 hora",
+        arcTop: "Zip Clip®",
+        arcBottom: "Montaje",
+        label: "Una banda preparada con ZIP CLIP® se instala en menos de una hora",
       },
       {
-        value: "4x",
-        label: "Vida útil de Ironcleat® vs. EP estándar",
-        ring: "Vida útil",
+        value: "4x más",
+        arcTop: "Ironcleat®",
+        arcBottom: "Vida útil",
+        label: "Ironcleat® dura hasta 4 veces más que una banda EP estándar",
       },
     ],
     howEyebrow: "Cómo trabajamos",

@@ -62,7 +62,6 @@ export const pt: Dictionary = {
       "Envie o modelo da sua máquina ou o número de peça OEM e receba uma cotação com referência cruzada — com a disponibilidade de estoque logo de cara.",
   },
   home: {
-    heroBadge: "Correias transportadoras originais · envio no dia seguinte",
     heroTitle: "Movendo o seu negócio",
     heroTitleAccent: "adiante.",
     heroLead:
@@ -184,23 +183,27 @@ export const pt: Dictionary = {
     stats: [
       {
         value: "DIN 22102",
-        label: "Todas as correias são fabricadas conforme DIN 22102",
-        ring: "Selo de qualidade",
+        arcTop: "Qualidade",
+        arcBottom: "Garantida",
+        label: "Todas as correias são fabricadas e testadas conforme DIN 22102",
       },
       {
         value: "Dia seguinte",
-        label: "Despacho para correias em estoque",
-        ring: "Direto do estoque",
+        arcTop: "Em estoque",
+        arcBottom: "Envio",
+        label: "Correias em estoque são despachadas no dia útil seguinte",
       },
       {
-        value: "< 1 h",
-        label: "Tempo de instalação da ZIP CLIP®",
-        ring: "Instalação rápida",
+        value: "< 1 hora",
+        arcTop: "Zip Clip®",
+        arcBottom: "Instalação",
+        label: "Uma correia preparada com ZIP CLIP® é instalada em menos de uma hora",
       },
       {
-        value: "4x",
-        label: "Vida útil da Ironcleat® vs. EP padrão",
-        ring: "Vida útil",
+        value: "4x mais",
+        arcTop: "Ironcleat®",
+        arcBottom: "Vida útil",
+        label: "A Ironcleat® dura até 4 vezes mais que uma correia EP padrão",
       },
     ],
     howEyebrow: "Como trabalhamos",

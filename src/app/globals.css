@@ -103,12 +103,14 @@
   --animate-roll: roll 22s linear infinite;
   --animate-status-pulse: status-pulse 2s ease-in-out infinite;
 
+  /* Rolls rightward (client direction, Aug 2026) — the duplicated strip
+     starts at -50% so the loop stays seamless. */
   @keyframes roll {
     from {
-      transform: translateX(0);
+      transform: translateX(-50%);
     }
     to {
-      transform: translateX(-50%);
+      transform: translateX(0);
     }
   }
   @keyframes status-pulse {

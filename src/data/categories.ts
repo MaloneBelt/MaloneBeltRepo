@@ -81,16 +81,9 @@ export const categories: Category[] = [
         src: "/products/photos/crusher-discharge.jpg",
         alt: "Mobile crusher discharging rock over its incline conveyor",
       },
-      gallery: [
-        {
-          src: "/products/photos/steel-mesh.jpg",
-          alt: "Woven steel wire mesh, the reinforcement inside Ripstop belts",
-        },
-        {
-          src: "/products/constructions/ironcleat.png",
-          alt: "Layer diagram of the Ironcleat construction with binder warp",
-        },
-      ],
+      /* Single image for now — the client trimmed the range gallery to the
+         hero only (client review, Aug 2026). */
+      gallery: [],
     },
   },
   {

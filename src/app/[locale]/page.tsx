@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { ClipboardCheck, SearchCheck, Truck } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
 import { BeltMatch } from "@/components/mrb/belt-match";
 import { ConveyorStrip } from "@/components/mrb/conveyor-strip";
 import { CtaBand } from "@/components/mrb/cta-band";
@@ -59,13 +58,7 @@ export default async function HomePage({
 
         <div className="container-shell relative py-16 lg:py-24">
           <div className="max-w-xl lg:max-w-2xl">
-            <Badge
-              variant="brand"
-              className="border-white/15 bg-white/10 text-navy-100"
-            >
-              {dict.home.heroBadge}
-            </Badge>
-            <h1 className="mt-5 font-display text-h1 leading-[1.02] font-black tracking-tight text-white">
+            <h1 className="font-display text-h1 leading-[1.02] font-black tracking-tight text-white">
               {dict.home.heroTitle}{" "}
               <span className="text-orange">{dict.home.heroTitleAccent}</span>
             </h1>
@@ -88,10 +81,6 @@ export default async function HomePage({
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {dict.home.steps.map((step, index) => {
             const Icon = STEP_ICONS[index] ?? SearchCheck;
-            // Title-only steps (empty body) get an express treatment — the
-            // client wants the shipping step to read as fast without
-            // clashing with the other two cards.
-            const express = step.body === "";
             return (
               <div
                 key={step.title}
@@ -102,8 +91,8 @@ export default async function HomePage({
                     {dict.home.stepLabel} 0{index + 1}
                   </span>
                   <Icon
-                    className={express ? "size-6 text-orange" : "size-6 text-navy-500"}
-                    strokeWidth={express ? 2.5 : 2}
+                    className="size-6 text-navy-500"
+                    strokeWidth={2}
                     aria-hidden="true"
                   />
                 </div>
