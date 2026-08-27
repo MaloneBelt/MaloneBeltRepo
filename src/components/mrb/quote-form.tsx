@@ -3,6 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { track } from "@vercel/analytics";
 import { CheckCircle2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 
@@ -87,6 +88,15 @@ export function QuoteForm({ locale }: { locale: Locale }) {
       });
       if (!response.ok) throw new Error(`quote POST ${response.status}`);
       setSubmitted(true);
+      /* Conversion event — aggregate dimensions only, never PII. Capped at
+         two properties (the Web Analytics tier included in the Pro plan);
+         locale is deliberately left out since country is already reported.
+         Fired after the success state so a tracking failure can't hide the
+         confirmation. No-op on staging, where <Analytics /> isn't mounted. */
+      track("quote_submitted", {
+        urgency: values.urgency,
+        product: values.productSlug ?? "unspecified",
+      });
     } catch {
       setSubmitError(true);
     } finally {

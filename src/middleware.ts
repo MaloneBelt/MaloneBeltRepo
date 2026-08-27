@@ -74,8 +74,16 @@ export async function middleware(request: NextRequest) {
 
   /* Same exclusions the matcher used to express (Next internals, metadata
      routes, any file with an extension) — kept here so the staging gate
-     above still covers those paths while the locale logic skips them. */
-  if (pathname.startsWith("/_next") || pathname.startsWith("/api") || pathname.includes(".")) {
+     above still covers those paths while the locale logic skips them.
+     /_vercel covers the Analytics / Speed Insights beacons
+     (POST /_vercel/insights/view etc.), which carry no extension and must
+     never be locale-redirected. */
+  if (
+    pathname.startsWith("/_next") ||
+    pathname.startsWith("/_vercel") ||
+    pathname.startsWith("/api") ||
+    pathname.includes(".")
+  ) {
     return NextResponse.next();
   }
 

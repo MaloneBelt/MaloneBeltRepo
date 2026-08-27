@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Archivo, IBM_Plex_Mono, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { HideOnRoute } from "@/components/mrb/hide-on-route";
 import { SiteFooter } from "@/components/mrb/site-footer";
 import { SiteHeader } from "@/components/mrb/site-header";
 import { launchMode } from "@/data/launch";
+import { stagingMode } from "@/data/staging";
 import { isLocale, locales, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n";
 
@@ -85,6 +88,15 @@ export default async function RootLayout({
           <HideOnRoute routes={locales.map((loc) => `/${loc}/coming-soon`)}>
             <SiteFooter locale={locale} />
           </HideOnRoute>
+        )}
+        {/* Traffic analytics + Core Web Vitals — cookie-less, so no consent
+            banner. Never mounted on the private staging deployment so the
+            client's review sessions don't pollute the metrics. */}
+        {!stagingMode && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
         )}
       </body>
     </html>
