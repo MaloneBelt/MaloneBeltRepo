@@ -14,12 +14,12 @@ export const categoryEs: Record<string, CategoryOverlay> = {
     tagline: "La EP de stock que carga con el trabajo — elige las lonas.",
     description: [
       "La línea estándar de Malone Road Belt: bandas EP multilona fabricadas según DIN 22102 y mantenidas en stock en construcciones de 2, 3 y 4 lonas. La urdimbre de poliéster y la trama de poliamida dan a la carcasa alta resistencia a la tracción con elongación mínima y excelente acanalamiento.",
-      "Combina el número de lonas con el grado de tensión y los diámetros de polea de tu máquina, y llévala sin fin, en corte a medida, preparada o lista para ZIP CLIP®. Toda banda tiene referencia cruzada con tu máquina o número de parte OEM.",
+      "Combina el número de lonas con el grado de tensión y los diámetros de polea de tu máquina, y llévala sin fin, en corte a medida, preparada o lista para MRB ZIP®. Toda banda tiene referencia cruzada con tu máquina o número de parte OEM.",
     ],
     features: [
       "Fabricadas según DIN 22102, con ensayos de rutina en laboratorio propio",
       "Carcasas EP de 2, 3 y 4 lonas según el grado de tensión",
-      "Formatos de suministro: sin fin, preparada, corte a medida o ZIP CLIP®",
+      "Formatos de suministro: sin fin, preparada, corte a medida o MRB ZIP®",
       "Empalmes vulcanizados en caliente en fábrica — casi 2x la resistencia del empalme en frío",
       "Números de parte MB con referencia cruzada para recompra rápida",
     ],
@@ -30,11 +30,11 @@ export const categoryEs: Record<string, CategoryOverlay> = {
     family: "Línea de desempeño",
     tagline: "Hechas para los impactos más duros.",
     description: [
-      "Cuando la multilona estándar no alcanza: bandas Ironcleat® de tejido reforzado que duran hasta cuatro veces más.",
+      "Cuando la multilona estándar no alcanza: bandas de tejido reforzado que duran hasta cuatro veces más.",
     ],
     features: [
-      "Ironcleat®: dura hasta 4x más que la EP multilona estándar",
-      "Empalme vulcanizado en caliente o preparación ZIP CLIP®",
+      "Tejido reforzado: dura hasta 4x más que la EP multilona estándar",
+      "Empalme vulcanizado en caliente o preparación MRB ZIP®",
     ],
   },
   incline: {
@@ -44,14 +44,14 @@ export const categoryEs: Record<string, CategoryOverlay> = {
     tagline: "Roca sin retroceso.",
     description: [
       "Una línea de bandas con nervios MRB CleatMax™ construida para el trabajo con agregados: roca triturada, material cribado y todo lo que una cantera pueda arrojarle. Los perfiles de nervio se moldean en caliente integralmente en la cubierta superior de la banda — nada de pegamento ni tornillos — agarrándose a la banda con la misma firmeza con que la banda agarra la carga, alargando la vida útil y manteniendo el material subiendo en inclinaciones fuertes.",
-      "Combina el patrón de nervios con una banda base reforzada como la Ironcleat® para resistencia al corte, al impacto y al desgaste con excelente acanalamiento. Nuestro equipo ajusta el perfil, la altura y el paso de los nervios al ángulo de inclinación, al material y a la velocidad de la banda.",
+      "Combina el patrón de nervios con una banda base reforzada como la Bulldog Cleat para resistencia al corte, al impacto y al desgaste con excelente acanalamiento. Nuestro equipo ajusta el perfil, la altura y el paso de los nervios al ángulo de inclinación, al material y a la velocidad de la banda.",
     ],
     features: [
       "Nervios moldeados en caliente en la cubierta superior, con adhesión superior",
       "Perfiles ajustados al ángulo de inclinación, al material y a la velocidad",
       "Alturas populares de 15, 25 y 32 mm, con opción de junta en V",
-      "Bandas base Ironcleat®",
-      "Suministrada en rollo, corte, sin fin o preparada para ZIP CLIP®",
+      "Bandas base Heavy-Duty",
+      "Suministrada en rollo, corte, sin fin o preparada para MRB ZIP®",
     ],
   },
   "custom-special": {
@@ -71,13 +71,13 @@ export const productEs: Record<string, ProductOverlay> = {
     tagline: "La especificación ligera para poleas pequeñas y tramos cortos.",
     description: [
       "Una carcasa EP de dos lonas para el lado más ligero del trabajo en equipos móviles: transportadores de transferencia, tramos cortos y máquinas con poleas de diámetro pequeño, donde una banda más pesada pelearía contra el accionamiento en lugar de ayudarlo.",
-      "Fabricada según DIN 22102 con cubiertas resistentes a la abrasión, y suministrada sin fin, en corte a medida, preparada o lista para ZIP CLIP® — con referencia cruzada a tu máquina o número de parte OEM.",
+      "Fabricada según DIN 22102 con cubiertas resistentes a la abrasión, y suministrada sin fin, en corte a medida, preparada o lista para MRB ZIP® — con referencia cruzada a tu máquina o número de parte OEM.",
     ],
     features: [
       "Carcasa EP de 2 lonas — flexible en poleas de diámetro pequeño",
       "Alta resistencia con baja elongación y excelente acanalamiento",
       "Grados de cubierta resistentes a la abrasión según tu material",
-      "Disponible sin fin, preparada, en corte a medida o lista para ZIP CLIP®",
+      "Disponible sin fin, preparada, en corte a medida o lista para MRB ZIP®",
       "Números de parte MB con referencia cruzada para recompra rápida",
     ],
   },
@@ -86,13 +86,13 @@ export const productEs: Record<string, ProductOverlay> = {
     tagline: "La especificación todoterreno para trituración y cribado móviles.",
     description: [
       "El caballo de batalla de la línea estándar: una carcasa EP de tres lonas que cubre los transportadores principales y laterales de la mayoría de trituradoras, cribadoras y recicladoras móviles. Suficientemente fuerte para trabajo pesado y abrasivo, suficientemente flexible para acanalar limpiamente sobre rodillos estándar.",
-      "Fabricada según DIN 22102 con grados de cubierta según tu material, y suministrada sin fin, en corte a medida, preparada o lista para ZIP CLIP®.",
+      "Fabricada según DIN 22102 con grados de cubierta según tu material, y suministrada sin fin, en corte a medida, preparada o lista para MRB ZIP®.",
     ],
     features: [
       "El número de lonas más especificado en equipos móviles",
       "Carcasa EP de 3 lonas — alta resistencia, baja elongación",
       "Grados de cubierta para abrasión, impacto y corte",
-      "Disponible sin fin, preparada, en corte a medida o lista para ZIP CLIP®",
+      "Disponible sin fin, preparada, en corte a medida o lista para MRB ZIP®",
       "Números de parte MB con referencia cruzada para recompra rápida",
     ],
   },
@@ -101,42 +101,42 @@ export const productEs: Record<string, ProductOverlay> = {
     tagline: "Carcasa de alta tensión para tramos largos y cargas pesadas.",
     description: [
       "Una carcasa EP de cuatro lonas para los accionamientos más exigidos de la línea estándar: apiladores de tramo largo, descarga de trituradora primaria y bandas anchas moviendo tonelaje de verdad. La lona extra soporta la tensión que estiraría una banda más ligera hasta sacarla de servicio.",
-      "Fabricada según DIN 22102 con cubiertas resistentes al impacto, y suministrada sin fin, en corte a medida, preparada o lista para ZIP CLIP®.",
+      "Fabricada según DIN 22102 con cubiertas resistentes al impacto, y suministrada sin fin, en corte a medida, preparada o lista para MRB ZIP®.",
     ],
     features: [
       "Carcasa EP de 4 lonas para accionamientos de alta tensión y tramo largo",
       "Absorbe el impacto de bloques grandes en condiciones extremas",
       "Grados de cubierta para abrasión, impacto y corte",
-      "Disponible sin fin, preparada, en corte a medida o lista para ZIP CLIP®",
+      "Disponible sin fin, preparada, en corte a medida o lista para MRB ZIP®",
       "Números de parte MB con referencia cruzada para recompra rápida",
     ],
   },
-  "hd-flat": {
+  "bulldog-cleat": {
     tagline: "Dura hasta 4x más que la EP multilona estándar.",
     description: [
-      "HD Flat es nuestra banda Ironcleat® de superficie lisa. Usa un tejido especial de urdimbre recta con dos lonas reforzadas más una urdimbre de amarre adicional. El resultado es una carcasa que resiste perforaciones y dura hasta cuatro veces más que una banda EP multilona estándar en la misma aplicación, bajo cubiertas resistentes al corte, al impacto y al desgaste.",
-      "Cuando los cambios de banda se están comiendo tus ventanas de mantenimiento, la Ironcleat® es la mejora que se paga sola en disponibilidad.",
+      "Bulldog Cleat es nuestra banda Heavy-Duty de superficie lisa. Usa un tejido especial de urdimbre recta con dos lonas reforzadas más una urdimbre de amarre adicional. El resultado es una carcasa que resiste perforaciones y dura hasta cuatro veces más que una banda EP multilona estándar en la misma aplicación, bajo cubiertas resistentes al corte, al impacto y al desgaste.",
+      "Cuando los cambios de banda se están comiendo tus ventanas de mantenimiento, la Bulldog Cleat es la mejora que se paga sola en disponibilidad.",
     ],
     features: [
       "Dura hasta 4x más que las bandas EP multilona estándar",
       "Tejido especial: 2 lonas de urdimbre recta + urdimbre de amarre",
       "Cubiertas superiores resistentes al corte, al impacto y al desgaste",
       "Menos cambios de banda — más tiempo productivo programado",
-      "Disponible sin fin, en corte a medida o preparada para ZIP CLIP®",
+      "Disponible sin fin, en corte a medida o preparada para MRB ZIP®",
     ],
   },
   "hd-cleat": {
-    tagline: "La resistencia Ironcleat® con nervios chevron moldeados en caliente para inclinados.",
+    tagline: "La resistencia Heavy-Duty con nervios chevron moldeados en caliente para inclinados.",
     description: [
-      "HD Cleat pone un patrón de nervios chevron sobre la misma carcasa Ironcleat® de la HD Flat: un tejido especial de urdimbre recta con dos lonas reforzadas más una urdimbre de amarre adicional, bajo cubiertas pesadas resistentes al corte, al impacto y al desgaste. Los nervios se moldean en caliente sobre la superficie de carga, de modo que forman parte integral de la banda y no son un añadido pegado.",
+      "HD Cleat pone un patrón de nervios chevron sobre la misma carcasa reforzada de la Bulldog Cleat: un tejido especial de urdimbre recta con dos lonas reforzadas más una urdimbre de amarre adicional, bajo cubiertas pesadas resistentes al corte, al impacto y al desgaste. Los nervios se moldean en caliente sobre la superficie de carga, de modo que forman parte integral de la banda y no son un añadido pegado.",
       "Especificada para transportadores principales y laterales inclinados en plantas móviles de trituración y cribado, donde una banda chevron estándar se rasgaría o perforaría mucho antes de que se desgasten los nervios.",
     ],
     features: [
-      "Misma carcasa Ironcleat® que la HD Flat — dura hasta 4x más que la EP multilona estándar",
+      "Misma carcasa reforzada que la Bulldog Cleat — dura hasta 4x más que la EP multilona estándar",
       "Nervios chevron moldeados en caliente: integrales a la banda, sin fallas de pegado en frío",
       "Lonas reforzadas de urdimbre recta que resisten perforaciones y rasgaduras",
       "Cubiertas superiores resistentes al corte, al impacto y al desgaste",
-      "Empalme vulcanizado en caliente sin fin o preparada para ZIP CLIP®",
+      "Empalme vulcanizado en caliente sin fin o preparada para MRB ZIP®",
     ],
   },
   c15p385: {
@@ -151,7 +151,7 @@ export const productEs: Record<string, ProductOverlay> = {
       "Nervio de 15 mm con un paso corto de 250 mm",
       "Anchos de banda de 400 a 800 mm",
       "Banda base EP315/3 o EP500/3 reforzada",
-      "Suministrada en rollo, corte, sin fin o preparada para ZIP CLIP®",
+      "Suministrada en rollo, corte, sin fin o preparada para MRB ZIP®",
     ],
   },
   c15v450: {
@@ -166,7 +166,7 @@ export const productEs: Record<string, ProductOverlay> = {
       "Moldeado en caliente integralmente en la cubierta superior — nunca pegado",
       "Nervio de 15 mm con paso de 300 mm",
       "Banda base EP500/3 5+1.5",
-      "Suministrada en rollo, corte, sin fin o preparada para ZIP CLIP®",
+      "Suministrada en rollo, corte, sin fin o preparada para MRB ZIP®",
     ],
   },
   c32p460: {
@@ -181,7 +181,7 @@ export const productEs: Record<string, ProductOverlay> = {
       "Moldeado en caliente integralmente en la cubierta superior — nunca pegado",
       "El paso de 330 mm asienta los bloques grandes entre nervios",
       "Bandas base EP250/2 o EP400/3",
-      "Suministrada en rollo, corte, sin fin o preparada para ZIP CLIP®",
+      "Suministrada en rollo, corte, sin fin o preparada para MRB ZIP®",
     ],
   },
   s25p750: {
@@ -196,7 +196,7 @@ export const productEs: Record<string, ProductOverlay> = {
       "Moldeado en caliente integralmente en la cubierta superior — nunca pegado",
       "Nervio de 25 mm con paso de 340 mm",
       "Banda base EP315/3 3+1.5",
-      "Suministrada en rollo, corte, sin fin o preparada para ZIP CLIP®",
+      "Suministrada en rollo, corte, sin fin o preparada para MRB ZIP®",
     ],
   },
   c25p1000: {
@@ -211,7 +211,7 @@ export const productEs: Record<string, ProductOverlay> = {
       "Moldeado en caliente integralmente en la cubierta superior — nunca pegado",
       "Nervio de 25 mm con paso de 400 mm",
       "Banda base EP500/3 con cubiertas 4+2 o 5+1.5",
-      "Suministrada en rollo, corte, sin fin o preparada para ZIP CLIP®",
+      "Suministrada en rollo, corte, sin fin o preparada para MRB ZIP®",
     ],
   },
   c15p540: {
@@ -226,7 +226,7 @@ export const productEs: Record<string, ProductOverlay> = {
       "Moldeado en caliente integralmente en la cubierta superior — nunca pegado",
       "Nervio de 15 mm sobre un ancho de nervio de 540 mm",
       "Banda base EP400/3 3+1.5",
-      "Suministrada en rollo, corte, sin fin o preparada para ZIP CLIP®",
+      "Suministrada en rollo, corte, sin fin o preparada para MRB ZIP®",
     ],
   },
   y26v400: {
@@ -241,7 +241,7 @@ export const productEs: Record<string, ProductOverlay> = {
       "La junta en V cierra el patrón contra el retroceso",
       "Moldeado en caliente integralmente en la cubierta superior — nunca pegado",
       "Nervio de 26 mm con paso de 200 mm",
-      "Suministrada en rollo, corte, sin fin o preparada para ZIP CLIP®",
+      "Suministrada en rollo, corte, sin fin o preparada para MRB ZIP®",
     ],
   },
   c15p800: {
@@ -256,7 +256,7 @@ export const productEs: Record<string, ProductOverlay> = {
       "Moldeado en caliente integralmente en la cubierta superior — nunca pegado",
       "Nervio de 15 mm con paso de 300 mm",
       "Banda base EP400/3 5+1.5",
-      "Suministrada en rollo, corte, sin fin o preparada para ZIP CLIP®",
+      "Suministrada en rollo, corte, sin fin o preparada para MRB ZIP®",
     ],
   },
   y26v330: {
@@ -271,7 +271,7 @@ export const productEs: Record<string, ProductOverlay> = {
       "La junta en V cierra el patrón contra el retroceso",
       "Moldeado en caliente integralmente en la cubierta superior — nunca pegado",
       "Nervio de 26 mm con paso de 310 mm",
-      "Suministrada en rollo, corte, sin fin o preparada para ZIP CLIP®",
+      "Suministrada en rollo, corte, sin fin o preparada para MRB ZIP®",
     ],
   },
   c15p500: {
@@ -286,7 +286,7 @@ export const productEs: Record<string, ProductOverlay> = {
       "Moldeado en caliente integralmente en la cubierta superior — nunca pegado",
       "Nervio de 15 mm con paso de 335 mm",
       "Banda base EP500/3 5+1.5",
-      "Suministrada en rollo, corte, sin fin o preparada para ZIP CLIP®",
+      "Suministrada en rollo, corte, sin fin o preparada para MRB ZIP®",
     ],
   },
 };
@@ -368,8 +368,8 @@ export const beltFormatEs: Record<string, { name: string; description: string }>
     description:
       "Largo con extremos rectos y margen de empalme opcional. La opción flexible para stock.",
   },
-  "zip-clip": {
-    name: "ZIP CLIP® — Lista para el Pasador",
+  "mrb-zip": {
+    name: "MRB ZIP® — Lista para el Pasador",
     description:
       "Extremos preparados mecánicamente, unidos con un pasador a presión o roscado. Se instala en aproximadamente una hora.",
   },

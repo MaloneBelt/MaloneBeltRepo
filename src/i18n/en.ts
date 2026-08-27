@@ -133,7 +133,7 @@ export const en = {
     title: "Get a straight quote.",
     lead: "Send us your machine model or OEM part number. You'll get back a cross-referenced spec, stock status and pricing — no games.",
     downBody:
-      "Skip the form. Call us and we'll cross-reference your belt on the phone — stocked belts ship next day.",
+      "Skip the form. Call us and we'll cross-reference your belt on the phone — same day ship when logistics allow. All others guaranteed to ship next day.",
   },
   quoteForm: {
     urgencyLabel: "How urgent is it?",
@@ -198,15 +198,15 @@ export const en = {
       },
       {
         value: "< 1 hour",
-        arcTop: "Zip Clip®",
+        arcTop: "MRB ZIP®",
         arcBottom: "Fitting",
-        label: "A ZIP CLIP® prepared belt is fitted in under an hour",
+        label: "A MRB ZIP® prepared belt is fitted in under an hour",
       },
       {
         value: "4x longer",
-        arcTop: "Ironcleat®",
+        arcTop: "Heavy-Duty",
         arcBottom: "Service life",
-        label: "Ironcleat® lasts up to 4x longer than standard EP multi-ply",
+        label: "Heavy-Duty belts last up to 4x longer than standard EP multi-ply",
       },
     ],
     howEyebrow: "How we work",

@@ -20,7 +20,7 @@ import {
 import { cn } from "@/lib/utils";
 
 /* One pictogram per stat seal (client direction, Aug 2026): DIN = check,
-   next-day shipping = truck, ZIP CLIP fitting = hourglass, service life =
+   next-day shipping = truck, MRB ZIP fitting = hourglass, service life =
    stopwatch. Order matches dict.about.stats — shared by the About stat
    cards, the home hero strip and the footer. */
 export const STAT_ICONS: LucideIcon[] = [Check, Truck, Hourglass, Timer];

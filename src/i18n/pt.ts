@@ -133,7 +133,7 @@ export const pt: Dictionary = {
     title: "Receba uma cotação direta.",
     lead: "Envie o modelo da sua máquina ou o número de peça OEM. Você recebe de volta a especificação com referência cruzada, disponibilidade e preço — sem enrolação.",
     downBody:
-      "Pule o formulário. Ligue e fazemos a referência cruzada da sua correia por telefone — correias em estoque saem no dia seguinte.",
+      "Pule o formulário. Ligue e fazemos a referência cruzada da sua correia por telefone — envio no mesmo dia quando a logística permitir. Todas as demais com envio garantido no dia seguinte.",
   },
   quoteForm: {
     urgencyLabel: "Qual é a urgência?",
@@ -197,15 +197,15 @@ export const pt: Dictionary = {
       },
       {
         value: "< 1 hora",
-        arcTop: "Zip Clip®",
+        arcTop: "MRB ZIP®",
         arcBottom: "Instalação",
-        label: "Uma correia preparada com ZIP CLIP® é instalada em menos de uma hora",
+        label: "Uma correia preparada com MRB ZIP® é instalada em menos de uma hora",
       },
       {
         value: "4x mais",
-        arcTop: "Ironcleat®",
+        arcTop: "Heavy-Duty",
         arcBottom: "Vida útil",
-        label: "A Ironcleat® dura até 4 vezes mais que uma correia EP padrão",
+        label: "As correias Heavy-Duty duram até 4 vezes mais que uma correia EP padrão",
       },
     ],
     howEyebrow: "Como trabalhamos",

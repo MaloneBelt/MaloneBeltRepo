@@ -28,12 +28,12 @@ export const categoryPt: Record<string, CategoryOverlay> = {
     tagline: "A EP de estoque que carrega o trabalho — escolha as lonas.",
     description: [
       "A linha padrão da Malone Road Belt: correias EP multilonas fabricadas conforme DIN 22102 e mantidas em estoque nas construções de 2, 3 e 4 lonas. O urdume de poliéster e a trama de poliamida dão à carcaça alta resistência à tração com alongamento mínimo e excelente acomodação em calha.",
-      "Combine o número de lonas com a classe de tensão e os diâmetros de polia da sua máquina, e leve a correia sem-fim, em corte, preparada ou pronta para ZIP CLIP®. Toda correia tem referência cruzada com a sua máquina ou número de peça OEM.",
+      "Combine o número de lonas com a classe de tensão e os diâmetros de polia da sua máquina, e leve a correia sem-fim, em corte, preparada ou pronta para MRB ZIP®. Toda correia tem referência cruzada com a sua máquina ou número de peça OEM.",
     ],
     features: [
       "Fabricadas conforme DIN 22102, testadas rotineiramente em laboratório próprio",
       "Carcaças EP de 2, 3 e 4 lonas conforme a classe de tensão",
-      "Formatos de fornecimento: sem-fim, preparada, corte ou ZIP CLIP®",
+      "Formatos de fornecimento: sem-fim, preparada, corte ou MRB ZIP®",
       "Emendas vulcanizadas a quente na fábrica — quase 2x a resistência da emenda a frio",
       "Números de peça MB com referência cruzada para recompra rápida",
     ],
@@ -44,11 +44,11 @@ export const categoryPt: Record<string, CategoryOverlay> = {
     family: "Linha de desempenho",
     tagline: "Feitas para os impactos mais duros.",
     description: [
-      "Quando a multilonas padrão não basta: correias Ironcleat® de trama reforçada que duram até quatro vezes mais.",
+      "Quando a multilonas padrão não basta: correias de trama reforçada que duram até quatro vezes mais.",
     ],
     features: [
-      "Ironcleat®: dura até 4x mais que a EP multilonas padrão",
-      "Emenda vulcanizada a quente ou preparação ZIP CLIP®",
+      "Trama reforçada: dura até 4x mais que a EP multilonas padrão",
+      "Emenda vulcanizada a quente ou preparação MRB ZIP®",
     ],
   },
   incline: {
@@ -58,14 +58,14 @@ export const categoryPt: Record<string, CategoryOverlay> = {
     tagline: "Rocha sem retorno.",
     description: [
       "Uma linha de correias com taliscas MRB CleatMax™ construída para o trabalho com agregados: rocha britada, material peneirado e tudo o que uma pedreira aguenta jogar. Os perfis de talisca são moldados a quente integralmente na cobertura superior da correia — nada de cola ou parafuso — agarrando a correia com a mesma firmeza com que a correia agarra a carga, prolongando a vida útil e mantendo o material subindo em inclinações fortes.",
-      "Combine o padrão de taliscas com uma correia base reforçada como a Ironcleat® para resistência a corte, impacto e desgaste com excelente acomodação em calha. Nossa equipe ajusta perfil, altura e passo das taliscas ao ângulo de inclinação, ao material e à velocidade da correia.",
+      "Combine o padrão de taliscas com uma correia base reforçada como a Bulldog Cleat para resistência a corte, impacto e desgaste com excelente acomodação em calha. Nossa equipe ajusta perfil, altura e passo das taliscas ao ângulo de inclinação, ao material e à velocidade da correia.",
     ],
     features: [
       "Taliscas moldadas a quente na cobertura superior, com adesão superior",
       "Perfis ajustados ao ângulo de inclinação, material e velocidade",
       "Alturas populares de 15, 25 e 32 mm, com opção de junta em V",
-      "Correias base Ironcleat®",
-      "Fornecida em rolo, corte, sem-fim ou preparada para ZIP CLIP®",
+      "Correias base Heavy-Duty",
+      "Fornecida em rolo, corte, sem-fim ou preparada para MRB ZIP®",
     ],
   },
   "custom-special": {
@@ -85,13 +85,13 @@ export const productPt: Record<string, ProductOverlay> = {
     tagline: "A especificação leve para polias pequenas e vãos curtos.",
     description: [
       "Uma carcaça EP de duas lonas para o lado mais leve do trabalho em equipamentos móveis: transportadores de transferência, vãos curtos e máquinas com polias de diâmetro pequeno, onde uma correia mais pesada brigaria com o acionamento em vez de ajudar.",
-      "Fabricada conforme DIN 22102 com coberturas resistentes à abrasão, e fornecida sem-fim, em corte, preparada ou pronta para ZIP CLIP® — com referência cruzada para a sua máquina ou número de peça OEM.",
+      "Fabricada conforme DIN 22102 com coberturas resistentes à abrasão, e fornecida sem-fim, em corte, preparada ou pronta para MRB ZIP® — com referência cruzada para a sua máquina ou número de peça OEM.",
     ],
     features: [
       "Carcaça EP de 2 lonas — flexível em polias de diâmetro pequeno",
       "Alta resistência com baixo alongamento e excelente acomodação em calha",
       "Classes de cobertura resistentes à abrasão conforme o seu material",
-      "Disponível sem-fim, preparada, em corte ou pronta para ZIP CLIP®",
+      "Disponível sem-fim, preparada, em corte ou pronta para MRB ZIP®",
       "Números de peça MB com referência cruzada para recompra rápida",
     ],
   },
@@ -100,13 +100,13 @@ export const productPt: Record<string, ProductOverlay> = {
     tagline: "A especificação completa para britagem e peneiramento móveis.",
     description: [
       "A força de trabalho da linha padrão: uma carcaça EP de três lonas que cobre os transportadores principais e laterais da maioria dos britadores, peneiras e recicladoras móveis. Forte o bastante para trabalho pesado e abrasivo, flexível o bastante para acomodar em calha nos roletes padrão.",
-      "Fabricada conforme DIN 22102 com classes de cobertura para o seu material, e fornecida sem-fim, em corte, preparada ou pronta para ZIP CLIP®.",
+      "Fabricada conforme DIN 22102 com classes de cobertura para o seu material, e fornecida sem-fim, em corte, preparada ou pronta para MRB ZIP®.",
     ],
     features: [
       "O número de lonas mais especificado em equipamentos móveis",
       "Carcaça EP de 3 lonas — alta resistência, baixo alongamento",
       "Classes de cobertura para abrasão, impacto e corte",
-      "Disponível sem-fim, preparada, em corte ou pronta para ZIP CLIP®",
+      "Disponível sem-fim, preparada, em corte ou pronta para MRB ZIP®",
       "Números de peça MB com referência cruzada para recompra rápida",
     ],
   },
@@ -115,42 +115,42 @@ export const productPt: Record<string, ProductOverlay> = {
     tagline: "Carcaça de alta tensão para vãos longos e cargas pesadas.",
     description: [
       "Uma carcaça EP de quatro lonas para os acionamentos mais exigidos da linha padrão: empilhadores de vão longo, descarga de britador primário e correias largas movendo tonelagem de verdade. A lona extra carrega a tensão que esticaria uma correia mais leve até tirá-la de serviço.",
-      "Fabricada conforme DIN 22102 com coberturas resistentes a impacto, e fornecida sem-fim, em corte, preparada ou pronta para ZIP CLIP®.",
+      "Fabricada conforme DIN 22102 com coberturas resistentes a impacto, e fornecida sem-fim, em corte, preparada ou pronta para MRB ZIP®.",
     ],
     features: [
       "Carcaça EP de 4 lonas para acionamentos de alta tensão e vão longo",
       "Absorve o impacto de blocos grandes em condições extremas",
       "Classes de cobertura para abrasão, impacto e corte",
-      "Disponível sem-fim, preparada, em corte ou pronta para ZIP CLIP®",
+      "Disponível sem-fim, preparada, em corte ou pronta para MRB ZIP®",
       "Números de peça MB com referência cruzada para recompra rápida",
     ],
   },
-  "hd-flat": {
+  "bulldog-cleat": {
     tagline: "Dura até 4x mais que a EP multilonas padrão.",
     description: [
-      "A HD Flat é a nossa correia Ironcleat® de superfície lisa. Usa uma trama especial de urdume reto com duas lonas reforçadas mais um urdume de amarração adicional. O resultado é uma carcaça que resiste a perfurações e dura até quatro vezes mais que uma correia EP multilonas padrão na mesma aplicação, sob coberturas resistentes a corte, impacto e desgaste.",
-      "Quando as trocas de correia estão consumindo as suas janelas de manutenção, a Ironcleat® é o upgrade que se paga em disponibilidade.",
+      "A Bulldog Cleat é a nossa correia Heavy-Duty de superfície lisa. Usa uma trama especial de urdume reto com duas lonas reforçadas mais um urdume de amarração adicional. O resultado é uma carcaça que resiste a perfurações e dura até quatro vezes mais que uma correia EP multilonas padrão na mesma aplicação, sob coberturas resistentes a corte, impacto e desgaste.",
+      "Quando as trocas de correia estão consumindo as suas janelas de manutenção, a Bulldog Cleat é o upgrade que se paga em disponibilidade.",
     ],
     features: [
       "Dura até 4x mais que correias EP multilonas padrão",
       "Trama especial: 2 lonas de urdume reto + urdume de amarração",
       "Coberturas superiores resistentes a corte, impacto e desgaste",
       "Menos trocas de correia — mais tempo produtivo programado",
-      "Disponível sem-fim, em corte ou preparada para ZIP CLIP®",
+      "Disponível sem-fim, em corte ou preparada para MRB ZIP®",
     ],
   },
   "hd-cleat": {
-    tagline: "A resistência Ironcleat® com taliscas chevron moldadas a quente para inclinados.",
+    tagline: "A resistência Heavy-Duty com taliscas chevron moldadas a quente para inclinados.",
     description: [
-      "A HD Cleat coloca um padrão de taliscas chevron sobre a mesma carcaça Ironcleat® da HD Flat: uma trama especial de urdume reto com duas lonas reforçadas mais um urdume de amarração adicional, sob coberturas pesadas resistentes a corte, impacto e desgaste. As taliscas são moldadas a quente na superfície de transporte, tornando-se parte integral da correia e não um acessório colado.",
+      "A HD Cleat coloca um padrão de taliscas chevron sobre a mesma carcaça reforçada da Bulldog Cleat: uma trama especial de urdume reto com duas lonas reforçadas mais um urdume de amarração adicional, sob coberturas pesadas resistentes a corte, impacto e desgaste. As taliscas são moldadas a quente na superfície de transporte, tornando-se parte integral da correia e não um acessório colado.",
       "Especificada para transportadores principais e laterais inclinados em plantas móveis de britagem e peneiramento, onde uma correia chevron padrão rasgaria ou furaria muito antes de as taliscas se desgastarem.",
     ],
     features: [
-      "Mesma carcaça Ironcleat® da HD Flat — dura até 4x mais que a EP multilonas padrão",
+      "Mesma carcaça reforçada da Bulldog Cleat — dura até 4x mais que a EP multilonas padrão",
       "Taliscas chevron moldadas a quente: integrais à correia, sem falhas de colagem a frio",
       "Lonas reforçadas de urdume reto que resistem a perfurações e rasgos",
       "Coberturas superiores resistentes a corte, impacto e desgaste",
-      "Emenda vulcanizada a quente sem-fim ou preparada para ZIP CLIP®",
+      "Emenda vulcanizada a quente sem-fim ou preparada para MRB ZIP®",
     ],
   },
   c15p385: {
@@ -165,7 +165,7 @@ export const productPt: Record<string, ProductOverlay> = {
       "Talisca de 15 mm com passo curto de 250 mm",
       "Larguras de correia de 400 a 800 mm",
       "Correia base EP315/3 ou EP500/3 reforçada",
-      "Fornecida em rolo, corte, sem-fim ou preparada para ZIP CLIP®",
+      "Fornecida em rolo, corte, sem-fim ou preparada para MRB ZIP®",
     ],
   },
   c15v450: {
@@ -180,7 +180,7 @@ export const productPt: Record<string, ProductOverlay> = {
       "Moldado a quente integralmente na cobertura superior — nunca colado",
       "Talisca de 15 mm com passo de 300 mm",
       "Correia base EP500/3 5+1.5",
-      "Fornecida em rolo, corte, sem-fim ou preparada para ZIP CLIP®",
+      "Fornecida em rolo, corte, sem-fim ou preparada para MRB ZIP®",
     ],
   },
   c32p460: {
@@ -195,7 +195,7 @@ export const productPt: Record<string, ProductOverlay> = {
       "Moldado a quente integralmente na cobertura superior — nunca colado",
       "Passo de 330 mm assenta blocos grandes entre as taliscas",
       "Correias base EP250/2 ou EP400/3",
-      "Fornecida em rolo, corte, sem-fim ou preparada para ZIP CLIP®",
+      "Fornecida em rolo, corte, sem-fim ou preparada para MRB ZIP®",
     ],
   },
   s25p750: {
@@ -210,7 +210,7 @@ export const productPt: Record<string, ProductOverlay> = {
       "Moldado a quente integralmente na cobertura superior — nunca colado",
       "Talisca de 25 mm com passo de 340 mm",
       "Correia base EP315/3 3+1.5",
-      "Fornecida em rolo, corte, sem-fim ou preparada para ZIP CLIP®",
+      "Fornecida em rolo, corte, sem-fim ou preparada para MRB ZIP®",
     ],
   },
   c25p1000: {
@@ -225,7 +225,7 @@ export const productPt: Record<string, ProductOverlay> = {
       "Moldado a quente integralmente na cobertura superior — nunca colado",
       "Talisca de 25 mm com passo de 400 mm",
       "Correia base EP500/3 com coberturas 4+2 ou 5+1.5",
-      "Fornecida em rolo, corte, sem-fim ou preparada para ZIP CLIP®",
+      "Fornecida em rolo, corte, sem-fim ou preparada para MRB ZIP®",
     ],
   },
   c15p540: {
@@ -240,7 +240,7 @@ export const productPt: Record<string, ProductOverlay> = {
       "Moldado a quente integralmente na cobertura superior — nunca colado",
       "Talisca de 15 mm em largura de talisca de 540 mm",
       "Correia base EP400/3 3+1.5",
-      "Fornecida em rolo, corte, sem-fim ou preparada para ZIP CLIP®",
+      "Fornecida em rolo, corte, sem-fim ou preparada para MRB ZIP®",
     ],
   },
   y26v400: {
@@ -255,7 +255,7 @@ export const productPt: Record<string, ProductOverlay> = {
       "Junta em V fecha o padrão contra o retorno",
       "Moldado a quente integralmente na cobertura superior — nunca colado",
       "Talisca de 26 mm com passo de 200 mm",
-      "Fornecida em rolo, corte, sem-fim ou preparada para ZIP CLIP®",
+      "Fornecida em rolo, corte, sem-fim ou preparada para MRB ZIP®",
     ],
   },
   c15p800: {
@@ -270,7 +270,7 @@ export const productPt: Record<string, ProductOverlay> = {
       "Moldado a quente integralmente na cobertura superior — nunca colado",
       "Talisca de 15 mm com passo de 300 mm",
       "Correia base EP400/3 5+1.5",
-      "Fornecida em rolo, corte, sem-fim ou preparada para ZIP CLIP®",
+      "Fornecida em rolo, corte, sem-fim ou preparada para MRB ZIP®",
     ],
   },
   y26v330: {
@@ -285,7 +285,7 @@ export const productPt: Record<string, ProductOverlay> = {
       "Junta em V fecha o padrão contra o retorno",
       "Moldado a quente integralmente na cobertura superior — nunca colado",
       "Talisca de 26 mm com passo de 310 mm",
-      "Fornecida em rolo, corte, sem-fim ou preparada para ZIP CLIP®",
+      "Fornecida em rolo, corte, sem-fim ou preparada para MRB ZIP®",
     ],
   },
   c15p500: {
@@ -300,7 +300,7 @@ export const productPt: Record<string, ProductOverlay> = {
       "Moldado a quente integralmente na cobertura superior — nunca colado",
       "Talisca de 15 mm com passo de 335 mm",
       "Correia base EP500/3 5+1.5",
-      "Fornecida em rolo, corte, sem-fim ou preparada para ZIP CLIP®",
+      "Fornecida em rolo, corte, sem-fim ou preparada para MRB ZIP®",
     ],
   },
 };
@@ -382,8 +382,8 @@ export const beltFormatPt: Record<string, { name: string; description: string }>
     description:
       "Comprimento com pontas retas e folga de emenda opcional. A opção flexível para estoque.",
   },
-  "zip-clip": {
-    name: "ZIP CLIP® — Pronta para o Pino",
+  "mrb-zip": {
+    name: "MRB ZIP® — Pronta para o Pino",
     description:
       "Extremidades preparadas mecanicamente, unidas por pino de encaixe ou rosqueado. Instalada em cerca de uma hora.",
   },

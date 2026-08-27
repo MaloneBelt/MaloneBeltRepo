@@ -134,7 +134,7 @@ export const es: Dictionary = {
     title: "Recibe una cotización directa.",
     lead: "Envíanos el modelo de tu máquina o el número de parte OEM. Recibirás la especificación con referencia cruzada, el estado de stock y el precio — sin rodeos.",
     downBody:
-      "Sáltate el formulario. Llámanos y hacemos la referencia cruzada de tu banda por teléfono — las bandas en stock salen al día siguiente.",
+      "Sáltate el formulario. Llámanos y hacemos la referencia cruzada de tu banda por teléfono — envío el mismo día cuando la logística lo permita. Todas las demás con envío garantizado al día siguiente.",
   },
   quoteForm: {
     urgencyLabel: "¿Qué tan urgente es?",
@@ -198,15 +198,15 @@ export const es: Dictionary = {
       },
       {
         value: "< 1 hora",
-        arcTop: "Zip Clip®",
+        arcTop: "MRB ZIP®",
         arcBottom: "Montaje",
-        label: "Una banda preparada con ZIP CLIP® se instala en menos de una hora",
+        label: "Una banda preparada con MRB ZIP® se instala en menos de una hora",
       },
       {
         value: "4x más",
-        arcTop: "Ironcleat®",
+        arcTop: "Heavy-Duty",
         arcBottom: "Vida útil",
-        label: "Ironcleat® dura hasta 4 veces más que una banda EP estándar",
+        label: "Las bandas Heavy-Duty duran hasta 4 veces más que una banda EP estándar",
       },
     ],
     howEyebrow: "Cómo trabajamos",

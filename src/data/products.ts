@@ -20,13 +20,13 @@ export const products: Product[] = [
     tagline: "The light-duty spec for tight pulleys and short centres.",
     description: [
       "A two-ply EP carcass for the lighter end of mobile plant duty: transfer conveyors, short centres and machines with small pulley diameters where a heavier belt would fight the drive instead of helping it.",
-      "Manufactured to DIN 22102 with abrasion-resistant covers, and supplied endless, cut-length, stripped or ZIP CLIP® prepared — cross-referenced to your machine or OEM part number.",
+      "Manufactured to DIN 22102 with abrasion-resistant covers, and supplied endless, cut-length, stripped or MRB ZIP® prepared — cross-referenced to your machine or OEM part number.",
     ],
     features: [
       "2-ply EP carcass — flexible over small pulley diameters",
       "High strength with low elongation and excellent troughability",
       "Abrasion-resistant cover grades matched to your material",
-      "Available endless, stripped, cut-length or ZIP CLIP® prepared",
+      "Available endless, stripped, cut-length or MRB ZIP® prepared",
       "Cross-referenced MB part numbers for fast reordering",
     ],
     specs: [
@@ -51,7 +51,7 @@ export const products: Product[] = [
     },
     availability: { status: "in-stock", label: "Ships next day" },
     buyingMoment: "planned",
-    related: ["3-ply", "4-ply", "hd-flat"],
+    related: ["3-ply", "4-ply", "bulldog-cleat"],
   },
   {
     slug: "3-ply",
@@ -61,13 +61,13 @@ export const products: Product[] = [
     tagline: "The all-round spec for mobile crushing and screening.",
     description: [
       "The workhorse of the standard range: a three-ply EP carcass that covers the main and side conveyors of most mobile crushers, screeners and recyclers. Strong enough for heavy, abrasive duty, flexible enough to trough cleanly on standard idler sets.",
-      "Manufactured to DIN 22102 with cover grades matched to your material, and supplied endless, cut-length, stripped or ZIP CLIP® prepared.",
+      "Manufactured to DIN 22102 with cover grades matched to your material, and supplied endless, cut-length, stripped or MRB ZIP® prepared.",
     ],
     features: [
       "The most-specified ply count on mobile plant",
       "3-ply EP carcass — high strength, low stretch",
       "Cover grades for abrasion, impact and cut resistance",
-      "Available endless, stripped, cut-length or ZIP CLIP® prepared",
+      "Available endless, stripped, cut-length or MRB ZIP® prepared",
       "Cross-referenced MB part numbers for fast reordering",
     ],
     specs: [
@@ -89,7 +89,7 @@ export const products: Product[] = [
     },
     availability: { status: "in-stock", label: "Ships next day" },
     buyingMoment: "planned",
-    related: ["2-ply", "4-ply", "hd-flat"],
+    related: ["2-ply", "4-ply", "bulldog-cleat"],
   },
   {
     slug: "4-ply",
@@ -99,13 +99,13 @@ export const products: Product[] = [
     tagline: "High-tension carcass for long centres and heavy loads.",
     description: [
       "A four-ply EP carcass for the hardest-working drives in the standard range: long-centre stackers, primary crusher discharge and wide belts moving real tonnage. The extra ply carries the tension that would stretch a lighter belt out of service.",
-      "Manufactured to DIN 22102 with impact-resistant covers, and supplied endless, cut-length, stripped or ZIP CLIP® prepared.",
+      "Manufactured to DIN 22102 with impact-resistant covers, and supplied endless, cut-length, stripped or MRB ZIP® prepared.",
     ],
     features: [
       "4-ply EP carcass for high-tension, long-centre drives",
       "Absorbs the impact of large lumps under extreme conditions",
       "Cover grades for abrasion, impact and cut resistance",
-      "Available endless, stripped, cut-length or ZIP CLIP® prepared",
+      "Available endless, stripped, cut-length or MRB ZIP® prepared",
       "Cross-referenced MB part numbers for fast reordering",
     ],
     specs: [
@@ -127,28 +127,28 @@ export const products: Product[] = [
     },
     availability: { status: "in-stock", label: "Ships next day" },
     buyingMoment: "planned",
-    related: ["3-ply", "2-ply", "hd-flat"],
+    related: ["3-ply", "2-ply", "bulldog-cleat"],
   },
 
   /* ------------------------------------------------------------------ */
   /* Heavy-Duty                                                         */
   /* ------------------------------------------------------------------ */
   {
-    slug: "hd-flat",
+    slug: "bulldog-cleat",
     categories: ["heavy-duty-specialized"],
     sku: "MB-HD-F",
-    name: "HD Flat",
+    name: "Bulldog Cleat",
     tagline: "Lasts up to 4x longer than standard EP multi-ply.",
     description: [
-      "HD Flat is our plain-surface Ironcleat® belt. It uses a special straight-warp weave of two reinforced plies plus an additional binder warp. The result is a carcass that resists puncturing and lasts up to four times longer than a standard EP multi-ply belt in the same application, under cut, impact and wear resistant covers.",
-      "When belt changes are eating your maintenance windows, Ironcleat® is the upgrade that pays for itself in uptime.",
+      "Bulldog Cleat is our plain-surface Heavy-Duty belt. It uses a special straight-warp weave of two reinforced plies plus an additional binder warp. The result is a carcass that resists puncturing and lasts up to four times longer than a standard EP multi-ply belt in the same application, under cut, impact and wear resistant covers.",
+      "When belt changes are eating your maintenance windows, Bulldog Cleat is the upgrade that pays for itself in uptime.",
     ],
     features: [
       "Lasts up to 4x longer than standard EP multi-ply belts",
       "Special weave: 2 straight-warp plies + additional binder warp",
       "Superior cut, impact and wear resistant covers",
       "Fewer belt changes — more scheduled uptime",
-      "Available endless, cut-length or ZIP CLIP® prepared",
+      "Available endless, cut-length or MRB ZIP® prepared",
     ],
     specs: [
       { label: "Carcass", value: "2 Straight warp" },
@@ -161,14 +161,14 @@ export const products: Product[] = [
     standards: ["DIN 22102", "ISO 9001"],
     images: {
       hero: {
-        src: "/products/photos/hd-flat.png",
-        alt: "HD Flat belt render: plain heavy-duty top cover with the two reinforced straight-warp plies exposed at the corner",
+        src: "/products/photos/bulldog-cleat.png",
+        alt: "Bulldog Cleat belt render: plain heavy-duty top cover with the two reinforced straight-warp plies exposed at the corner",
         fit: "contain",
       },
       gallery: [
         {
-          src: "/products/constructions/ironcleat-weave.png",
-          alt: "Cutaway illustration of the Ironcleat weave: two straight-warp fabric plies with an additional binder warp",
+          src: "/products/constructions/hd-weave.png",
+          alt: "Cutaway illustration of the reinforced straight-warp weave: two straight-warp fabric plies with an additional binder warp",
           fit: "contain",
         },
       ],
@@ -182,17 +182,17 @@ export const products: Product[] = [
     categories: ["heavy-duty-specialized"],
     sku: "MB-HD-C",
     name: "HD Cleat",
-    tagline: "Ironcleat® toughness with hot-molded chevron cleats for inclines.",
+    tagline: "Heavy-Duty toughness with hot-molded chevron cleats for inclines.",
     description: [
-      "HD Cleat puts a chevron cleat pattern on the same Ironcleat® carcass as HD Flat: a special straight-warp weave of two reinforced plies plus an additional binder warp, under heavy-duty cut, impact and wear resistant covers. The cleats are hot-molded to the carrying surface so they become an integral part of the belt rather than a bonded add-on.",
+      "HD Cleat puts a chevron cleat pattern on the same reinforced carcass as Bulldog Cleat: a special straight-warp weave of two reinforced plies plus an additional binder warp, under heavy-duty cut, impact and wear resistant covers. The cleats are hot-molded to the carrying surface so they become an integral part of the belt rather than a bonded add-on.",
       "Specified for inclined main and side conveyors on mobile crushing and screening plant, where a standard chevron belt would rip or puncture long before the cleats wear out.",
     ],
     features: [
-      "Same Ironcleat® carcass as HD Flat — lasts up to 4x longer than standard EP multi-ply",
+      "Same reinforced carcass as Bulldog Cleat — lasts up to 4x longer than standard EP multi-ply",
       "Hot-molded chevron cleats: integral to the belt, no cold-bond failure",
       "Reinforced straight-warp plies resist puncturing and rips",
       "Superior cut, impact and wear resistant covers",
-      "Hot spliced (vulcanized) endless or ZIP CLIP® prepared",
+      "Hot spliced (vulcanized) endless or MRB ZIP® prepared",
     ],
     specs: [
       { label: "Carcass", value: "2 Straight warp" },
@@ -212,15 +212,15 @@ export const products: Product[] = [
       },
       gallery: [
         {
-          src: "/products/constructions/ironcleat-weave.png",
-          alt: "Cutaway illustration of the Ironcleat weave: two straight-warp fabric plies with an additional binder warp",
+          src: "/products/constructions/hd-weave.png",
+          alt: "Cutaway illustration of the reinforced straight-warp weave: two straight-warp fabric plies with an additional binder warp",
           fit: "contain",
         },
       ],
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
-    related: ["hd-flat", "c15p385", "c25p1000"],
+    related: ["bulldog-cleat", "c15p385", "c25p1000"],
   },
 
   /* ------------------------------------------------------------------ */
@@ -241,7 +241,7 @@ export const products: Product[] = [
       "15 mm cleat height at a tight 250 mm pitch",
       "Belt widths from 400 to 800 mm",
       "EP315/3 or heavier EP500/3 base belt options",
-      "Available as full rolls, cut lengths, endless or ZIP CLIP® prepared",
+      "Available as full rolls, cut lengths, endless or MRB ZIP® prepared",
     ],
     specs: [
       { label: "Profile", value: "C15P385" },
@@ -284,7 +284,7 @@ export const products: Product[] = [
       "Integrally hot-molded into the top cover — never glued",
       "15 mm cleat height at 300 mm pitch",
       "EP500/3 5+1.5 base belt",
-      "Available as full rolls, cut lengths, endless or ZIP CLIP® prepared",
+      "Available as full rolls, cut lengths, endless or MRB ZIP® prepared",
     ],
     specs: [
       { label: "Profile", value: "C15V450" },
@@ -313,7 +313,7 @@ export const products: Product[] = [
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
-    related: ["c15p385", "c15p500", "hd-flat"],
+    related: ["c15p385", "c15p500", "bulldog-cleat"],
   },
   {
     slug: "c32p460",
@@ -330,7 +330,7 @@ export const products: Product[] = [
       "Integrally hot-molded into the top cover — never glued",
       "330 mm pitch seats large lumps between cleats",
       "EP250/2 or EP400/3 base belt options",
-      "Available as full rolls, cut lengths, endless or ZIP CLIP® prepared",
+      "Available as full rolls, cut lengths, endless or MRB ZIP® prepared",
     ],
     specs: [
       { label: "Profile", value: "C32P460" },
@@ -356,7 +356,7 @@ export const products: Product[] = [
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
-    related: ["c15p385", "y26v400", "hd-flat"],
+    related: ["c15p385", "y26v400", "bulldog-cleat"],
   },
   {
     slug: "s25p750",
@@ -373,7 +373,7 @@ export const products: Product[] = [
       "Integrally hot-molded into the top cover — never glued",
       "25 mm cleat height at 340 mm pitch",
       "EP315/3 3+1.5 base belt",
-      "Available as full rolls, cut lengths, endless or ZIP CLIP® prepared",
+      "Available as full rolls, cut lengths, endless or MRB ZIP® prepared",
     ],
     specs: [
       { label: "Profile", value: "S25P750" },
@@ -411,7 +411,7 @@ export const products: Product[] = [
       "Integrally hot-molded into the top cover — never glued",
       "25 mm cleat height at 400 mm pitch",
       "EP500/3 base belt in 4+2 or 5+1.5 covers",
-      "Available as full rolls, cut lengths, endless or ZIP CLIP® prepared",
+      "Available as full rolls, cut lengths, endless or MRB ZIP® prepared",
     ],
     specs: [
       { label: "Profile", value: "C25P1000" },
@@ -437,7 +437,7 @@ export const products: Product[] = [
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
-    related: ["c15p385", "s25p750", "hd-flat"],
+    related: ["c15p385", "s25p750", "bulldog-cleat"],
   },
   {
     slug: "c15p540",
@@ -454,7 +454,7 @@ export const products: Product[] = [
       "Integrally hot-molded into the top cover — never glued",
       "15 mm cleat height across a 540 mm cleat width",
       "EP400/3 3+1.5 base belt",
-      "Available as full rolls, cut lengths, endless or ZIP CLIP® prepared",
+      "Available as full rolls, cut lengths, endless or MRB ZIP® prepared",
     ],
     specs: [
       { label: "Profile", value: "C15P540" },
@@ -497,7 +497,7 @@ export const products: Product[] = [
       "V-joint closes the pattern against rollback",
       "Integrally hot-molded into the top cover — never glued",
       "26 mm cleat height at 200 mm pitch",
-      "Available as full rolls, cut lengths, endless or ZIP CLIP® prepared",
+      "Available as full rolls, cut lengths, endless or MRB ZIP® prepared",
     ],
     specs: [
       { label: "Profile", value: "Y26V400" },
@@ -540,7 +540,7 @@ export const products: Product[] = [
       "Integrally hot-molded into the top cover — never glued",
       "15 mm cleat height at 300 mm pitch",
       "EP400/3 5+1.5 base belt",
-      "Available as full rolls, cut lengths, endless or ZIP CLIP® prepared",
+      "Available as full rolls, cut lengths, endless or MRB ZIP® prepared",
     ],
     specs: [
       { label: "Profile", value: "C15P800" },
@@ -566,7 +566,7 @@ export const products: Product[] = [
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
-    related: ["c15p540", "c25p1000", "hd-flat"],
+    related: ["c15p540", "c25p1000", "bulldog-cleat"],
   },
   {
     slug: "y26v330",
@@ -583,7 +583,7 @@ export const products: Product[] = [
       "V-joint closes the pattern against rollback",
       "Integrally hot-molded into the top cover — never glued",
       "26 mm cleat height at 310 mm pitch",
-      "Available as full rolls, cut lengths, endless or ZIP CLIP® prepared",
+      "Available as full rolls, cut lengths, endless or MRB ZIP® prepared",
     ],
     specs: [
       { label: "Profile", value: "Y26V330" },
@@ -606,7 +606,7 @@ export const products: Product[] = [
     },
     availability: { status: "made-to-order", label: "Made to order" },
     buyingMoment: "planned",
-    related: ["y26v400", "c15p500", "hd-flat"],
+    related: ["y26v400", "c15p500", "bulldog-cleat"],
   },
   {
     slug: "c15p500",
@@ -623,7 +623,7 @@ export const products: Product[] = [
       "Integrally hot-molded into the top cover — never glued",
       "15 mm cleat height at 335 mm pitch",
       "EP500/3 5+1.5 base belt",
-      "Available as full rolls, cut lengths, endless or ZIP CLIP® prepared",
+      "Available as full rolls, cut lengths, endless or MRB ZIP® prepared",
     ],
     specs: [
       { label: "Profile", value: "C15P500" },
@@ -712,13 +712,13 @@ export const beltFormats: BeltFormat[] = [
     },
   },
   {
-    id: "zip-clip",
-    name: "ZIP CLIP® — Ready to Pin",
+    id: "mrb-zip",
+    name: "MRB ZIP® — Ready to Pin",
     description:
       "Mechanically prepared ends joined with a push-in or screw-in pin. Fits in about an hour.",
     image: {
-      src: "/products/formats/zip-clip-loop.png",
-      alt: "ZIP CLIP belt loop with mechanical splice",
+      src: "/products/formats/mrb-zip-loop.png",
+      alt: "MRB ZIP belt loop with mechanical splice",
     },
   },
 ];

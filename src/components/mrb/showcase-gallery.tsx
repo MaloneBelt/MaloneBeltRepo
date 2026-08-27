@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 export function ShowcaseGallery({
   images,
 }: {
-  images: { src: string; alt: string }[];
+  images: { src: string; alt: string; fit?: "cover" | "contain" }[];
 }) {
   const [index, setIndex] = useState(0);
   const count = images.length;
@@ -39,7 +39,8 @@ export function ShowcaseGallery({
             priority={i === 0}
             sizes="(max-width: 1180px) 100vw, 1140px"
             className={cn(
-              "bg-white object-cover transition-opacity duration-500",
+              "bg-white transition-opacity duration-500",
+              image.fit === "contain" ? "object-contain p-4" : "object-cover",
               i === index ? "opacity-100" : "opacity-0"
             )}
           />
@@ -88,7 +89,10 @@ export function ShowcaseGallery({
               alt=""
               fill
               sizes="340px"
-              className="bg-white object-cover transition-transform duration-500 group-hover:scale-105"
+              className={cn(
+                "bg-white transition-transform duration-500 group-hover:scale-105",
+                images[next].fit === "contain" ? "object-contain p-2" : "object-cover"
+              )}
             />
           </div>
           <span className="absolute top-2 left-2 rounded-md bg-navy-900/70 px-2 py-0.5 font-mono text-[10px] tracking-[1px] text-navy-100 uppercase ring-1 ring-white/15 backdrop-blur-sm">
