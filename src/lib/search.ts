@@ -106,7 +106,7 @@ export function searchProducts(query: string): ProductMatch[] {
 
   // 2. Machines: a machine matches when at least two query tokens (or the
   // whole query, if shorter) prefix-match its brand/model/aliases. This lets
-  // "Wirtgen W 100 Fi — main conveyor" match even with non-machine words.
+  // "Powerscreen Warrior 1400 — main conveyor" match even with non-machine words.
   for (const machine of machines) {
     const machineTokens = tokenize(
       [machine.brand, machine.model, ...machine.aliases].join(" ")

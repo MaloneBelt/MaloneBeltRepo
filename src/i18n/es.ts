@@ -179,7 +179,7 @@ export const es: Dictionary = {
     storyTitle: "Conocemos los equipos.",
     storyParagraphs: [
       "Venimos del lado de los equipos de esta industria — y eso importa. En lugar de esperar que nos digas exactamente qué banda necesitas, recorremos la cadena nosotros mismos: fabricante → máquina → modelo → aplicación → banda → número de parte → repuesto correcto.",
-      "Desarrollamos continuamente una extensa base de datos de equipos y bandas que cubre máquinas de Wirtgen, McCloskey, Powerscreen, Terex Finlay, Sandvik, Extec, Rubble Master, Anaconda, Roadtec, Vermeer, Doppstadt, Komptech y muchos más en trituración, cribado, molienda, reciclaje y fresado.",
+      "Desarrollamos continuamente una extensa base de datos de equipos y bandas que cubre máquinas de McCloskey, Powerscreen, Terex Finlay, Sandvik, Extec, Rubble Master, Anaconda, Roadtec, Vermeer, Doppstadt, Komptech y muchos más en trituración, cribado, molienda, reciclaje y fresado.",
       "Como distribuidor OEM autorizado de bandas Smiley Monroe, MRB combina ese conocimiento de máquinas con una amplia gama de bandas transportadoras — y con personas a las que de verdad les importa que tu máquina vuelva a trabajar.",
     ],
     storyPunch: "Dinos la máquina. Nosotros encontramos la banda.",

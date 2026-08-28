@@ -178,7 +178,7 @@ export const en = {
     storyTitle: "We know equipment.",
     storyParagraphs: [
       "Our background comes from the equipment side of the industry — and that matters. Instead of expecting you to tell us exactly what belt you need, we work the chain ourselves: manufacturer → machine → model → application → belt → part number → correct replacement.",
-      "We are continuously developing an extensive equipment and belt database covering machines from Wirtgen, McCloskey, Powerscreen, Terex Finlay, Sandvik, Extec, Rubble Master, Anaconda, Roadtec, Vermeer, Doppstadt, Komptech and many others across crushing, screening, grinding, recycling and milling.",
+      "We are continuously developing an extensive equipment and belt database covering machines from McCloskey, Powerscreen, Terex Finlay, Sandvik, Extec, Rubble Master, Anaconda, Roadtec, Vermeer, Doppstadt, Komptech and many others across crushing, screening, grinding, recycling and milling.",
     ],
     storyPunch: "Give us the machine. We'll help find the belt.",
     /* `ring` is the arc text of each stat's stamp badge (StampBadge) — keep

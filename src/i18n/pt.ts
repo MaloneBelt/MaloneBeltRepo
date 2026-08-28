@@ -178,7 +178,7 @@ export const pt: Dictionary = {
     storyTitle: "Conhecemos os equipamentos.",
     storyParagraphs: [
       "Viemos do lado dos equipamentos desta indústria — e isso importa. Em vez de esperar que você diga exatamente qual correia precisa, percorremos a cadeia nós mesmos: fabricante → máquina → modelo → aplicação → correia → número de peça → reposição correta.",
-      "Desenvolvemos continuamente uma extensa base de dados de equipamentos e correias cobrindo máquinas da Wirtgen, McCloskey, Powerscreen, Terex Finlay, Sandvik, Extec, Rubble Master, Anaconda, Roadtec, Vermeer, Doppstadt, Komptech e muitas outras em britagem, peneiramento, moagem, reciclagem e fresagem.",
+      "Desenvolvemos continuamente uma extensa base de dados de equipamentos e correias cobrindo máquinas da McCloskey, Powerscreen, Terex Finlay, Sandvik, Extec, Rubble Master, Anaconda, Roadtec, Vermeer, Doppstadt, Komptech e muitas outras em britagem, peneiramento, moagem, reciclagem e fresagem.",
       "Como distribuidora OEM autorizada de correias Smiley Monroe, a MRB combina esse conhecimento de máquinas com uma ampla gama de correias transportadoras — e com pessoas que realmente se importam com a sua máquina voltar a trabalhar.",
     ],
     storyPunch: "Diga a máquina. Nós encontramos a correia.",

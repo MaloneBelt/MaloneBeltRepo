@@ -98,25 +98,20 @@ export const categories: Category[] = [
     ],
     applications: ["Aggregates", "Quarrying", "Crushing", "Screening", "Stockpiling"],
     /* Machine-portrait imagery (client direction, 24 Aug 2026, modeled on
-       the "MRB Cleatmax" references): the hero shows the incline conveyor
-       CleatMax belts actually run on. The gallery is the client's own
+       the "MRB Cleatmax" references): hero and gallery are the client's own
        26 Aug 2026 photo set from functional_docs/MRB Cleatmax (third-party
        machine marks painted out, upscaled to 1600x900; the milling-machine
        cut-out arrived with a painted checkerboard and was keyed to real
        alpha, hence fit: "contain"). */
     images: {
       hero: {
-        src: "/products/photos/quarry-cleated-conveyor.jpg",
-        alt: "Mobile crushing and screening plant in a quarry, its raised incline conveyor fitted with a chevron-cleated belt",
+        src: "/products/photos/cleatmax-incline-cleated.jpg",
+        alt: "Cleated belt running up a steep incline conveyor inside a recycling plant",
       },
       gallery: [
         {
           src: "/products/photos/cleatmax-chevron-closeup.jpg",
           alt: "Close-up of a chevron-cleated belt with hot-molded cleats",
-        },
-        {
-          src: "/products/photos/cleatmax-incline-cleated.jpg",
-          alt: "Cleated belt running up a steep incline conveyor inside a recycling plant",
         },
         {
           src: "/products/photos/cleatmax-trommel-screen.jpg",

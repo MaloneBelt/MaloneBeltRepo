@@ -24,7 +24,6 @@ export const oems: Oem[] = [
   { slug: "edge", name: "EDGE", logo: "/oems/edge.png" },
   { slug: "ims", name: "Irish Manufacturing (IMS)", logo: "/oems/ims.png" },
   { slug: "irock", name: "IROCK", logo: "/oems/irock.png" },
-  { slug: "kleemann", name: "Kleemann", logo: "/oems/kleemann.png" },
   { slug: "kpi", name: "Kolberg-Pioneer (KPI)", logo: "/oems/kpi.png" },
   { slug: "mccloskey", name: "McCloskey", logo: "/oems/mccloskey.png", tone: "dark" },
   { slug: "mccloskey-environmental", name: "McCloskey Environmental", logo: "/oems/mccloskey-environmental.png" },
