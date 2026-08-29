@@ -4,8 +4,12 @@
    Aug 2026), sourced from each manufacturer's official site/press assets.
    tone: "dark" marks logos whose original artwork is white-on-dark — they
    render directly on dark bands and get a navy plate on white surfaces.
-   KPI and Roadtec carry the Astec mark (their current corporate branding);
-   Terex Cedar Rapids / Terex MPS use the Terex corporate mark. */
+   The Astec group brands we serve (Astec Mobile Screens, Roadtec,
+   Kolberg-Pioneer) are ONE entry named together — the mark repeated per
+   brand read as a bug (client direction, 29 Aug 2026). Terex Cedar Rapids /
+   Terex MPS stay separate entries but point at the SAME Terex corporate
+   file — the conveyor strip dedupes by logo path so one mark never rolls
+   by twice. */
 
 export interface Oem {
   slug: string;
@@ -18,20 +22,18 @@ export interface Oem {
 
 export const oems: Oem[] = [
   { slug: "anaconda", name: "Anaconda", logo: "/oems/anaconda.png" },
-  { slug: "astec-mobile-screens", name: "Astec Mobile Screens", logo: "/oems/astec-mobile-screens.png" },
+  { slug: "astec", name: "Astec (Mobile Screens, Roadtec, Kolberg-Pioneer)", logo: "/oems/astec.png" },
   { slug: "barford", name: "Barford", logo: "/oems/barford.png" },
   { slug: "eagle-crusher", name: "Eagle Crusher", logo: "/oems/eagle-crusher.png" },
   { slug: "edge", name: "EDGE", logo: "/oems/edge.png" },
   { slug: "ims", name: "Irish Manufacturing (IMS)", logo: "/oems/ims.png" },
   { slug: "irock", name: "IROCK", logo: "/oems/irock.png" },
-  { slug: "kpi", name: "Kolberg-Pioneer (KPI)", logo: "/oems/kpi.png" },
   { slug: "mccloskey", name: "McCloskey", logo: "/oems/mccloskey.png", tone: "dark" },
   { slug: "mccloskey-environmental", name: "McCloskey Environmental", logo: "/oems/mccloskey-environmental.png" },
   { slug: "mws", name: "McCloskey Washing Systems (MWS)", logo: "/oems/mws.png", tone: "dark" },
   { slug: "metso", name: "Metso", logo: "/oems/metso.png" },
   { slug: "pronar", name: "Pronar", logo: "/oems/pronar.png" },
   { slug: "rubblemaster", name: "Rubblemaster", logo: "/oems/rubblemaster.png" },
-  { slug: "roadtec", name: "Roadtec (Astec)", logo: "/oems/roadtec.png" },
   { slug: "sandvik", name: "Sandvik", logo: "/oems/sandvik.png" },
   { slug: "telestack", name: "Telestack", logo: "/oems/telestack.png" },
   { slug: "terex-cbi", name: "Terex CBI", logo: "/oems/terex-cbi.png", tone: "dark" },
@@ -41,7 +43,7 @@ export const oems: Oem[] = [
   { slug: "terex-finlay", name: "Terex Finlay", logo: "/oems/terex-finlay.png" },
   { slug: "terex-marco", name: "Terex Marco", logo: "/oems/terex-marco.png" },
   { slug: "terex-mds", name: "Terex MDS", logo: "/oems/terex-mds.png" },
-  { slug: "terex-mps", name: "Terex MPS", logo: "/oems/terex-mps.png" },
+  { slug: "terex-mps", name: "Terex MPS", logo: "/oems/terex-cedarapids.png" },
   { slug: "terex-powerscreen", name: "Terex Powerscreen", logo: "/oems/terex-powerscreen.png" },
   { slug: "terex-prostack", name: "Terex Prostack", logo: "/oems/terex-prostack.png" },
   { slug: "terex-washing-systems", name: "Terex Washing Systems", logo: "/oems/terex-washing-systems.png" },

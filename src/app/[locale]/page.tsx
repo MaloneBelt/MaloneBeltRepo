@@ -4,6 +4,7 @@ import { ClipboardCheck, SearchCheck, Truck } from "lucide-react";
 import { BeltMatch } from "@/components/mrb/belt-match";
 import { ConveyorStrip } from "@/components/mrb/conveyor-strip";
 import { CtaBand } from "@/components/mrb/cta-band";
+import { DeferredVideo } from "@/components/mrb/deferred-video";
 import { SectionHeading } from "@/components/mrb/section-heading";
 import { STAT_ICONS, StampBadge } from "@/components/mrb/stamp-badge";
 import { isLocale, type Locale } from "@/i18n/config";
@@ -26,7 +27,7 @@ export default async function HomePage({
         <div className="absolute inset-y-0 right-0 w-full lg:w-[55%]">
           {/* Static frame paints first and stays for prefers-reduced-motion;
              the looping belt video (same scene, first frame = poster) fades
-             in over it once it can play. */}
+             in over it once the rest of the page has loaded. */}
           <Image
             src="/home/hero-conveyor-poster.jpg"
             alt=""
@@ -35,18 +36,12 @@ export default async function HomePage({
             sizes="(min-width: 1024px) 55vw, 100vw"
             className="object-cover object-[70%_45%] grayscale"
           />
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
+          <DeferredVideo
+            src="/home/hero-conveyor.mp4"
             poster="/home/hero-conveyor-poster.jpg"
-            aria-hidden="true"
+            strategy="after-load"
             className="absolute inset-0 size-full object-cover object-[70%_45%] grayscale motion-reduce:hidden"
-          >
-            <source src="/home/hero-conveyor.mp4" type="video/mp4" />
-          </video>
+          />
           <div
             aria-hidden="true"
             className="absolute inset-0 hidden bg-linear-to-r from-navy-900 from-8% via-navy-900/35 via-45% to-transparent lg:block"

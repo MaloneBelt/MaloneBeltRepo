@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { DeferredVideo } from "@/components/mrb/deferred-video";
 import { l, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n";
 
@@ -41,18 +42,12 @@ export function CtaBand({ locale }: { locale: Locale }) {
             sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover grayscale"
           />
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
+          <DeferredVideo
+            src="/home/cta-conveyor.mp4"
             poster="/home/cta-conveyor-poster.jpg"
-            aria-hidden="true"
+            strategy="in-view"
             className="absolute inset-0 size-full object-cover grayscale motion-reduce:hidden"
-          >
-            <source src="/home/cta-conveyor.mp4" type="video/mp4" />
-          </video>
+          />
           {/* soft navy wash so the clip sits inside the band's palette */}
           <div
             aria-hidden="true"
