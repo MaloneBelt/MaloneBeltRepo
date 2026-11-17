@@ -61,6 +61,116 @@ async function guardStaging(request: NextRequest): Promise<NextResponse | null> 
   });
 }
 
+/* ── Printed QR → English home (client direction, Nov 2026) ─────────────
+   Marketing pieces already in circulation carry a QR that encodes exactly
+   https://www.malonebelt.com/es (the Spanish HOME) and cannot be reprinted.
+   Scans must land on the English home, but /es is also the real Spanish home
+   (header logo, product breadcrumb, LocaleSwitcher, sitemap), so the redirect
+   is conditional: only an external top-level navigation to the bare /es
+   (camera / Lens / scanner app, typed URL, link opened from a native app)
+   goes to /en. Everything else keeps Spanish:
+     - in-site navigation (logo, breadcrumb, switcher, next/link prefetch) is
+       an RSC fetch() with Sec-Fetch-Dest: empty, never "document";
+     - visitors coming from a web page (Google…) carry an http(s) Referer;
+     - crawlers send no Sec-Fetch-*, no real Accept-Language or a bot UA, so
+       Googlebot sees exactly what Google-search visitors see (no cloaking);
+     - NEXT_LOCALE=es (switcher choice or a remembered Spanish reader);
+     - any query string: /es?lang=es is the escape hatch for Spanish links.
+   Next strips rsc / next-router-* headers before middleware runs, so Fetch
+   Metadata (Sec-Fetch-*) is the only navigation signal available here.
+   307 ONLY, never 301/308: browsers cache permanent redirects, which would
+   lock that phone out of the Spanish home for good.
+   To retire the rule, revert the commit that introduced this block. */
+
+const ONE_YEAR = 60 * 60 * 24 * 365;
+
+/* A real language tag (en-US, es-419, pt…). Rejects a missing or empty
+   header and the "*" some crawlers send. */
+const LANGUAGE_TAG = /^\s*[a-z]{2,3}(?:[-_][a-z0-9]{1,8})*\s*(?:[,;]|$)/i;
+
+/* Explicit tokens only (a bare /bot/i would also match phones such as
+   CUBOT). Used solely to never redirect. */
+const BOT_UA =
+  /Googlebot|Google-InspectionTool|GoogleOther|AdsBot-Google|Storebot-Google|bingbot|BingPreview|Applebot|DuckDuckBot|YandexBot|Baiduspider|facebookexternalhit|Twitterbot|LinkedInBot|Slackbot|TelegramBot|WhatsApp\/|Chrome-Lighthouse|GPTBot|OAI-SearchBot|ChatGPT-User|PerplexityBot|ClaudeBot/i;
+
+/* google.com, google.com.mx, google.co.uk, bing.com, search.yahoo.com… —
+   the engine label must be followed by a short public suffix and then the
+   end of the host, so google.attacker.com does not count. */
+const SEARCH_ENGINE_REFERER =
+  /^https?:\/\/(?:[a-z0-9-]+\.)*(?:google|bing|duckduckgo|yahoo|ecosia|yandex)\.[a-z]{2,3}(?:\.[a-z]{2})?(?:[/:?#]|$)/i;
+
+type EsArrival =
+  | "redirect"
+  | "not_get"
+  | "query"
+  | "no_fetch_metadata"
+  | "not_document"
+  | "same_site"
+  | "web_referer"
+  | "no_language"
+  | "bot"
+  | "cookie_es";
+
+/* First failing check wins. Speculative prefetches (Sec-Purpose) are NOT
+   exempt on purpose: a scanner app that prefetches /es must get the same
+   307 the tap will get, or the tap would reuse a Spanish response. */
+function classifyEsArrival(request: NextRequest): EsArrival {
+  const h = request.headers;
+  if (request.method !== "GET") return "not_get";
+  if (request.nextUrl.search !== "") return "query";
+  const site = h.get("sec-fetch-site");
+  if (!site) return "no_fetch_metadata";
+  if (h.get("sec-fetch-dest") !== "document" || h.get("sec-fetch-mode") !== "navigate") {
+    return "not_document";
+  }
+  if (site !== "none" && site !== "cross-site") return "same_site";
+  if (/^https?:\/\//i.test(h.get("referer") ?? "")) return "web_referer";
+  if (!LANGUAGE_TAG.test(h.get("accept-language") ?? "")) return "no_language";
+  if (BOT_UA.test(h.get("user-agent") ?? "")) return "bot";
+  if (request.cookies.get("NEXT_LOCALE")?.value === "es") return "cookie_es";
+  return "redirect";
+}
+
+/* Remember Spanish readers, so a reload, a bookmark or a Safari new tab of
+   /es never bounces someone who was reading Spanish. Runs only on real page
+   loads (GET, Sec-Fetch-Dest: document, no speculative prefetch), never on
+   RSC payloads, which are CDN-cached. Attributes mirror the LocaleSwitcher's
+   document.cookie exactly (path=/, 1 year, lax, host-only) and are NOT
+   HttpOnly, so the switcher can still overwrite the value.
+     - refresh: an existing NEXT_LOCALE=es is re-issued from the server,
+       because Safari and Brave cap script-written cookies at 7 days;
+     - stamp: a visitor with no saved preference who loads a deep Spanish
+       page, or reaches /es from our own site or a search engine, is
+       remembered as Spanish. A QR-like arrival on the bare /es is never
+       stamped. An explicit en/pt choice is never overridden. */
+function rememberSpanishReader(request: NextRequest, response: NextResponse) {
+  const h = request.headers;
+  if (
+    request.method !== "GET" ||
+    h.get("sec-fetch-dest") !== "document" ||
+    h.has("sec-purpose") ||
+    h.has("purpose")
+  ) {
+    return;
+  }
+
+  const saved = request.cookies.get("NEXT_LOCALE")?.value;
+  const remember =
+    saved === "es" ||
+    (!saved &&
+      (request.nextUrl.pathname !== "/es" ||
+        h.get("sec-fetch-site") === "same-origin" ||
+        SEARCH_ENGINE_REFERER.test(h.get("referer") ?? "")));
+
+  if (remember) {
+    response.cookies.set("NEXT_LOCALE", "es", {
+      path: "/",
+      maxAge: ONE_YEAR,
+      sameSite: "lax",
+    });
+  }
+}
+
 /* Locale routing: every page lives under a locale prefix (/en, /pt, /es) — requests
    without a locale prefix (including legacy pre-i18n URLs) are redirected,
    honoring the NEXT_LOCALE cookie set by the header's language switcher. */
@@ -87,8 +197,24 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  /* Printed QR (see above). Must run before the isLocale() early return,
+     which is today's exit for /es. /es/ never reaches this point: Next's
+     built-in trailing-slash 308 normalizes it to /es first. */
+  if (pathname === "/es" && classifyEsArrival(request) === "redirect") {
+    const url = request.nextUrl.clone();
+    url.pathname = "/en";
+    url.search = "";
+    const response = NextResponse.redirect(url, 307);
+    response.headers.set("Cache-Control", "private, no-store");
+    return response;
+  }
+
   const first = pathname.split("/")[1];
-  if (isLocale(first)) return NextResponse.next();
+  if (isLocale(first)) {
+    const response = NextResponse.next();
+    if (first === "es") rememberSpanishReader(request, response);
+    return response;
+  }
 
   const cookie = request.cookies.get("NEXT_LOCALE")?.value;
   const locale = cookie && isLocale(cookie) ? cookie : defaultLocale;
